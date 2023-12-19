@@ -11,10 +11,10 @@ struct FoodDetailViewModel {
   
   let cellViewModel: FoodCellViewModel
   
-  var id: String
-  var name: String
-  var description: String
-  var imageUrl: URL?
+  let id: String
+  let name: String
+  let description: String
+  let imageUrl: URL?
   
   init(cellViewModel: FoodCellViewModel) {
     self.cellViewModel = cellViewModel

@@ -12,5 +12,5 @@ protocol APIServiceProtocol {
 }
 
 extension APIServiceProtocol {
-  func fetchFoodItems(_ completion: @escaping (Result<FoodResponse?>) -> Void) { }
+  func fetchFoodItems(_ completion: @escaping (Result<FoodResponse?>) -> Void) {}
 }

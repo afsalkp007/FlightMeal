@@ -11,8 +11,4 @@ extension Constants {
   enum Urls {
     static let foddieUrl = URL(string: "https://yummie.glitch.me")!
   }
-  
-  enum APIkey {
-    static let nyt = "gGc5U7GM2xeyNgFlxJxf3qb0x8AfqLe5"
-  }
 }

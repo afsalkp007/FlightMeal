@@ -9,11 +9,11 @@ import UIKit
 
 final class FoodViewController: UIViewController, Storyboarded {
   
-  var coordinator: FoodDetailCoordinator?
-  var viewModel: FoodViewModel?
+  internal var coordinator: FoodDetailCoordinator?
+  internal var viewModel: FoodViewModel?
   
-  @IBOutlet weak var tableView: UITableView!
-  var loaderView = UIActivityIndicatorView()
+  @IBOutlet private weak var tableView: UITableView!
+  private var loaderView = UIActivityIndicatorView()
   private let adapter = Adapter<FoodCellViewModel, FoodTableViewCell>()
   
   override func viewDidLoad() {
@@ -46,17 +46,21 @@ final class FoodViewController: UIViewController, Storyboarded {
     tableView.tableFooterView = UIView()
     tableView.reloadData()
     
-    adapter.configure = { item, cell in
-      cell.titleLabel.text = item.name
-      cell.descLabel.text = "\(item.description ?? "")"
-      guard let url = item.imageUrl else { return }
-      cell.foodImageView.setUpLoader()
-      cell.foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFit)
+    adapter.configure = { [weak self] item, cell in
+      self?.configure(cell, for: item)
     }
     
     adapter.select = { [weak self] viewModel in
       self?.coordinator?.start(viewModel)
     }
+  }
+  
+  private func configure(_ cell: FoodTableViewCell, for item: FoodCellViewModel) {
+    cell.titleLabel.text = item.name
+    cell.descLabel.text = "\(item.description ?? "")"
+    guard let url = item.imageUrl else { return }
+    cell.foodImageView.setUpLoader()
+    cell.foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFit)
   }
   
   private func setUpLoader() {
