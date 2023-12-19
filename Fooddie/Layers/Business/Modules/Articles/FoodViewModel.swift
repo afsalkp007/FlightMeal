@@ -15,7 +15,7 @@ final class FoodViewModel {
   
   var viewModels = [FoodCellViewModel]() {
     didSet {
-      updateView()
+      setTitle()
       updateUI()
     }
   }
@@ -31,15 +31,19 @@ final class FoodViewModel {
     foodService.fetchFoodItems { [weak self] result in
       switch result {
       case .success(let results):
-        guard let self = self, let foodItems = results?.foodItems else { return }
-        self.viewModels = foodItems.compactMap(FoodCellViewModel.init)
+        self?.viewModels = Self.getFoodCellViewModels(from: results)
       case .failure(let error):
         print(error.localizedDescription)
       }
     }
   }
   
-  func updateView() {
+  private static func getFoodCellViewModels(from response: FoodResponse?) -> [FoodCellViewModel] {
+    guard let foodItems = response?.foodItems else { return [] }
+    return foodItems.compactMap(FoodCellViewModel.init)
+  }
+  
+  func setTitle() {
     title = "Menu"
   }
   

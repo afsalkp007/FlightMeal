@@ -9,15 +9,11 @@ import UIKit
 
 final class CacheableImageView: UIImageView {
   
-  // MARK: - Constants
-  
   private let imageCache = NSCache<NSString, AnyObject>()
   
-  // MARK: - Properties
+  private let activityIndicator = UIActivityIndicatorView()
   
-  let activityIndicator = UIActivityIndicatorView()
-  
-  func downloadImageFrom(
+  private func downloadImageFrom(
     urlString: String,
     imageMode: UIView.ContentMode
   ) {
@@ -25,14 +21,14 @@ final class CacheableImageView: UIImageView {
     downloadImageFrom(url: url, imageMode: imageMode)
   }
   
-  func setUpLoader() {
+  internal func setUpLoader() {
     activityIndicator.center = center
     activityIndicator.hidesWhenStopped = true
     addSubview(activityIndicator)
     self.activityIndicator.startAnimating()
   }
   
-  func downloadImageFrom(
+  internal func downloadImageFrom(
     url: URL,
     imageMode: UIView.ContentMode
   ) {

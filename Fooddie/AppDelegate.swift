@@ -7,25 +7,30 @@
 
 import UIKit
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  var window: UIWindow?
-  var coordinator: FoodViewCoordinator?
+  internal var window: UIWindow?
+  private var coordinator: FoodViewCoordinator?
 
   func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    
+    setupRootView()
+    return true
+  }
+  
+  private func setupRootView() {
     let navController = UINavigationController()
     coordinator = FoodViewCoordinator(navigationController: navController)
     coordinator?.start()
-    
+    setupWindow(for: navController)
+  }
+  
+  private func setupWindow(for navController: UINavigationController) {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = navController
     window?.makeKeyAndVisible()
-    
-    return true
   }
 }
 

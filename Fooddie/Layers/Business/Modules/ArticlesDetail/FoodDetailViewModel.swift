@@ -13,14 +13,14 @@ struct FoodDetailViewModel {
   
   var id: String
   var name: String
-  var description: String?
+  var description: String
   var imageUrl: URL?
   
   init(cellViewModel: FoodCellViewModel) {
     self.cellViewModel = cellViewModel
     self.id = cellViewModel.id
     self.name = cellViewModel.name ?? ""
-    self.description = cellViewModel.description
+    self.description = cellViewModel.description ?? ""
     self.imageUrl = cellViewModel.imageUrl
   }
 }
