@@ -236,14 +236,14 @@
 			path = APIService;
 			sourceTree = "<group>";
 		};
-		F4B8BB50273A588E00C7E933 /* ArticlesTableViewCell */ = {
+		F4B8BB50273A588E00C7E933 /* FoodTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				F4D65062273852BE0068A14E /* FoodTableViewCell.swift */,
 				F4B8BB52273A5B2600C7E933 /* FoodTableViewCell.xib */,
 				F4D65063273852BE0068A14E /* FoodCellViewModel.swift */,
 			);
-			path = ArticlesTableViewCell;
+			path = FoodTableViewCell;
 			sourceTree = "<group>";
 		};
 		F4B8BB51273A58A000C7E933 /* CacheableImageView */ = {
@@ -318,7 +318,7 @@
 		F4D65061273852BE0068A14E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F4B8BB50273A588E00C7E933 /* ArticlesTableViewCell */,
+				F4B8BB50273A588E00C7E933 /* FoodTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
