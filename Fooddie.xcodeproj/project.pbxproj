@@ -369,30 +369,30 @@
 		F4D65070273852BE0068A14E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F4D65074273852BE0068A14E /* Articles */,
-				F4D65071273852BE0068A14E /* ArticlesDetail */,
+				F4D65074273852BE0068A14E /* Food */,
+				F4D65071273852BE0068A14E /* FoodDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		F4D65071273852BE0068A14E /* ArticlesDetail */ = {
+		F4D65071273852BE0068A14E /* FoodDetail */ = {
 			isa = PBXGroup;
 			children = (
 				F4D65072273852BE0068A14E /* FoodDetailViewController.swift */,
 				F4D65073273852BE0068A14E /* FoodDetailViewModel.swift */,
 				F4E8DE0E273A771F00482B75 /* FoodDetailCoordinator.swift */,
 			);
-			path = ArticlesDetail;
+			path = FoodDetail;
 			sourceTree = "<group>";
 		};
-		F4D65074273852BE0068A14E /* Articles */ = {
+		F4D65074273852BE0068A14E /* Food */ = {
 			isa = PBXGroup;
 			children = (
 				F4D65075273852BE0068A14E /* FoodViewModel.swift */,
 				F4D65076273852BE0068A14E /* FoodViewController.swift */,
 				F4E8DE0C273A767E00482B75 /* FoodViewCoordinator.swift */,
 			);
-			path = Articles;
+			path = Food;
 			sourceTree = "<group>";
 		};
 		F4E8DE05273A714E00482B75 /* Coordinator */ = {
