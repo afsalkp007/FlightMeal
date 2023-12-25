@@ -9,6 +9,6 @@ import Foundation
 
 extension Constants {
   enum Urls {
-    static let foddieUrl = URL(string: "https://yummie.glitch.me")!
+    static let foddieUrl = URL(string: "https://run.mocky.io")!
   }
 }

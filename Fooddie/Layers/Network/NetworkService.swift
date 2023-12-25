@@ -62,7 +62,7 @@ final class NetworkService: Networking {
     }
     
     var request = URLRequest(url: resolvedUrl)
-    request.httpMethod = resource.httpMethod
+    request.httpMethod = resource.httpMethod.value
     request.allHTTPHeaderFields = resource.headers
     return request
   }

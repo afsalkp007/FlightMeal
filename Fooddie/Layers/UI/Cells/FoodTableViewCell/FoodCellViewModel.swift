@@ -9,15 +9,13 @@ import Foundation
 import UIKit
 
 struct FoodCellViewModel {
-  var id: String
   var name: String?
-  var description: String?
+  var quantity: Int?
   var imageUrl: URL?
   
   init(item: FoodItem) {
-    self.id = item.id
     self.name = item.name
-    self.description = item.description
+    self.quantity = item.quantity
     self.imageUrl = URL(string: item.imageUrl ?? "")
   }
 }

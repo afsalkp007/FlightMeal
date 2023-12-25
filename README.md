@@ -22,4 +22,18 @@ Follow the steps to get test case reports:
 # Architecture
 
  This project uses MVVM design pattern and project is fully developed in Swift.
+ 
+ 
+ ### Load Food from API
+ 
+ #### Primary Course (Happy path):
+ 1. Call fetchFood API
+ 2. System fetches food data from API
+ 3. System prefill the food data on the UI
+ 
+ #### Error Course (Sad path):
+ 1. System delivers error
+ 
+ 
+ 
 

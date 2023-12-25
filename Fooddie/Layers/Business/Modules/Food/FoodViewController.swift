@@ -13,18 +13,32 @@ final class FoodViewController: UIViewController, Storyboarded {
   internal var viewModel: FoodViewModel?
   
   @IBOutlet private weak var tableView: UITableView!
+  
   private var loaderView = UIActivityIndicatorView()
   private let adapter = Adapter<FoodCellViewModel, FoodTableViewCell>()
+  private let serviceType = "test-app"
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
     setupData()
+    setupConnectivity()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    MultiPeer.instance.disconnect()
+    super.viewWillDisappear(animated)
   }
 
   private func setupUI() {
     setUpLoader()
     tableView.register(cellType: FoodTableViewCell.self)
+  }
+  
+  private func setupConnectivity() {
+    MultiPeer.instance.delegate = self
+    MultiPeer.instance.initialize(serviceType: serviceType)
+    MultiPeer.instance.autoConnect()
   }
 
   private func setupData() {
@@ -57,7 +71,7 @@ final class FoodViewController: UIViewController, Storyboarded {
   
   private func configure(_ cell: FoodTableViewCell, for item: FoodCellViewModel) {
     cell.titleLabel.text = item.name
-    cell.descLabel.text = "\(item.description ?? "")"
+    cell.descLabel.text = "\(item.quantity ?? 0)"
     guard let url = item.imageUrl else { return }
     cell.foodImageView.setUpLoader()
     cell.foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFit)
@@ -71,4 +85,15 @@ final class FoodViewController: UIViewController, Storyboarded {
     loaderView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
     loaderView.startAnimating()
   }
+}
+
+extension FoodViewController: MultiPeerDelegate {
+
+    func multiPeer(didReceiveData data: Data, ofType type: UInt32) {
+        
+    }
+
+    func multiPeer(connectedDevicesChanged devices: [String]) {
+        print("Connected devices changed: \(devices)")
+    }
 }

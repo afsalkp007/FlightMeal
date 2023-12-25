@@ -16,6 +16,9 @@
 		F417F3BA27392CE000611687 /* FoodDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3B927392CE000611687 /* FoodDataServiceTests.swift */; };
 		F417F3BD27392D3B00611687 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3BC27392D3B00611687 /* MockNetworkService.swift */; };
 		F417F3C027392E9500611687 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = F417F3BF27392E9500611687 /* food.json */; };
+		F435D2342B3996F0009AE040 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2312B3996F0009AE040 /* Peer.swift */; };
+		F435D2352B3996F0009AE040 /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2322B3996F0009AE040 /* MultiPeer.swift */; };
+		F435D2362B3996F0009AE040 /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */; };
 		F45A62F0273848BD00C9E3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A62EF273848BD00C9E3A2 /* AppDelegate.swift */; };
 		F45A62F7273848BD00C9E3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45A62F5273848BD00C9E3A2 /* Main.storyboard */; };
 		F45A62F9273848BE00C9E3A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45A62F8273848BE00C9E3A2 /* Assets.xcassets */; };
@@ -75,6 +78,9 @@
 		F417F3BC27392D3B00611687 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		F417F3BF27392E9500611687 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
 		F417F3C2273955C600611687 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		F435D2312B3996F0009AE040 /* Peer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		F435D2322B3996F0009AE040 /* MultiPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeer.swift; sourceTree = "<group>"; };
+		F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
 		F45A62EC273848BD00C9E3A2 /* Fooddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45A62EF273848BD00C9E3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45A62F6273848BD00C9E3A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +167,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F435D2302B3996B9009AE040 /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				F435D2322B3996F0009AE040 /* MultiPeer.swift */,
+				F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */,
+				F435D2312B3996F0009AE040 /* Peer.swift */,
+			);
+			path = Connectivity;
+			sourceTree = "<group>";
+		};
 		F45A62E3273848BD00C9E3A2 = {
 			isa = PBXGroup;
 			children = (
@@ -218,12 +234,21 @@
 			path = FooddieUITests;
 			sourceTree = "<group>";
 		};
-		F4B8BB4E273A578700C7E933 /* Service */ = {
+		F48484BC2B35FAAA00B0C96E /* API */ = {
 			isa = PBXGroup;
 			children = (
 				F4D65068273852BE0068A14E /* Protocol */,
 				F4D6506A273852BE0068A14E /* Model */,
 				F4B8BB4F273A57F300C7E933 /* APIService */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F4B8BB4E273A578700C7E933 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F435D2302B3996B9009AE040 /* Connectivity */,
+				F48484BC2B35FAAA00B0C96E /* API */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -559,6 +584,7 @@
 				F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */,
 				F4E8DE08273A716600482B75 /* Coordinator.swift in Sources */,
 				F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */,
+				F435D2342B3996F0009AE040 /* Peer.swift in Sources */,
 				F417F3B8273912A900611687 /* Constants+Urls.swift in Sources */,
 				F45A62F0273848BD00C9E3A2 /* AppDelegate.swift in Sources */,
 				F417F3B42739106B00611687 /* NetworkService.swift in Sources */,
@@ -566,12 +592,14 @@
 				F4D65081273852BE0068A14E /* FoodViewController.swift in Sources */,
 				F417F3B22739102700611687 /* Resource.swift in Sources */,
 				F4D65080273852BE0068A14E /* FoodViewModel.swift in Sources */,
+				F435D2352B3996F0009AE040 /* MultiPeer.swift in Sources */,
 				F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */,
 				F499366427396C60007D37A3 /* Adapter.swift in Sources */,
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,
 				F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */,
 				F4D6507B273852BE0068A14E /* FoodResponse.swift in Sources */,
 				F4E8DE0D273A767E00482B75 /* FoodViewCoordinator.swift in Sources */,
+				F435D2362B3996F0009AE040 /* MultiPeerDelegate.swift in Sources */,
 				F4D6507D273852BE0068A14E /* APIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
