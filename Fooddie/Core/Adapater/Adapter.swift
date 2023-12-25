@@ -16,6 +16,7 @@ class Adapter<T, Cell: UICollectionViewCell>:
   var items: [T] = []
   var configure: ((T, Cell) -> Void)?
   var select: ((T) -> Void)?
+  var size: CGSize?
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -47,11 +48,13 @@ class Adapter<T, Cell: UICollectionViewCell>:
     select?(item)
   }
   
-//  func collectionView(
-//    _ collectionView: UICollectionView,
-//    layout collectionViewLayout: UICollectionViewLayout,
-//    sizeForItemAt indexPath: IndexPath
-//  ) -> CGSize {
-//    
-//  }
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
+    let screenSize = UIScreen.main.bounds
+    let screenWidth = screenSize.width
+    return CGSize(width: screenWidth / 2 - 24, height: 280)
+  }
 }

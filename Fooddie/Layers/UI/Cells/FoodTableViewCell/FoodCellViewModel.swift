@@ -10,12 +10,12 @@ import UIKit
 
 struct FoodCellViewModel {
   let name: String
-  let quantity: Int
+  let quantity: String
   let imageUrl: URL?
   
   init(item: FoodItem) {
     self.name = item.name
-    self.quantity = item.quantity
+    self.quantity = "Quantity: \(item.quantity)"
     self.imageUrl = URL(string: item.imageUrl ?? "")
   }
 }

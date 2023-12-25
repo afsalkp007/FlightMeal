@@ -69,7 +69,7 @@ final class FoodViewController: UIViewController, Storyboarded {
   
   private func configure(_ cell: FoodCollectionViewCell, for item: FoodCellViewModel) {
     cell.titleLabel.text = item.name
-    cell.descLabel.text = "\(item.quantity)"
+    cell.descLabel.text = item.quantity
     guard let url = item.imageUrl else { return }
     cell.foodImageView.setUpLoader()
     cell.foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFit)

@@ -12,13 +12,13 @@ struct FoodDetailViewModel {
   let cellViewModel: FoodCellViewModel
   
   let name: String
-  let quantity: Int
+  let quantity: String
   let imageUrl: URL?
   
   init(cellViewModel: FoodCellViewModel) {
     self.cellViewModel = cellViewModel
-    self.name = cellViewModel.name ?? ""
-    self.quantity = cellViewModel.quantity ?? 0
+    self.name = cellViewModel.name
+    self.quantity = cellViewModel.quantity
     self.imageUrl = cellViewModel.imageUrl
   }
 }
