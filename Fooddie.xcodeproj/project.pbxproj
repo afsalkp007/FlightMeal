@@ -19,6 +19,8 @@
 		F435D2342B3996F0009AE040 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2312B3996F0009AE040 /* Peer.swift */; };
 		F435D2352B3996F0009AE040 /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2322B3996F0009AE040 /* MultiPeer.swift */; };
 		F435D2362B3996F0009AE040 /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */; };
+		F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2372B3A00A5009AE040 /* FoodCollectionViewCell.swift */; };
+		F435D23A2B3A00A5009AE040 /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F435D2382B3A00A5009AE040 /* FoodCollectionViewCell.xib */; };
 		F45A62F0273848BD00C9E3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A62EF273848BD00C9E3A2 /* AppDelegate.swift */; };
 		F45A62F7273848BD00C9E3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45A62F5273848BD00C9E3A2 /* Main.storyboard */; };
 		F45A62F9273848BE00C9E3A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45A62F8273848BE00C9E3A2 /* Assets.xcassets */; };
@@ -28,10 +30,8 @@
 		F499366427396C60007D37A3 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366327396C60007D37A3 /* Adapter.swift */; };
 		F499366627396C94007D37A3 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366527396C94007D37A3 /* UITableView+Ext.swift */; };
 		F4993668273981CB007D37A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4993667273981CB007D37A3 /* .gitignore */; };
-		F4B8BB53273A5B2600C7E933 /* FoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B8BB52273A5B2600C7E933 /* FoodTableViewCell.xib */; };
 		F4B9C7602B31C255007702A9 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */; };
 		F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */; };
-		F4D65077273852BE0068A14E /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65062273852BE0068A14E /* FoodTableViewCell.swift */; };
 		F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65063273852BE0068A14E /* FoodCellViewModel.swift */; };
 		F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65065273852BE0068A14E /* CacheableImageView.swift */; };
 		F4D6507A273852BE0068A14E /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65069273852BE0068A14E /* APIServiceProtocol.swift */; };
@@ -81,6 +81,8 @@
 		F435D2312B3996F0009AE040 /* Peer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		F435D2322B3996F0009AE040 /* MultiPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeer.swift; sourceTree = "<group>"; };
 		F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
+		F435D2372B3A00A5009AE040 /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		F435D2382B3A00A5009AE040 /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		F45A62EC273848BD00C9E3A2 /* Fooddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45A62EF273848BD00C9E3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45A62F6273848BD00C9E3A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,10 +99,8 @@
 		F499366327396C60007D37A3 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		F499366527396C94007D37A3 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		F4993667273981CB007D37A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F4B8BB52273A5B2600C7E933 /* FoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodTableViewCell.xib; sourceTree = "<group>"; };
 		F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Convenience.swift"; sourceTree = "<group>"; };
-		F4D65062273852BE0068A14E /* FoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		F4D65063273852BE0068A14E /* FoodCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCellViewModel.swift; sourceTree = "<group>"; };
 		F4D65065273852BE0068A14E /* CacheableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheableImageView.swift; sourceTree = "<group>"; };
 		F4D65069273852BE0068A14E /* APIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
@@ -264,9 +264,9 @@
 		F4B8BB50273A588E00C7E933 /* FoodTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				F4D65062273852BE0068A14E /* FoodTableViewCell.swift */,
-				F4B8BB52273A5B2600C7E933 /* FoodTableViewCell.xib */,
 				F4D65063273852BE0068A14E /* FoodCellViewModel.swift */,
+				F435D2372B3A00A5009AE040 /* FoodCollectionViewCell.swift */,
+				F435D2382B3A00A5009AE040 /* FoodCollectionViewCell.xib */,
 			);
 			path = FoodTableViewCell;
 			sourceTree = "<group>";
@@ -541,7 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E8DE04273A6F7700482B75 /* README.md in Resources */,
-				F4B8BB53273A5B2600C7E933 /* FoodTableViewCell.xib in Resources */,
+				F435D23A2B3A00A5009AE040 /* FoodCollectionViewCell.xib in Resources */,
 				F4993668273981CB007D37A3 /* .gitignore in Resources */,
 				F45A62FC273848BE00C9E3A2 /* LaunchScreen.storyboard in Resources */,
 				F45A62F9273848BE00C9E3A2 /* Assets.xcassets in Resources */,
@@ -579,7 +579,6 @@
 				F417F3B02739101100611687 /* Client.swift in Sources */,
 				F4E8DE0B273A718800482B75 /* Storyboarded.swift in Sources */,
 				F4E8DE0F273A771F00482B75 /* FoodDetailCoordinator.swift in Sources */,
-				F4D65077273852BE0068A14E /* FoodTableViewCell.swift in Sources */,
 				F4DFAD7828C4FFBD00302A06 /* main.swift in Sources */,
 				F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */,
 				F4E8DE08273A716600482B75 /* Coordinator.swift in Sources */,
@@ -596,6 +595,7 @@
 				F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */,
 				F499366427396C60007D37A3 /* Adapter.swift in Sources */,
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,
+				F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */,
 				F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */,
 				F4D6507B273852BE0068A14E /* FoodResponse.swift in Sources */,
 				F4E8DE0D273A767E00482B75 /* FoodViewCoordinator.swift in Sources */,
@@ -708,7 +708,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -763,7 +763,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -780,15 +780,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.afsal.Fooddie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -799,15 +802,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.afsal.Fooddie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

@@ -9,7 +9,7 @@ import Foundation
 
 struct FoodItem {
   var name: String
-  var quantity: Int?
+  var quantity: Int
   var imageUrl: String?
 }
 
@@ -23,7 +23,7 @@ extension FoodItem: Codable {
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     name = try container.decodeValue(forKey: .name)
-    quantity = try container.decodeValueIfPresent(forKey: .quantity)
+    quantity = try container.decodeValue(forKey: .quantity)
     imageUrl = try container.decodeValueIfPresent(forKey: .imageUrl)
   }
 

@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,23 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7aG-ma-yMq">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bY1-zb-X0y">
                                 <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PbH-YV-fdQ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Lwf-Re-rCJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NH8-yn-ff6">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gN8-OR-xy6"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7aG-ma-yMq" firstAttribute="leading" secondItem="gN8-OR-xy6" secondAttribute="leading" id="Aqo-bF-deM"/>
-                            <constraint firstItem="7aG-ma-yMq" firstAttribute="top" secondItem="gN8-OR-xy6" secondAttribute="top" id="BN3-yc-Xe0"/>
-                            <constraint firstItem="gN8-OR-xy6" firstAttribute="trailing" secondItem="7aG-ma-yMq" secondAttribute="trailing" id="bdP-lT-F6o"/>
-                            <constraint firstItem="gN8-OR-xy6" firstAttribute="bottom" secondItem="7aG-ma-yMq" secondAttribute="bottom" id="g6R-pX-qV1"/>
+                            <constraint firstItem="gN8-OR-xy6" firstAttribute="bottom" secondItem="bY1-zb-X0y" secondAttribute="bottom" id="17i-ot-XHd"/>
+                            <constraint firstItem="gN8-OR-xy6" firstAttribute="trailing" secondItem="bY1-zb-X0y" secondAttribute="trailing" id="SVI-F1-RYx"/>
+                            <constraint firstItem="bY1-zb-X0y" firstAttribute="leading" secondItem="gN8-OR-xy6" secondAttribute="leading" id="bdL-ru-2rh"/>
+                            <constraint firstItem="bY1-zb-X0y" firstAttribute="top" secondItem="gN8-OR-xy6" secondAttribute="top" id="fGi-yy-O5I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c0z-ge-hrd"/>
                     <connections>
-                        <outlet property="tableView" destination="7aG-ma-yMq" id="t2X-2g-wYN"/>
+                        <outlet property="collectionView" destination="bY1-zb-X0y" id="D3H-5l-UjR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijg-zK-KRg" sceneMemberID="firstResponder"/>

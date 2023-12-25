@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 struct FoodCellViewModel {
-  var name: String?
-  var quantity: Int?
-  var imageUrl: URL?
+  let name: String
+  let quantity: Int
+  let imageUrl: URL?
   
   init(item: FoodItem) {
     self.name = item.name
