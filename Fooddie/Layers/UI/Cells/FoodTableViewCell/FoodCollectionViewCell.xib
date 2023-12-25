@@ -12,67 +12,48 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FoodCollectionViewCell" id="UMa-Hp-pPG" customClass="FoodCollectionViewCell" customModule="Fooddie" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="341" height="280"/>
+            <rect key="frame" x="0.0" y="0.0" width="341" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q5X-XA-v1r">
-                <rect key="frame" x="0.0" y="0.0" width="341" height="280"/>
+                <rect key="frame" x="0.0" y="0.0" width="341" height="300"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gf7-DD-bES">
-                        <rect key="frame" x="0.0" y="0.0" width="341" height="280"/>
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="300"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="N4L-MY-d0R">
-                                <rect key="frame" x="0.0" y="0.0" width="341" height="280"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IV0-hS-hZ2">
+                                <rect key="frame" x="16" y="16" width="309" height="150"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IV0-hS-hZ2">
-                                        <rect key="frame" x="95.5" y="0.0" width="150" height="150"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="150" image="image1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hlm-nT-jsT" customClass="CacheableImageView" customModule="Fooddie" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Hlm-nT-jsT" secondAttribute="height" multiplier="1:1" id="B0C-a2-six"/>
-                                                    <constraint firstAttribute="width" constant="150" id="OKT-uI-2BW"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="75"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XO8-Gk-OzF">
-                                        <rect key="frame" x="150.5" y="150" width="40" height="98"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="30" text="Ford" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-Ta-PXX">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="49"/>
-                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="18"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="30" text="Ford" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnn-Nt-0zQ">
-                                                <rect key="frame" x="0.0" y="49" width="40" height="49"/>
-                                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="18"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-Ke-gCe">
-                                        <rect key="frame" x="123.5" y="248" width="94" height="32"/>
-                                    </stepper>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="150" translatesAutoresizingMaskIntoConstraints="NO" id="Hlm-nT-jsT" customClass="CacheableImageView" customModule="Fooddie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="309" height="150"/>
+                                    </imageView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="30" text="Ford" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-Ta-PXX">
+                                <rect key="frame" x="16" y="178" width="309" height="30"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlP-4J-ff1" customClass="UIStepperController" customModule="Fooddie" customModuleProvider="target">
+                                <rect key="frame" x="16" y="220" width="309" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="N4L-MY-d0R" firstAttribute="top" secondItem="Gf7-DD-bES" secondAttribute="top" id="3T3-z2-O6j"/>
-                            <constraint firstAttribute="trailing" secondItem="N4L-MY-d0R" secondAttribute="trailing" id="MmA-Dl-yxR"/>
-                            <constraint firstItem="N4L-MY-d0R" firstAttribute="leading" secondItem="Gf7-DD-bES" secondAttribute="leading" id="kHs-yo-NkQ"/>
-                            <constraint firstAttribute="bottom" secondItem="N4L-MY-d0R" secondAttribute="bottom" id="oEO-os-IUH"/>
+                            <constraint firstItem="mlP-4J-ff1" firstAttribute="top" secondItem="Ofd-Ta-PXX" secondAttribute="bottom" constant="12" id="5g1-ZZ-ERE"/>
+                            <constraint firstItem="Ofd-Ta-PXX" firstAttribute="leading" secondItem="Gf7-DD-bES" secondAttribute="leading" constant="16" id="8Ai-6v-WDa"/>
+                            <constraint firstAttribute="trailing" secondItem="IV0-hS-hZ2" secondAttribute="trailing" constant="16" id="LEa-Zf-7E3"/>
+                            <constraint firstAttribute="trailing" secondItem="mlP-4J-ff1" secondAttribute="trailing" constant="16" id="TXn-PR-Twb"/>
+                            <constraint firstItem="mlP-4J-ff1" firstAttribute="leading" secondItem="Gf7-DD-bES" secondAttribute="leading" constant="16" id="gjj-yk-LCc"/>
+                            <constraint firstItem="IV0-hS-hZ2" firstAttribute="top" secondItem="Gf7-DD-bES" secondAttribute="top" constant="16" id="idI-J2-iny"/>
+                            <constraint firstItem="mlP-4J-ff1" firstAttribute="height" secondItem="Gf7-DD-bES" secondAttribute="height" multiplier="0.186667" id="j79-wP-b63"/>
+                            <constraint firstItem="Ofd-Ta-PXX" firstAttribute="top" secondItem="IV0-hS-hZ2" secondAttribute="bottom" constant="12" id="peG-Gh-A6J"/>
+                            <constraint firstItem="Hlm-nT-jsT" firstAttribute="height" secondItem="Gf7-DD-bES" secondAttribute="height" multiplier="0.5" id="q6X-iY-l3k"/>
+                            <constraint firstAttribute="trailing" secondItem="Ofd-Ta-PXX" secondAttribute="trailing" constant="16" id="qJh-df-dBs"/>
+                            <constraint firstItem="IV0-hS-hZ2" firstAttribute="leading" secondItem="Gf7-DD-bES" secondAttribute="leading" constant="16" id="wCq-J8-oEa"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="20"/>
-                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
@@ -91,15 +72,14 @@
             </collectionViewCellContentView>
             <size key="customSize" width="341" height="272"/>
             <connections>
-                <outlet property="descLabel" destination="tnn-Nt-0zQ" id="355-Vf-2JU"/>
                 <outlet property="foodImageView" destination="Hlm-nT-jsT" id="G4a-4x-9lf"/>
+                <outlet property="stepper" destination="mlP-4J-ff1" id="TTP-CV-Hb1"/>
                 <outlet property="titleLabel" destination="Ofd-Ta-PXX" id="XnF-qU-VMK"/>
             </connections>
             <point key="canvasLocation" x="-84.512195121951223" y="2.5423728813559325"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="image1.png" width="384" height="384"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

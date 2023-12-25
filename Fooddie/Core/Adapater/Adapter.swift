@@ -54,7 +54,8 @@ class Adapter<T, Cell: UICollectionViewCell>:
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
     let screenSize = UIScreen.main.bounds
-    let screenWidth = screenSize.width
-    return CGSize(width: screenWidth / 2 - 24, height: 280)
+    let sWidth = screenSize.width * 0.4
+    let width = sWidth > 280 ? sWidth : 280
+    return CGSize(width: screenSize.width / 2 - 24, height: width)
   }
 }

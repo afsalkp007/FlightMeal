@@ -12,7 +12,7 @@ struct FoodDetailViewModel {
   let cellViewModel: FoodCellViewModel
   
   let name: String
-  let quantity: String
+  let quantity: CGFloat
   let imageUrl: URL?
   
   init(cellViewModel: FoodCellViewModel) {

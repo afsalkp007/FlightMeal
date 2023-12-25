@@ -21,6 +21,7 @@
 		F435D2362B3996F0009AE040 /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */; };
 		F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2372B3A00A5009AE040 /* FoodCollectionViewCell.swift */; };
 		F435D23A2B3A00A5009AE040 /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F435D2382B3A00A5009AE040 /* FoodCollectionViewCell.xib */; };
+		F435D2492B3A2E33009AE040 /* UIStepperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2482B3A2E33009AE040 /* UIStepperController.swift */; };
 		F45A62F0273848BD00C9E3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A62EF273848BD00C9E3A2 /* AppDelegate.swift */; };
 		F45A62F7273848BD00C9E3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45A62F5273848BD00C9E3A2 /* Main.storyboard */; };
 		F45A62F9273848BE00C9E3A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45A62F8273848BE00C9E3A2 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
 		F435D2372B3A00A5009AE040 /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		F435D2382B3A00A5009AE040 /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		F435D2482B3A2E33009AE040 /* UIStepperController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStepperController.swift; sourceTree = "<group>"; };
 		F45A62EC273848BD00C9E3A2 /* Fooddie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooddie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45A62EF273848BD00C9E3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45A62F6273848BD00C9E3A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -244,6 +246,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		F48F37182B3A46A9006CC28C /* Stepper */ = {
+			isa = PBXGroup;
+			children = (
+				F435D2482B3A2E33009AE040 /* UIStepperController.swift */,
+			);
+			path = Stepper;
+			sourceTree = "<group>";
+		};
 		F4B8BB4E273A578700C7E933 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +361,7 @@
 		F4D65064273852BE0068A14E /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				F48F37182B3A46A9006CC28C /* Stepper */,
 				F4B8BB51273A58A000C7E933 /* CacheableImageView */,
 			);
 			path = Reusable;
@@ -589,6 +600,7 @@
 				F417F3B42739106B00611687 /* NetworkService.swift in Sources */,
 				F417F3B62739128A00611687 /* Constants.swift in Sources */,
 				F4D65081273852BE0068A14E /* FoodViewController.swift in Sources */,
+				F435D2492B3A2E33009AE040 /* UIStepperController.swift in Sources */,
 				F417F3B22739102700611687 /* Resource.swift in Sources */,
 				F4D65080273852BE0068A14E /* FoodViewModel.swift in Sources */,
 				F435D2352B3996F0009AE040 /* MultiPeer.swift in Sources */,
