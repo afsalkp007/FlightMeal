@@ -16,7 +16,7 @@ final class FoodViewController: UIViewController, Storyboarded {
   
   private var loaderView = UIActivityIndicatorView()
   private let adapter = Adapter<FoodCellViewModel, FoodTableViewCell>()
-  private let serviceType = "test-app"
+  private let serviceType = "fooddie-mpc"
   
   override func viewDidLoad() {
     super.viewDidLoad()
