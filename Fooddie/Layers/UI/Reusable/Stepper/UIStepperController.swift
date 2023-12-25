@@ -83,7 +83,7 @@ class UIStepperController: UIView {
         self.subtractionButtonView.backgroundColor = UIColor.clear
         
         self.subtractionButtonView.translatesAutoresizingMaskIntoConstraints = false
-        let subtractionButtonWidthConstraint = NSLayoutConstraint(item: self.subtractionButtonView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 32)
+        let subtractionButtonWidthConstraint = NSLayoutConstraint(item: self.subtractionButtonView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 48)
         let subtractionButtonTopConstraint = NSLayoutConstraint(item: self.subtractionButtonView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
         let subtractionButtonBottomConstraint = NSLayoutConstraint(item: self.subtractionButtonView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
         let subtractionButtonLeftConstraint = NSLayoutConstraint(item: self.subtractionButtonView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
@@ -140,7 +140,7 @@ class UIStepperController: UIView {
         self.additionButtonView.backgroundColor = UIColor.clear
         
         self.additionButtonView.translatesAutoresizingMaskIntoConstraints = false
-        let additionButtonViewWidthConstraint = NSLayoutConstraint(item: self.additionButtonView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 32)
+        let additionButtonViewWidthConstraint = NSLayoutConstraint(item: self.additionButtonView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 48)
         let additionButtonTopConstraint = NSLayoutConstraint(item: self.additionButtonView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
         let additionButtonBottomConstraint = NSLayoutConstraint(item: self.additionButtonView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
         let additionButtonRightConstraint = NSLayoutConstraint(item: self.additionButtonView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
