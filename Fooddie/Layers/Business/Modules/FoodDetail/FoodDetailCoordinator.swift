@@ -18,6 +18,6 @@ final class FoodDetailCoordinator: Coordinator {
   func start(_ model: FoodCellViewModel) {
     let vc = FoodDetailViewController.instantiate()
     vc.viewModel = FoodDetailViewModel(cellViewModel: model)
-    navigationController.pushViewController(vc, animated: true)
+    navigationController.present(vc, animated: true)
   }
 }
