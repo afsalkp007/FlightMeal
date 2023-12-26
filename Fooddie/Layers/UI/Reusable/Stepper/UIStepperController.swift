@@ -10,6 +10,10 @@ import UIKit
 public struct Stepper: Codable {
   let count: CGFloat
   let index: Int
+  
+  var data: Data? {
+    return try? JSONEncoder().encode(self)
+  }
 }
 
 protocol UIStepperControllerDelegate {

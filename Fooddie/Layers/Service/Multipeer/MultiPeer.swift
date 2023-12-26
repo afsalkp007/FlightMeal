@@ -1,22 +1,15 @@
 //
 //  MultiPeer.swift
-//  Fooddie
+//  MultiPeer
 //
-//  Created by Afsal Mohammed on 19/12/2023.
+//  Created by Wilson Ding on 2/1/18.
 //
 
 import Foundation
 import MultipeerConnectivity
 
-#warning("TBD")
-public enum SessionType: Int {
-  case host = 1
-  case peer = 2
-  case both = 3
-}
-
 /// Main Class for MultiPeer
-public class MultiPeer: NSObject {
+public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   
   /// Singleton instance - call via MultiPeer.instance
   public static let instance = MultiPeer()
@@ -32,11 +25,8 @@ public class MultiPeer: NSObject {
   /** Device's name */
   var devicePeerID: MCPeerID!
   
-  /** Session Type */
-  var sessionType: SessionType = .both
-  
   /** Advertises session */
-  var serviceAdvertiser: MCNearbyServiceAdvertiser!
+  var serviceAdvertiser: MCAdvertiserAssistant!
   
   /** Browses for sessions */
   var serviceBrowser: MCNearbyServiceBrowser!
@@ -85,9 +75,12 @@ public class MultiPeer: NSObject {
     self.devicePeerID = MCPeerID(displayName: deviceName)
     
     // Setup the service advertiser
-    self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: self.devicePeerID,
-                                                       discoveryInfo: nil,
-                                                       serviceType: serviceType)
+    self.serviceAdvertiser = MCAdvertiserAssistant(serviceType: serviceType,
+                                                   discoveryInfo: nil,
+                                                   session: session)
+//    self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: self.devicePeerID,
+//                                                       discoveryInfo: nil,
+//                                                       serviceType: serviceType)
     self.serviceAdvertiser.delegate = self
     
     // Setup the service browser
@@ -110,7 +103,7 @@ public class MultiPeer: NSObject {
   
   /// JOIN: Automatically advertises and accepts all invites
   public func startAccepting() {
-    self.serviceAdvertiser.startAdvertisingPeer()
+    self.serviceAdvertiser.start()
   }
   
   /// HOST and JOIN: Uses both advertising and browsing to connect.
@@ -126,7 +119,7 @@ public class MultiPeer: NSObject {
   
   /// Stops accepting invites and becomes invisible on the network
   public func stopAccepting() {
-    self.serviceAdvertiser.stopAdvertisingPeer()
+    self.serviceAdvertiser.stop()
   }
   
   /// Stops all invite/accept services
@@ -156,14 +149,10 @@ public class MultiPeer: NSObject {
   /// Sends Data (and type) to all connected peers.
   /// - Parameters:
   ///     - data: Data (Data) to send to all connected peers.
+  /// After sending the data, you can use the extension for Data, `convertData()` to convert it back into data.
   public func send(stepper: Stepper) {
-    if isConnected {
-      do {
-        let data = try JSONEncoder().encode(stepper)
-        try session.send(data, toPeers: session.connectedPeers, with: .reliable)
-      } catch let error {
-        printDebug(error.localizedDescription)
-      }
+    if isConnected, let data = stepper.data  {
+      try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
     }
   }
   
@@ -173,6 +162,7 @@ public class MultiPeer: NSObject {
       print(string)
     }
   }
+  
 }
 
 // MARK: - Advertiser Delegate
@@ -248,25 +238,29 @@ extension MultiPeer: MCSessionDelegate {
   /// Received data, update delegate didRecieveData
   public func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
     printDebug("Received data: \(data.count) bytes")
+    
+    guard let stepper = data.toObject() else { return }
+    
     OperationQueue.main.addOperation {
-      self.delegate?.multiPeer(didReceiveData: data)
+      self.delegate?.multiPeer(didReceiveData: stepper)
     }
+    
   }
   
   /// Received stream
-  public func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-    printDebug("Received stream")
-  }
+  public func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {}
   
   /// Started receiving resource
-  public func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
-    printDebug("Started receiving resource with name: \(resourceName)")
-  }
+  public func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {}
   
   /// Finished receiving resource
-  public func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-    printDebug("Finished receiving resource with name: \(resourceName)")
-  }
+  public func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {}
   
 }
 
+// MARK: - Data extension for conversion
+extension Data {
+  public func toObject() -> Stepper? {
+    return try? JSONDecoder().decode(Stepper.self, from: self)
+  }
+}

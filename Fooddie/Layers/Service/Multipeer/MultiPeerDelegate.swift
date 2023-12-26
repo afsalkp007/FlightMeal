@@ -1,8 +1,8 @@
 //
 //  MultiPeerDelegate.swift
-//  Fooddie
+//  MultiPeer
 //
-//  Created by Afsal Mohammed on 19/12/2023.
+//  Created by Wilson Ding on 2/1/18.
 //
 
 import Foundation
@@ -17,7 +17,7 @@ import Foundation
 public protocol MultiPeerDelegate: AnyObject {
   
   /// didReceiveData: delegate runs on receiving data from another peer
-  func multiPeer(didReceiveData data: Data)
+  func multiPeer(didReceiveData stepper: Stepper)
   
   /// connectedDevicesChanged: delegate runs on connection/disconnection event in session
   func multiPeer(connectedDevicesChanged devices: [String])

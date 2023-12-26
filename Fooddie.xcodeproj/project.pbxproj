@@ -25,9 +25,9 @@
 		F45A62FC273848BE00C9E3A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45A62FA273848BE00C9E3A2 /* LaunchScreen.storyboard */; };
 		F45A6312273848BE00C9E3A2 /* FooddieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A6311273848BE00C9E3A2 /* FooddieUITests.swift */; };
 		F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A1492274A570100EFDCA7 /* UIImage+Ext.swift */; };
-		F48F371B2B3AF774006CC28C /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2322B3996F0009AE040 /* MultiPeer.swift */; };
-		F48F371C2B3AF776006CC28C /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */; };
-		F48F371D2B3AF779006CC28C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2312B3996F0009AE040 /* Peer.swift */; };
+		F48F37382B3B52E2006CC28C /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37332B3B52E1006CC28C /* MultiPeer.swift */; };
+		F48F37392B3B52E2006CC28C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37372B3B52E2006CC28C /* Peer.swift */; };
+		F48F373A2B3B52E2006CC28C /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */; };
 		F499366427396C60007D37A3 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366327396C60007D37A3 /* Adapter.swift */; };
 		F499366627396C94007D37A3 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366527396C94007D37A3 /* UITableView+Ext.swift */; };
 		F4993668273981CB007D37A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4993667273981CB007D37A3 /* .gitignore */; };
@@ -79,9 +79,6 @@
 		F417F3BC27392D3B00611687 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		F417F3BF27392E9500611687 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
 		F417F3C2273955C600611687 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		F435D2312B3996F0009AE040 /* Peer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
-		F435D2322B3996F0009AE040 /* MultiPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeer.swift; sourceTree = "<group>"; };
-		F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
 		F435D2372B3A00A5009AE040 /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		F435D2382B3A00A5009AE040 /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		F435D2482B3A2E33009AE040 /* UIStepperController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStepperController.swift; sourceTree = "<group>"; };
@@ -98,6 +95,9 @@
 		F45A6313273848BE00C9E3A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45A631F2738495700C9E3A2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F48A1492274A570100EFDCA7 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		F48F37332B3B52E1006CC28C /* MultiPeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeer.swift; sourceTree = "<group>"; };
+		F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
+		F48F37372B3B52E2006CC28C /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		F499366327396C60007D37A3 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		F499366527396C94007D37A3 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		F4993667273981CB007D37A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -167,16 +167,6 @@
 				F417F3C2273955C600611687 /* CoreServices.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F435D2302B3996B9009AE040 /* Connectivity */ = {
-			isa = PBXGroup;
-			children = (
-				F435D2322B3996F0009AE040 /* MultiPeer.swift */,
-				F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */,
-				F435D2312B3996F0009AE040 /* Peer.swift */,
-			);
-			path = Connectivity;
 			sourceTree = "<group>";
 		};
 		F45A62E3273848BD00C9E3A2 = {
@@ -254,10 +244,20 @@
 			path = Stepper;
 			sourceTree = "<group>";
 		};
+		F48F372E2B3B529B006CC28C /* Multipeer */ = {
+			isa = PBXGroup;
+			children = (
+				F48F37332B3B52E1006CC28C /* MultiPeer.swift */,
+				F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */,
+				F48F37372B3B52E2006CC28C /* Peer.swift */,
+			);
+			path = Multipeer;
+			sourceTree = "<group>";
+		};
 		F4B8BB4E273A578700C7E933 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				F435D2302B3996B9009AE040 /* Connectivity */,
+				F48F372E2B3B529B006CC28C /* Multipeer */,
 				F48484BC2B35FAAA00B0C96E /* API */,
 			);
 			path = Service;
@@ -591,6 +591,8 @@
 				F4E8DE0B273A718800482B75 /* Storyboarded.swift in Sources */,
 				F4E8DE0F273A771F00482B75 /* FoodDetailCoordinator.swift in Sources */,
 				F4DFAD7828C4FFBD00302A06 /* main.swift in Sources */,
+				F48F373A2B3B52E2006CC28C /* MultiPeerDelegate.swift in Sources */,
+				F48F37392B3B52E2006CC28C /* Peer.swift in Sources */,
 				F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */,
 				F4E8DE08273A716600482B75 /* Coordinator.swift in Sources */,
 				F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */,
@@ -603,15 +605,13 @@
 				F417F3B22739102700611687 /* Resource.swift in Sources */,
 				F4D65080273852BE0068A14E /* FoodViewModel.swift in Sources */,
 				F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */,
-				F48F371B2B3AF774006CC28C /* MultiPeer.swift in Sources */,
+				F48F37382B3B52E2006CC28C /* MultiPeer.swift in Sources */,
 				F499366427396C60007D37A3 /* Adapter.swift in Sources */,
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,
 				F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */,
 				F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */,
 				F4D6507B273852BE0068A14E /* FoodResponse.swift in Sources */,
 				F4E8DE0D273A767E00482B75 /* FoodViewCoordinator.swift in Sources */,
-				F48F371D2B3AF779006CC28C /* Peer.swift in Sources */,
-				F48F371C2B3AF776006CC28C /* MultiPeerDelegate.swift in Sources */,
 				F4D6507D273852BE0068A14E /* APIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

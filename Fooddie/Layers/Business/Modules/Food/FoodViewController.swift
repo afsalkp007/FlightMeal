@@ -16,7 +16,6 @@ final class FoodViewController: UIViewController, Storyboarded {
   
   private var loaderView = UIActivityIndicatorView()
   private let adapter = Adapter<FoodCellViewModel, FoodCollectionViewCell>()
-  private let serviceType = "fooddie-mpc"
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,24 +36,20 @@ final class FoodViewController: UIViewController, Storyboarded {
   
   private func setupConnectivity() {
     MultiPeer.instance.delegate = self
-    MultiPeer.instance.initialize(serviceType: serviceType)
+
+    MultiPeer.instance.initialize(serviceType: "fooddie-mpc")
     MultiPeer.instance.autoConnect()
-    
-    #warning("Debug Mode")
-    MultiPeer.instance.debugMode = true
   }
 
   private func setupData() {
-    viewModel?.updateUI = { [weak self] in
-      guard let self = self, let viewModel = self.viewModel else { return }
-      self.title = viewModel.title
-      self.adapter.items = viewModel.viewModels
-      self.configureTableView()
-      self.loaderView.stopAnimating()
-    }
+    guard let viewModel = self.viewModel else { return }
+    self.title = viewModel.title
+    self.adapter.items = viewModel.viewModels
+    self.configureCollectionView()
+    self.loaderView.stopAnimating()
   }
   
-  private func configureTableView() {
+  private func configureCollectionView() {
     collectionView.delegate = adapter
     collectionView.dataSource = adapter
     collectionView.layer.cornerRadius = 0
@@ -108,13 +103,8 @@ extension FoodViewController: UIStepperControllerDelegate {
 }
 
 extension FoodViewController: MultiPeerDelegate {
-  func multiPeer(didReceiveData data: Data) {
-    do {
-      let stepper = try JSONDecoder().decode(Stepper.self, from: data)
-      print("Count: \(stepper.count) at index: \(stepper.index)")
-    } catch {
-      print(error.localizedDescription)
-    }
+  func multiPeer(didReceiveData stepper: Stepper) {
+    print("Received count: \(stepper.count), at: \(stepper.index)")
   }
   
   func multiPeer(connectedDevicesChanged devices: [String]) {

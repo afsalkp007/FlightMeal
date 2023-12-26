@@ -1,8 +1,8 @@
 //
 //  Peer.swift
-//  Fooddie
+//  MultiPeer
 //
-//  Created by Afsal Mohammed on 19/12/2023.
+//  Created by Wilson Ding on 2/1/18.
 //
 
 import Foundation
@@ -11,12 +11,11 @@ import MultipeerConnectivity
 /// Class containing peerID and session state
 public class Peer {
   
-  let peerID: MCPeerID
+  var peerID: MCPeerID
   var state: MCSessionState
   
   init(peerID: MCPeerID, state: MCSessionState) {
     self.peerID = peerID
     self.state = state
   }
-  
 }
