@@ -92,18 +92,29 @@ final class FoodViewController: UIViewController, Storyboarded {
 }
 
 extension FoodViewController: UIStepperControllerDelegate {
-  func stepperDidAddValues(_ count: CGFloat, for index: Int) {
-    print("Count: \(count) at index: \(index)")
+  func stepperDidAddValues(_ stepper: Stepper) {
+    MultiPeer.instance.stopSearching()
+    
+    defer {
+        MultiPeer.instance.autoConnect()
+    }
+    
+    MultiPeer.instance.send(stepper: stepper)
   }
 
-  func stepperDidSubtractValues(_ count: CGFloat, for index: Int) {
-    print("Count: \(count) at index: \(index)")
+  func stepperDidSubtractValues(_ stepper: Stepper) {
+    print("Count: \(stepper.count) at index: \(stepper.index)")
   }
 }
 
 extension FoodViewController: MultiPeerDelegate {
-  func multiPeer(didReceiveData data: Data, ofType type: UInt32) {
-    
+  func multiPeer(didReceiveData data: Data) {
+    do {
+      let stepper = try JSONDecoder().decode(Stepper.self, from: data)
+      print("Count: \(stepper.count) at index: \(stepper.index)")
+    } catch {
+      print(error.localizedDescription)
+    }
   }
   
   func multiPeer(connectedDevicesChanged devices: [String]) {
