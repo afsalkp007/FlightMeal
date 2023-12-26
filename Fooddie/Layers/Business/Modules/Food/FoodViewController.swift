@@ -39,6 +39,9 @@ final class FoodViewController: UIViewController, Storyboarded {
     MultiPeer.instance.delegate = self
     MultiPeer.instance.initialize(serviceType: serviceType)
     MultiPeer.instance.autoConnect()
+    
+    #warning("Debug Mode")
+    MultiPeer.instance.debugMode = true
   }
 
   private func setupData() {
@@ -89,22 +92,21 @@ final class FoodViewController: UIViewController, Storyboarded {
 }
 
 extension FoodViewController: UIStepperControllerDelegate {
-  func stepperDidAddValues(stepper: UIStepperController, for index: Int) {
-    print("Count: \(stepper.count) at index: \(index)")
+  func stepperDidAddValues(_ count: CGFloat, for index: Int) {
+    print("Count: \(count) at index: \(index)")
   }
 
-  func stepperDidSubtractValues(stepper: UIStepperController, for index: Int) {
-    print("Count: \(stepper.count) at index: \(index)")
+  func stepperDidSubtractValues(_ count: CGFloat, for index: Int) {
+    print("Count: \(count) at index: \(index)")
   }
 }
 
 extension FoodViewController: MultiPeerDelegate {
-
-    func multiPeer(didReceiveData data: Data, ofType type: UInt32) {
-        
-    }
-
-    func multiPeer(connectedDevicesChanged devices: [String]) {
-        print("Connected devices changed: \(devices)")
-    }
+  func multiPeer(didReceiveData data: Data, ofType type: UInt32) {
+    
+  }
+  
+  func multiPeer(connectedDevicesChanged devices: [String]) {
+    print("Connected devices changed: \(devices)")
+  }
 }
