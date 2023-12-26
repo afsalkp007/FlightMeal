@@ -15,7 +15,7 @@ final class FoodViewModel {
   
   var viewModels = [FoodCellViewModel]() {
     didSet {
-      setTitle()
+      title = "Menu"
       updateUI()
     }
   }
@@ -27,7 +27,7 @@ final class FoodViewModel {
     getFoodItems()
   }
 
-  func getFoodItems() {
+  private func getFoodItems() {
     foodService.fetchFoodItems { [weak self] result in
       switch result {
       case .success(let results):
@@ -41,10 +41,6 @@ final class FoodViewModel {
   private static func getFoodCellViewModels(from response: FoodResponse?) -> [FoodCellViewModel] {
     guard let foodItems = response?.foodItems else { return [] }
     return foodItems.compactMap(FoodCellViewModel.init)
-  }
-  
-  func setTitle() {
-    title = "Menu"
   }
   
   func modelFor(indexPath: IndexPath) -> FoodCellViewModel {

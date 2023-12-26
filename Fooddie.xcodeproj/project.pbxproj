@@ -16,9 +16,6 @@
 		F417F3BA27392CE000611687 /* FoodDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3B927392CE000611687 /* FoodDataServiceTests.swift */; };
 		F417F3BD27392D3B00611687 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3BC27392D3B00611687 /* MockNetworkService.swift */; };
 		F417F3C027392E9500611687 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = F417F3BF27392E9500611687 /* food.json */; };
-		F435D2342B3996F0009AE040 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2312B3996F0009AE040 /* Peer.swift */; };
-		F435D2352B3996F0009AE040 /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2322B3996F0009AE040 /* MultiPeer.swift */; };
-		F435D2362B3996F0009AE040 /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */; };
 		F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2372B3A00A5009AE040 /* FoodCollectionViewCell.swift */; };
 		F435D23A2B3A00A5009AE040 /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F435D2382B3A00A5009AE040 /* FoodCollectionViewCell.xib */; };
 		F435D2492B3A2E33009AE040 /* UIStepperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2482B3A2E33009AE040 /* UIStepperController.swift */; };
@@ -28,6 +25,9 @@
 		F45A62FC273848BE00C9E3A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45A62FA273848BE00C9E3A2 /* LaunchScreen.storyboard */; };
 		F45A6312273848BE00C9E3A2 /* FooddieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A6311273848BE00C9E3A2 /* FooddieUITests.swift */; };
 		F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A1492274A570100EFDCA7 /* UIImage+Ext.swift */; };
+		F48F371B2B3AF774006CC28C /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2322B3996F0009AE040 /* MultiPeer.swift */; };
+		F48F371C2B3AF776006CC28C /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2332B3996F0009AE040 /* MultiPeerDelegate.swift */; };
+		F48F371D2B3AF779006CC28C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F435D2312B3996F0009AE040 /* Peer.swift */; };
 		F499366427396C60007D37A3 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366327396C60007D37A3 /* Adapter.swift */; };
 		F499366627396C94007D37A3 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366527396C94007D37A3 /* UITableView+Ext.swift */; };
 		F4993668273981CB007D37A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4993667273981CB007D37A3 /* .gitignore */; };
@@ -594,7 +594,6 @@
 				F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */,
 				F4E8DE08273A716600482B75 /* Coordinator.swift in Sources */,
 				F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */,
-				F435D2342B3996F0009AE040 /* Peer.swift in Sources */,
 				F417F3B8273912A900611687 /* Constants+Urls.swift in Sources */,
 				F45A62F0273848BD00C9E3A2 /* AppDelegate.swift in Sources */,
 				F417F3B42739106B00611687 /* NetworkService.swift in Sources */,
@@ -603,15 +602,16 @@
 				F435D2492B3A2E33009AE040 /* UIStepperController.swift in Sources */,
 				F417F3B22739102700611687 /* Resource.swift in Sources */,
 				F4D65080273852BE0068A14E /* FoodViewModel.swift in Sources */,
-				F435D2352B3996F0009AE040 /* MultiPeer.swift in Sources */,
 				F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */,
+				F48F371B2B3AF774006CC28C /* MultiPeer.swift in Sources */,
 				F499366427396C60007D37A3 /* Adapter.swift in Sources */,
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,
 				F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */,
 				F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */,
 				F4D6507B273852BE0068A14E /* FoodResponse.swift in Sources */,
 				F4E8DE0D273A767E00482B75 /* FoodViewCoordinator.swift in Sources */,
-				F435D2362B3996F0009AE040 /* MultiPeerDelegate.swift in Sources */,
+				F48F371D2B3AF779006CC28C /* Peer.swift in Sources */,
+				F48F371C2B3AF776006CC28C /* MultiPeerDelegate.swift in Sources */,
 				F4D6507D273852BE0068A14E /* APIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -791,6 +791,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SC3D86JVL3;
 				INFOPLIST_FILE = Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -813,6 +814,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SC3D86JVL3;
 				INFOPLIST_FILE = Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

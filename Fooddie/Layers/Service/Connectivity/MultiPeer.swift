@@ -42,7 +42,7 @@ public class MultiPeer: NSObject {
   var serviceBrowser: MCNearbyServiceBrowser!
   
   /// Amount of time to spend connecting before timeout
-  public var connectionTimeout = 10.0
+  public var connectionTimeout = 30.0
   
   /// Peers available to connect to
   public var availablePeers: [Peer] = []
@@ -79,10 +79,9 @@ public class MultiPeer: NSObject {
   /// - Parameters:
   ///     - serviceType: String with name of MultiPeer service. Up to one hyphen (-) and 15 characters.
   ///     - deviceName: String containing custom name for device
-  public func initialize(serviceType: String, sessionType: SessionType = .both, deviceName: String) {
+  public func initialize(serviceType: String, deviceName: String) {
     // Setup device/session properties
     self.serviceType = serviceType
-    self.sessionType = sessionType
     self.devicePeerID = MCPeerID(displayName: deviceName)
     
     // Setup the service advertiser
@@ -154,30 +153,14 @@ public class MultiPeer: NSObject {
     return connectedPeers.count > 0
   }
   
-  /// Sends an object (and type) to all connected peers.
-  /// - Parameters:
-  ///     - object: Object (Any) to send to all connected peers.
-  ///     - type: Type of data (UInt32) sent
-  /// After sending the object, you can use the extension for Data, `convertData()` to convert it back into an object.
-  public func send(object: Any, type: UInt32) {
-    if isConnected {
-      guard let data = try? NSKeyedArchiver.archivedData(withRootObject: object, requiringSecureCoding: true) else { return }
-      
-      send(data: data, type: type)
-    }
-  }
-  
   /// Sends Data (and type) to all connected peers.
   /// - Parameters:
   ///     - data: Data (Data) to send to all connected peers.
-  ///     - type: Type of data (UInt32) sent
-  /// After sending the data, you can use the extension for Data, `convertData()` to convert it back into data.
-  public func send(data: Data, type: UInt32) {
+  public func send(stepper: Stepper) {
     if isConnected {
       do {
-        let container: [Any] = [data, type]
-        guard let data = try? NSKeyedArchiver.archivedData(withRootObject: container, requiringSecureCoding: true) else { return }
-        try session.send(data, toPeers: session.connectedPeers, with: MCSessionSendDataMode.reliable)
+        let data = try JSONEncoder().encode(stepper)
+        try session.send(data, toPeers: session.connectedPeers, with: .reliable)
       } catch let error {
         printDebug(error.localizedDescription)
       }
@@ -190,7 +173,6 @@ public class MultiPeer: NSObject {
       print(string)
     }
   }
-  
 }
 
 // MARK: - Advertiser Delegate
@@ -266,15 +248,9 @@ extension MultiPeer: MCSessionDelegate {
   /// Received data, update delegate didRecieveData
   public func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
     printDebug("Received data: \(data.count) bytes")
-    
-    guard let container = data.convert() as? [Any] else { return }
-    guard let item = container[0] as? Data else { return }
-    guard let type = container[1] as? UInt32 else { return }
-    
     OperationQueue.main.addOperation {
-      self.delegate?.multiPeer(didReceiveData: item, ofType: type)
+      self.delegate?.multiPeer(didReceiveData: data)
     }
-    
   }
   
   /// Received stream
@@ -294,17 +270,3 @@ extension MultiPeer: MCSessionDelegate {
   
 }
 
-// MARK: - Data extension for conversion
-extension Data {
-  
-  /// Unarchive data into an object and return as type `Any`.
-  public func convert() -> Any {
-    return NSKeyedUnarchiver.unarchiveObject(with: self)!
-  }
-  
-  /// Converts an object into Data using NSKeyedArchiver
-  public static func toData(object: Any) -> Data {
-    return NSKeyedArchiver.archivedData(withRootObject: object)
-  }
-  
-}
