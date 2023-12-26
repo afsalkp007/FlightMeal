@@ -11,7 +11,7 @@ class FoodCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var foodImageView: CacheableImageView!
-  @IBOutlet weak var stepper: UIStepperController!
+  @IBOutlet var stepper: UIStepperController!
   
   override func layoutSubviews() {
     super.layoutSubviews()

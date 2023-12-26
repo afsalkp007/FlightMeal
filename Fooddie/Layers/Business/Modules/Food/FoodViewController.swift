@@ -58,8 +58,8 @@ final class FoodViewController: UIViewController, Storyboarded {
     collectionView.backgroundColor = UIColor.clear
     collectionView.reloadData()
     
-    adapter.configure = { [weak self] item, cell in
-      self?.configure(cell, for: item)
+    adapter.configure = { [weak self] item, cell, index in
+      self?.configure(cell, for: item, at: index)
     }
     
     adapter.select = { [weak self] viewModel in
@@ -67,12 +67,15 @@ final class FoodViewController: UIViewController, Storyboarded {
     }
   }
   
-  private func configure(_ cell: FoodCollectionViewCell, for item: FoodCellViewModel) {
+  private func configure(_ cell: FoodCollectionViewCell, for item: FoodCellViewModel, at index: Int) {
     cell.titleLabel.text = item.name
     cell.stepper.count = item.quantity
     guard let url = item.imageUrl else { return }
     cell.foodImageView.setUpLoader()
     cell.foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFill)
+    cell.stepper.subtractionButton.tag = index
+    cell.stepper.additionButton.tag = index
+    cell.stepper.delegate = self
   }
   
   private func setUpLoader() {
@@ -82,6 +85,16 @@ final class FoodViewController: UIViewController, Storyboarded {
     loaderView.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
     loaderView.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
     loaderView.startAnimating()
+  }
+}
+
+extension FoodViewController: UIStepperControllerDelegate {
+  func stepperDidAddValues(stepper: UIStepperController, for index: Int) {
+    print("Count: \(stepper.count) at index: \(index)")
+  }
+
+  func stepperDidSubtractValues(stepper: UIStepperController, for index: Int) {
+    print("Count: \(stepper.count) at index: \(index)")
   }
 }
 

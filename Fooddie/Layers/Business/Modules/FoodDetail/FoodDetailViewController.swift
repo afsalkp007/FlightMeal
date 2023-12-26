@@ -14,7 +14,6 @@ final class FoodDetailViewController: UIViewController, Storyboarded {
   @IBOutlet private weak var foodImageView: CacheableImageView!
   @IBOutlet private weak var titleLabel: UILabel!
   @IBOutlet private weak var nameTextField: UITextField!
-  @IBOutlet private weak var descLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
