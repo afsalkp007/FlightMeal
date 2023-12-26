@@ -34,7 +34,6 @@ final class FoodDetailViewController: UIViewController, Storyboarded {
   private func configureView() {
     guard let viewModel = viewModel else { return }
     titleLabel.text = viewModel.name
-    descLabel.text = "\(viewModel.quantity)"
     guard let url = viewModel.imageUrl else { return }
     foodImageView.setUpLoader()
     foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFill)
