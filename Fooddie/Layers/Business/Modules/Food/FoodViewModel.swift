@@ -19,7 +19,7 @@ final class FoodViewModel {
   }
   
   internal func viewWillDisappear() {
-    multipeerService.disconnect()
+    multipeerService.end()
   }
   
   internal func setupConnectivity() {
@@ -27,7 +27,7 @@ final class FoodViewModel {
     multipeerService.autoConnect()
   }
   
-  internal func send(_ items: [FoodItem]) {
-    multipeerService.send(items)
+  internal func send(_ items: [FoodCellViewModel]) {
+    multipeerService.send(items.foodItems)
   }
 }

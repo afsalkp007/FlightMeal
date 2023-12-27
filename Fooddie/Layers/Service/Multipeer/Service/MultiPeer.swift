@@ -118,13 +118,13 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   }
   
   /// Stops all invite/accept services
-  public func stopSearching() {
+  private func stopSearching() {
     stopAccepting()
     stopInviting()
   }
   
   /// Disconnects from the current session and stops all searching activity
-  public func disconnect() {
+  private func disconnect() {
     session.disconnect()
     connectedPeers.removeAll()
     availablePeers.removeAll()
@@ -144,14 +144,8 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   /// Sends Data (and type) to all connected peers.
   /// - Parameters:
   ///     - data: Data (Data) to send to all connected peers.
-  /// After sending the data, you can use the extension for Data, `convertData()` to convert it back into data.
+  /// After sending the data, you can use the extension for Data, to convert it back into data.
   public func send(_ items: [FoodItem]) {
-    stopSearching()
-
-    defer {
-      autoConnect()
-    }
-    
     if isConnected, let data = items.data  {
       try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
     }
@@ -163,7 +157,6 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
       print(string)
     }
   }
-  
 }
 
 // MARK: - Advertiser Delegate

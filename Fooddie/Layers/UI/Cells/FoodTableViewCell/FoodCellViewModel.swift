@@ -19,3 +19,17 @@ struct FoodCellViewModel {
     self.imageUrl = URL(string: item.imageUrl ?? "")
   }
 }
+
+extension FoodCellViewModel {
+  var foodItem: FoodItem {
+    return FoodItem(name: name,
+                    quantity: quantity,
+                    imageUrl: imageUrl?.absoluteString)
+  }
+}
+
+extension Array where Element == FoodCellViewModel {
+  var foodItems: [FoodItem] {
+    return map(\.foodItem)
+  }
+}

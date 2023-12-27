@@ -77,11 +77,11 @@ final class FoodViewController: UIViewController, Storyboarded {
 
 extension FoodViewController: UIStepperControllerDelegate {
   func stepperDidAddValues(_ items: [FoodItem]) {
-    viewModel.send(items)
+    viewModel.send(items.models)
   }
 
   func stepperDidSubtractValues(_ items: [FoodItem]) {
-    viewModel.send(items)
+    viewModel.send(items.models)
   }
 }
 
