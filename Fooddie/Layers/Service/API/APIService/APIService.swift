@@ -21,6 +21,7 @@ final class APIService: APIServiceProtocol {
   
   /// Fetch food data
   /// - Parameter completion: Called when operation finishes
+  /// https://yummie.glitch.me/dishes/cat1
   func fetchFoodItems(_ completion: @escaping (Result<FoodResponse?>) -> Void) {
     let resource = Resource(
       url: Constants.Urls.foddieUrl,
