@@ -150,8 +150,8 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   /// - Parameters:
   ///     - data: Data (Data) to send to all connected peers.
   /// After sending the data, you can use the extension for Data, `convertData()` to convert it back into data.
-  public func send(stepper: Stepper) {
-    if isConnected, let data = stepper.data  {
+  public func send(_ items: [FoodItem]) {
+    if isConnected, let data = items.data  {
       try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
     }
   }
@@ -260,7 +260,7 @@ extension MultiPeer: MCSessionDelegate {
 
 // MARK: - Data extension for conversion
 extension Data {
-  public func toObject() -> Stepper? {
-    return try? JSONDecoder().decode(Stepper.self, from: self)
+  public func toObject() -> [FoodItem]? {
+    return try? JSONDecoder().decode([FoodItem].self, from: self)
   }
 }

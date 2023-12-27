@@ -14,7 +14,7 @@ class Adapter<T, Cell: UICollectionViewCell>:
   UICollectionViewDelegateFlowLayout {
   
   var items: [T] = []
-  var configure: ((T, Cell, Int) -> Void)?
+  var configure: ((T, Cell, IndexPath) -> Void)?
   var select: ((T) -> Void)?
   var size: CGSize?
   
@@ -35,7 +35,7 @@ class Adapter<T, Cell: UICollectionViewCell>:
   ) -> UICollectionViewCell {
     let cell: Cell = collectionView.dequeue(indexPath)
     let item = items[indexPath.row]
-    configure?(item, cell, indexPath.row)
+    configure?(item, cell, indexPath)
     return cell
   }
   

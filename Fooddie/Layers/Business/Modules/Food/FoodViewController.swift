@@ -56,8 +56,8 @@ final class FoodViewController: UIViewController, Storyboarded {
     collectionView.backgroundColor = UIColor.clear
     collectionView.reloadData()
     
-    adapter.configure = { [weak self] item, cell, index in
-      self?.configure(cell, for: item, at: index)
+    adapter.configure = { [weak self] cellVM, cell, indexPath in
+      self?.configure(cell, for: cellVM, at: indexPath)
     }
     
     adapter.select = { [weak self] viewModel in
@@ -65,14 +65,10 @@ final class FoodViewController: UIViewController, Storyboarded {
     }
   }
   
-  private func configure(_ cell: FoodCollectionViewCell, for item: FoodCellViewModel, at index: Int) {
-    cell.titleLabel.text = item.name
-    cell.stepper.count = item.quantity
-    guard let url = item.imageUrl else { return }
-    cell.foodImageView.setUpLoader()
-    cell.foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFill)
-    cell.stepper.subtractionButton.tag = index
-    cell.stepper.additionButton.tag = index
+  private func configure(_ cell: FoodCollectionViewCell, for cellVM: FoodCellViewModel, at indexPath: IndexPath) {
+    cell.viewModel = cellVM
+    cell.stepper.subtractionButton.tag = indexPath.item
+    cell.stepper.additionButton.tag = indexPath.item
     cell.stepper.delegate = self
   }
   
@@ -87,24 +83,31 @@ final class FoodViewController: UIViewController, Storyboarded {
 }
 
 extension FoodViewController: UIStepperControllerDelegate {
-  func stepperDidAddValues(_ stepper: Stepper) {
+  func stepperDidAddValues(_ items: [FoodItem]) {
     MultiPeer.instance.stopSearching()
-    
+
     defer {
         MultiPeer.instance.autoConnect()
     }
     
-    MultiPeer.instance.send(stepper: stepper)
+    MultiPeer.instance.send(items)
   }
 
-  func stepperDidSubtractValues(_ stepper: Stepper) {
-    print("Count: \(stepper.count) at index: \(stepper.index)")
+  func stepperDidSubtractValues(_ items: [FoodItem]) {
+    MultiPeer.instance.stopSearching()
+
+    defer {
+        MultiPeer.instance.autoConnect()
+    }
+    
+    MultiPeer.instance.send(items)
   }
 }
 
 extension FoodViewController: MultiPeerDelegate {
-  func multiPeer(didReceiveData stepper: Stepper) {
-    print("Received count: \(stepper.count), at: \(stepper.index)")
+  func multiPeer(didReceiveData items: [FoodItem]) {
+    adapter.items = items.map(FoodCellViewModel.init)
+    collectionView.reloadData()
   }
   
   func multiPeer(connectedDevicesChanged devices: [String]) {

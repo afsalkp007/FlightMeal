@@ -28,6 +28,7 @@
 		F48F37382B3B52E2006CC28C /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37332B3B52E1006CC28C /* MultiPeer.swift */; };
 		F48F37392B3B52E2006CC28C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37372B3B52E2006CC28C /* Peer.swift */; };
 		F48F373A2B3B52E2006CC28C /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */; };
+		F48F373C2B3B771B006CC28C /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F373B2B3B771B006CC28C /* FoodResponse.swift */; };
 		F499366427396C60007D37A3 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366327396C60007D37A3 /* Adapter.swift */; };
 		F499366627396C94007D37A3 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366527396C94007D37A3 /* UITableView+Ext.swift */; };
 		F4993668273981CB007D37A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4993667273981CB007D37A3 /* .gitignore */; };
@@ -36,14 +37,12 @@
 		F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65063273852BE0068A14E /* FoodCellViewModel.swift */; };
 		F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65065273852BE0068A14E /* CacheableImageView.swift */; };
 		F4D6507A273852BE0068A14E /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65069273852BE0068A14E /* APIServiceProtocol.swift */; };
-		F4D6507B273852BE0068A14E /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6506B273852BE0068A14E /* FoodResponse.swift */; };
 		F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6506C273852BE0068A14E /* FoodItem.swift */; };
 		F4D6507D273852BE0068A14E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6506E273852BE0068A14E /* APIService.swift */; };
 		F4D6507E273852BE0068A14E /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65072273852BE0068A14E /* FoodDetailViewController.swift */; };
 		F4D6507F273852BE0068A14E /* FoodDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65073273852BE0068A14E /* FoodDetailViewModel.swift */; };
 		F4D65080273852BE0068A14E /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65075273852BE0068A14E /* FoodViewModel.swift */; };
 		F4D65081273852BE0068A14E /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65076273852BE0068A14E /* FoodViewController.swift */; };
-		F4DFAD7828C4FFBD00302A06 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A631F2738495700C9E3A2 /* main.swift */; };
 		F4E8DE04273A6F7700482B75 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F4E8DE03273A6F7700482B75 /* README.md */; };
 		F4E8DE08273A716600482B75 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8DE06273A716600482B75 /* Coordinator.swift */; };
 		F4E8DE0B273A718800482B75 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E8DE0A273A718800482B75 /* Storyboarded.swift */; };
@@ -93,11 +92,11 @@
 		F45A630D273848BE00C9E3A2 /* FooddieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FooddieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45A6311273848BE00C9E3A2 /* FooddieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooddieUITests.swift; sourceTree = "<group>"; };
 		F45A6313273848BE00C9E3A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F45A631F2738495700C9E3A2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F48A1492274A570100EFDCA7 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		F48F37332B3B52E1006CC28C /* MultiPeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeer.swift; sourceTree = "<group>"; };
 		F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
 		F48F37372B3B52E2006CC28C /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		F48F373B2B3B771B006CC28C /* FoodResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
 		F499366327396C60007D37A3 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		F499366527396C94007D37A3 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		F4993667273981CB007D37A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -106,7 +105,6 @@
 		F4D65063273852BE0068A14E /* FoodCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCellViewModel.swift; sourceTree = "<group>"; };
 		F4D65065273852BE0068A14E /* CacheableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheableImageView.swift; sourceTree = "<group>"; };
 		F4D65069273852BE0068A14E /* APIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
-		F4D6506B273852BE0068A14E /* FoodResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
 		F4D6506C273852BE0068A14E /* FoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		F4D6506E273852BE0068A14E /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F4D65072273852BE0068A14E /* FoodDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				F45A62EF273848BD00C9E3A2 /* AppDelegate.swift */,
-				F45A631F2738495700C9E3A2 /* main.swift */,
 				F45A62F5273848BD00C9E3A2 /* Main.storyboard */,
 				F45A62FA273848BE00C9E3A2 /* LaunchScreen.storyboard */,
 				F4D6505F273852BE0068A14E /* Layers */,
@@ -388,7 +385,7 @@
 		F4D6506A273852BE0068A14E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F4D6506B273852BE0068A14E /* FoodResponse.swift */,
+				F48F373B2B3B771B006CC28C /* FoodResponse.swift */,
 				F4D6506C273852BE0068A14E /* FoodItem.swift */,
 			);
 			path = Model;
@@ -590,7 +587,6 @@
 				F417F3B02739101100611687 /* Client.swift in Sources */,
 				F4E8DE0B273A718800482B75 /* Storyboarded.swift in Sources */,
 				F4E8DE0F273A771F00482B75 /* FoodDetailCoordinator.swift in Sources */,
-				F4DFAD7828C4FFBD00302A06 /* main.swift in Sources */,
 				F48F373A2B3B52E2006CC28C /* MultiPeerDelegate.swift in Sources */,
 				F48F37392B3B52E2006CC28C /* Peer.swift in Sources */,
 				F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */,
@@ -610,7 +606,7 @@
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,
 				F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */,
 				F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */,
-				F4D6507B273852BE0068A14E /* FoodResponse.swift in Sources */,
+				F48F373C2B3B771B006CC28C /* FoodResponse.swift in Sources */,
 				F4E8DE0D273A767E00482B75 /* FoodViewCoordinator.swift in Sources */,
 				F4D6507D273852BE0068A14E /* APIService.swift in Sources */,
 			);

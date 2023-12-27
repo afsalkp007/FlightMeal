@@ -7,18 +7,9 @@
 
 import UIKit
 
-public struct Stepper: Codable {
-  let count: CGFloat
-  let index: Int
-  
-  var data: Data? {
-    return try? JSONEncoder().encode(self)
-  }
-}
-
 protocol UIStepperControllerDelegate {
-  func stepperDidAddValues(_ stepper: Stepper)
-  func stepperDidSubtractValues(_ stepper: Stepper)
+  func stepperDidAddValues(_ items: [FoodItem])
+  func stepperDidSubtractValues(_ items: [FoodItem])
 }
 
 class UIStepperController: UIView {
@@ -275,14 +266,29 @@ class UIStepperController: UIView {
     _count = _count - incrementer
     _count = _count >= 0 ? _count : (isMinus ? _count : 0)
     self.countLable.text = isFloat ? String(format: "%.2f", _count) : String(format: "%.0f", _count)
-    let stepper = Stepper(count: count, index: sender.tag)
-    delegate?.stepperDidSubtractValues(stepper)
+
+    replaceFoodItem(at: sender.tag)
+    delegate?.stepperDidSubtractValues(FoodItem.items)
   }
   
   @objc func additionButtonTouchUpInside(sender: UIButton) {
     _count = _count + incrementer
     self.countLable.text = isFloat ? String(format: "%.2f", _count) : String(format: "%.0f", _count)
-    let stepper = Stepper(count: count, index: sender.tag)
-    delegate?.stepperDidAddValues(stepper)
+    
+    replaceFoodItem(at: sender.tag)
+    delegate?.stepperDidAddValues(FoodItem.items)
+  }
+  
+  private func replaceFoodItem(at index: Int) {
+    var item = FoodItem.items[index]
+    item.quantity = count
+    FoodItem.items.remove(at: index)
+    FoodItem.items.insert(item, at: index)
+  }
+}
+
+extension Int {
+  var indexPath: IndexPath {
+    return IndexPath(item: self, section: 0)
   }
 }

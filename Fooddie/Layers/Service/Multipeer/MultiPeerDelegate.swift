@@ -17,7 +17,7 @@ import Foundation
 public protocol MultiPeerDelegate: AnyObject {
   
   /// didReceiveData: delegate runs on receiving data from another peer
-  func multiPeer(didReceiveData stepper: Stepper)
+  func multiPeer(didReceiveData items: [FoodItem])
   
   /// connectedDevicesChanged: delegate runs on connection/disconnection event in session
   func multiPeer(connectedDevicesChanged devices: [String])

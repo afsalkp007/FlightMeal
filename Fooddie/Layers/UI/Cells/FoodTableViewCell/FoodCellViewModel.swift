@@ -10,7 +10,7 @@ import UIKit
 
 struct FoodCellViewModel {
   let name: String
-  let quantity: CGFloat
+  var quantity: CGFloat
   let imageUrl: URL?
   
   init(item: FoodItem) {
