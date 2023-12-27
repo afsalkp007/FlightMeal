@@ -23,7 +23,7 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   var devicePeerID: MCPeerID!
   
   /** Advertises session */
-  var serviceAdvertiser: MCAdvertiserAssistant!
+  var serviceAdvertiser: MCNearbyServiceAdvertiser!
   
   /** Browses for sessions */
   var serviceBrowser: MCNearbyServiceBrowser!
@@ -72,9 +72,9 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
     self.devicePeerID = MCPeerID(displayName: deviceName)
     
     // Setup the service advertiser
-    self.serviceAdvertiser = MCAdvertiserAssistant(serviceType: serviceType,
-                                                   discoveryInfo: nil,
-                                                   session: session)
+    self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: devicePeerID,
+                                                       discoveryInfo: nil,
+                                                       serviceType: serviceType)
     
     self.serviceAdvertiser.delegate = self
     
@@ -98,7 +98,7 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   
   /// JOIN: Automatically advertises and accepts all invites
   public func startAccepting() {
-    self.serviceAdvertiser.start()
+    self.serviceAdvertiser.startAdvertisingPeer()
   }
   
   /// HOST and JOIN: Uses both advertising and browsing to connect.
@@ -114,7 +114,7 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   
   /// Stops accepting invites and becomes invisible on the network
   public func stopAccepting() {
-    self.serviceAdvertiser.stop()
+    self.serviceAdvertiser.stopAdvertisingPeer()
   }
   
   /// Stops all invite/accept services
@@ -172,7 +172,7 @@ extension MultiPeer: MCNearbyServiceAdvertiserDelegate {
   /// Received invitation
   public func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
     
-    OperationQueue.main.addOperation {
+    OperationQueue.main.addOperation { [unowned self] in
       invitationHandler(true, self.session)
     }
   }
@@ -231,7 +231,7 @@ extension MultiPeer: MCSessionDelegate {
     connectedPeers = session.connectedPeers.map { Peer(peerID: $0, state: .connected) }
     
     // Send new connection list to delegate
-    OperationQueue.main.addOperation {
+    OperationQueue.main.addOperation { [unowned self] in
       self.delegate?.multiPeer(connectedDevicesChanged: session.connectedPeers.map({$0.displayName}))
     }
   }
@@ -242,10 +242,9 @@ extension MultiPeer: MCSessionDelegate {
     
     guard let stepper = data.toObject() else { return }
     
-    OperationQueue.main.addOperation {
+    OperationQueue.main.addOperation { [unowned self] in
       self.delegate?.multiPeer(didReceiveData: stepper)
     }
-    
   }
   
   /// Received stream

@@ -9,7 +9,7 @@ import UIKit
 
 final class FoodViewController: UIViewController, Storyboarded {
   
-  internal var coordinator: FoodDetailCoordinator?
+  internal var coordinator: FoodDetailCoordinator!
   internal var viewModel: FoodViewModel!
   
   @IBOutlet private weak var collectionView: UICollectionView!
@@ -19,8 +19,8 @@ final class FoodViewController: UIViewController, Storyboarded {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupUI()
-    setupData()
+    setupCollectionView()
+    setupData(with: viewModel.foodItems)
     
     viewModel?.setupConnectivity()
   }
@@ -30,24 +30,23 @@ final class FoodViewController: UIViewController, Storyboarded {
     super.viewWillDisappear(animated)
   }
 
-  private func setupUI() {
+  private func setupCollectionView() {
     setUpLoader()
     collectionView.register(cellType: FoodCollectionViewCell.self)
+    collectionView.delegate = adapter
+    collectionView.dataSource = adapter
+    collectionView.layer.cornerRadius = 0
+    collectionView.backgroundColor = UIColor.clear
   }
 
-  private func setupData() {
-    guard let viewModel = self.viewModel else { return }
+  private func setupData(with items: [FoodCellViewModel]) {
     self.title = "Menu"
-    self.adapter.items = viewModel.viewModels
+    self.adapter.items = items
     self.configureCollectionView()
     self.loaderView.stopAnimating()
   }
   
   private func configureCollectionView() {
-    collectionView.delegate = adapter
-    collectionView.dataSource = adapter
-    collectionView.layer.cornerRadius = 0
-    collectionView.backgroundColor = UIColor.clear
     collectionView.reloadData()
     
     adapter.configure = { [weak self] cellVM, cell, indexPath in
@@ -55,7 +54,7 @@ final class FoodViewController: UIViewController, Storyboarded {
     }
     
     adapter.select = { [weak self] viewModel in
-      self?.coordinator?.start(viewModel)
+      self?.coordinator.start(viewModel)
     }
   }
   
@@ -88,8 +87,7 @@ extension FoodViewController: UIStepperControllerDelegate {
 
 extension FoodViewController: MultiPeerDelegate {
   func multiPeer(didReceiveData items: [FoodItem]) {
-    adapter.items = items.map(FoodCellViewModel.init)
-    collectionView.reloadData()
+    setupData(with: items.models)
   }
   
   func multiPeer(connectedDevicesChanged devices: [String]) {

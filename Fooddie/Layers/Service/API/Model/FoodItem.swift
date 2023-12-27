@@ -19,12 +19,6 @@ public struct FoodItem {
   ]
 }
 
-extension Array where Element == FoodItem {
-  var data: Data? {
-    return try? JSONEncoder().encode(self)
-  }
-}
-
 extension FoodItem: Codable {
   enum CodingKeys: String, CodingKey {
     case name
@@ -44,5 +38,15 @@ extension FoodItem: Codable {
     try container.encode(name, forKey: .name)
     try container.encode(quantity, forKey: .quantity)
     try container.encode(imageUrl, forKey: .imageUrl)
+  }
+}
+
+extension Array where Element == FoodItem {
+  var data: Data? {
+    return try? JSONEncoder().encode(self)
+  }
+  
+  var models: [FoodCellViewModel] {
+    return map(FoodCellViewModel.init)
   }
 }

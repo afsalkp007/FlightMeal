@@ -14,7 +14,7 @@ final class FoodViewModel {
     self.multipeerService = multipeer
   }
   
-  var viewModels: [FoodCellViewModel] {
+  var foodItems: [FoodCellViewModel] {
     return FoodItem.items.map(FoodCellViewModel.init)
   }
   
