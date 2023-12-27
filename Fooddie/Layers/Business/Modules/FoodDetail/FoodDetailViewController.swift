@@ -9,7 +9,8 @@ import UIKit
 
 final class FoodDetailViewController: UIViewController, Storyboarded {
   
-  var viewModel: FoodDetailViewModel?
+  internal var viewModel: FoodDetailViewModel?
+  internal var coordinator: FoodDetailCoordinator?
   
   @IBOutlet private weak var foodImageView: CacheableImageView!
   @IBOutlet private weak var titleLabel: UILabel!
@@ -52,7 +53,9 @@ final class FoodDetailViewController: UIViewController, Storyboarded {
     }
     guard let _ = nameTextField.text?.trimmingCharacters(in: .whitespaces) else { return }
     nameTextField.resignFirstResponder()
-    showAlert(title: "Success", message: "Your order has been received 😋😋😋", buttonTitle: "OK")
+    showAlert(title: "Success", message: "The order has been captured 😋😋😋", buttonTitle: "OK") { [weak self] _ in
+      self?.coordinator?.dismiss()
+    }
   }
 }
 

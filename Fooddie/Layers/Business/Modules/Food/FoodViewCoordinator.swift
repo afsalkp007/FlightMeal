@@ -17,7 +17,9 @@ final class FoodViewCoordinator: Coordinator {
   func start() {
     let vc = FoodViewController.instantiate()
     vc.coordinator = FoodDetailCoordinator(navigationController: navigationController)
-    vc.viewModel = FoodViewModel()
+    let mpc = MultiPeer()
+    mpc.delegate = vc
+    vc.viewModel = FoodViewModel(multipeer: mpc)
     navigationController.pushViewController(vc, animated: false)
   }
 }

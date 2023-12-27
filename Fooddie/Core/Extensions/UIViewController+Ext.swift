@@ -7,10 +7,12 @@
 
 import UIKit
 
+typealias alertHandler = ((UIAlertAction) -> Void)?
+
 extension UIViewController {
-  func showAlert(title: String, message: String, buttonTitle: String){
+  func showAlert(title: String, message: String, buttonTitle: String, completion: alertHandler = { _ in }) {
       let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-      let alertAction = UIAlertAction(title: buttonTitle, style: .default)
+      let alertAction = UIAlertAction(title: buttonTitle, style: .default, handler: completion)
       alertVC.addAction(alertAction)
       present(alertVC, animated: true)
   }

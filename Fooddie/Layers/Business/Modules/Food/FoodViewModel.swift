@@ -8,8 +8,26 @@
 import Foundation
 
 final class FoodViewModel {
+  let multipeerService: MultiPeer
   
-  var title = "Menu"
+  init(multipeer: MultiPeer) {
+    self.multipeerService = multipeer
+  }
   
-  var viewModels = FoodItem.items.map(FoodCellViewModel.init)
+  var viewModels: [FoodCellViewModel] {
+    return FoodItem.items.map(FoodCellViewModel.init)
+  }
+  
+  internal func viewWillDisappear() {
+    multipeerService.disconnect()
+  }
+  
+  internal func setupConnectivity() {
+    multipeerService.initialize(serviceType: "fooddie-mpc")
+    multipeerService.autoConnect()
+  }
+  
+  internal func send(_ items: [FoodItem]) {
+    multipeerService.send(items)
+  }
 }

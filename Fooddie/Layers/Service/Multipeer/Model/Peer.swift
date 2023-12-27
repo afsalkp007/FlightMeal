@@ -1,8 +1,8 @@
 //
 //  Peer.swift
-//  MultiPeer
+//  Fooddie
 //
-//  Created by Wilson Ding on 2/1/18.
+//  Created by Afsal Mohammed on 19/12/2023
 //
 
 import Foundation

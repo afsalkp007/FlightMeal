@@ -10,7 +10,7 @@ import UIKit
 final class FoodViewController: UIViewController, Storyboarded {
   
   internal var coordinator: FoodDetailCoordinator?
-  internal var viewModel: FoodViewModel?
+  internal var viewModel: FoodViewModel!
   
   @IBOutlet private weak var collectionView: UICollectionView!
   
@@ -21,11 +21,12 @@ final class FoodViewController: UIViewController, Storyboarded {
     super.viewDidLoad()
     setupUI()
     setupData()
-    setupConnectivity()
+    
+    viewModel?.setupConnectivity()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
-    MultiPeer.instance.disconnect()
+    viewModel?.viewWillDisappear()
     super.viewWillDisappear(animated)
   }
 
@@ -33,17 +34,10 @@ final class FoodViewController: UIViewController, Storyboarded {
     setUpLoader()
     collectionView.register(cellType: FoodCollectionViewCell.self)
   }
-  
-  private func setupConnectivity() {
-    MultiPeer.instance.delegate = self
-
-    MultiPeer.instance.initialize(serviceType: "fooddie-mpc")
-    MultiPeer.instance.autoConnect()
-  }
 
   private func setupData() {
     guard let viewModel = self.viewModel else { return }
-    self.title = viewModel.title
+    self.title = "Menu"
     self.adapter.items = viewModel.viewModels
     self.configureCollectionView()
     self.loaderView.stopAnimating()
@@ -84,23 +78,11 @@ final class FoodViewController: UIViewController, Storyboarded {
 
 extension FoodViewController: UIStepperControllerDelegate {
   func stepperDidAddValues(_ items: [FoodItem]) {
-    MultiPeer.instance.stopSearching()
-
-    defer {
-        MultiPeer.instance.autoConnect()
-    }
-    
-    MultiPeer.instance.send(items)
+    viewModel.send(items)
   }
 
   func stepperDidSubtractValues(_ items: [FoodItem]) {
-    MultiPeer.instance.stopSearching()
-
-    defer {
-        MultiPeer.instance.autoConnect()
-    }
-    
-    MultiPeer.instance.send(items)
+    viewModel.send(items)
   }
 }
 

@@ -1,8 +1,8 @@
 //
 //  MultiPeer.swift
-//  MultiPeer
+//  Fooddie
 //
-//  Created by Wilson Ding on 2/1/18.
+//  Created by Afsal Mohammed on 19/12/2023
 //
 
 import Foundation
@@ -10,9 +10,6 @@ import MultipeerConnectivity
 
 /// Main Class for MultiPeer
 public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
-  
-  /// Singleton instance - call via MultiPeer.instance
-  public static let instance = MultiPeer()
   
   // MARK: Properties
   
@@ -78,9 +75,7 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
     self.serviceAdvertiser = MCAdvertiserAssistant(serviceType: serviceType,
                                                    discoveryInfo: nil,
                                                    session: session)
-//    self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: self.devicePeerID,
-//                                                       discoveryInfo: nil,
-//                                                       serviceType: serviceType)
+    
     self.serviceAdvertiser.delegate = self
     
     // Setup the service browser
@@ -151,6 +146,12 @@ public class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   ///     - data: Data (Data) to send to all connected peers.
   /// After sending the data, you can use the extension for Data, `convertData()` to convert it back into data.
   public func send(_ items: [FoodItem]) {
+    stopSearching()
+
+    defer {
+      autoConnect()
+    }
+    
     if isConnected, let data = items.data  {
       try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
     }
