@@ -20,7 +20,10 @@ final class FoodViewController: UIViewController, Storyboarded {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCollectionView()
-    setupData(with: viewModel.foodItems)
+    
+    viewModel.updateUI = { [weak self] models in
+      self?.setupData(with: models)
+    }
     
     viewModel?.setupConnectivity()
   }
@@ -76,17 +79,18 @@ final class FoodViewController: UIViewController, Storyboarded {
 }
 
 extension FoodViewController: UIStepperControllerDelegate {
-  func stepperDidAddValues(_ items: [FoodItem]) {
-    viewModel.send(items.models)
+  func stepperDidAddValues(_ value: CGFloat, at index: Int) {
+    viewModel.send(value, at: index)
   }
 
-  func stepperDidSubtractValues(_ items: [FoodItem]) {
-    viewModel.send(items.models)
+  func stepperDidSubtractValues(_ value: CGFloat, at index: Int) {
+    viewModel.send(value, at: index)
   }
 }
 
 extension FoodViewController: MultiPeerDelegate {
   func multiPeer(didReceiveData items: [FoodItem]) {
+    viewModel.foodItems = items
     setupData(with: items.models)
   }
   

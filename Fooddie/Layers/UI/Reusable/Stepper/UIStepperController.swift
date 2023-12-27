@@ -8,8 +8,8 @@
 import UIKit
 
 protocol UIStepperControllerDelegate {
-  func stepperDidAddValues(_ items: [FoodItem])
-  func stepperDidSubtractValues(_ items: [FoodItem])
+  func stepperDidAddValues(_ value: CGFloat, at index: Int)
+  func stepperDidSubtractValues(_ value: CGFloat, at index: Int)
 }
 
 class UIStepperController: UIView {
@@ -267,23 +267,14 @@ class UIStepperController: UIView {
     _count = _count >= 0 ? _count : (isMinus ? _count : 0)
     self.countLable.text = isFloat ? String(format: "%.2f", _count) : String(format: "%.0f", _count)
 
-    replaceFoodItem(at: sender.tag)
-    delegate?.stepperDidSubtractValues(FoodItem.items)
+    delegate?.stepperDidSubtractValues(count, at: sender.tag)
   }
   
   @objc func additionButtonTouchUpInside(sender: UIButton) {
     _count = _count + incrementer
     self.countLable.text = isFloat ? String(format: "%.2f", _count) : String(format: "%.0f", _count)
     
-    replaceFoodItem(at: sender.tag)
-    delegate?.stepperDidAddValues(FoodItem.items)
-  }
-  
-  private func replaceFoodItem(at index: Int) {
-    var item = FoodItem.items[index]
-    item.quantity = count
-    FoodItem.items.remove(at: index)
-    FoodItem.items.insert(item, at: index)
+    delegate?.stepperDidAddValues(count, at: sender.tag)
   }
 }
 

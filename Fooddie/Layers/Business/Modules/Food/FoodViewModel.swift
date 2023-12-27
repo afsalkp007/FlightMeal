@@ -9,13 +9,30 @@ import Foundation
 
 final class FoodViewModel {
   let multipeerService: MultiPeer
+  let apiService: APIServiceProtocol
   
-  init(multipeer: MultiPeer) {
+  var foodItems: [FoodItem]!
+  var updateUI: (([FoodCellViewModel]) -> Void)?
+  
+  init(multipeer: MultiPeer,
+       apiService: APIServiceProtocol = APIService()) {
     self.multipeerService = multipeer
+    self.apiService = apiService
+    
+    fetchItems()
   }
   
-  var foodItems: [FoodCellViewModel] {
-    return FoodItem.items.map(FoodCellViewModel.init)
+  private func fetchItems() {
+    apiService.fetchFoodItems { [weak self] result in
+      switch result {
+      case let .success(response):
+        guard let items = response?.foodItems else { return }
+        self?.foodItems = items
+        self?.updateUI?(items.models)
+      case let .failure(error):
+        print(error.localizedDescription)
+      }
+    }
   }
   
   internal func viewWillDisappear() {
@@ -27,7 +44,18 @@ final class FoodViewModel {
     multipeerService.autoConnect()
   }
   
-  internal func send(_ items: [FoodCellViewModel]) {
-    multipeerService.send(items.foodItems)
+  internal func send(_ value: CGFloat, at index: Int) {
+    foodItems = getUpdatedFoodItems(for: value, at: index)
+    multipeerService.send(foodItems)
+  }
+  
+  private func getUpdatedFoodItems(for value: CGFloat, at place: Int) -> [FoodItem] {
+    return foodItems.enumerated().map { index, item in
+      var newItem = item
+      if place == index {
+        newItem.quantity = value
+      }
+      return newItem
+    }
   }
 }
