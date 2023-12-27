@@ -43,10 +43,10 @@ final class FoodViewController: UIViewController, Storyboarded {
   }
 
   private func setupData(with items: [FoodCellViewModel]) {
-    self.title = "Menu"
-    self.adapter.items = items
-    self.configureCollectionView()
-    self.loaderView.stopAnimating()
+    title = "Menu"
+    adapter.items = items
+    configureCollectionView()
+    loaderView.stopAnimating()
   }
   
   private func configureCollectionView() {
