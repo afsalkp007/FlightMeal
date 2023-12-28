@@ -57,7 +57,7 @@ final class FoodViewController: UIViewController, Storyboarded {
     }
     
     adapter.select = { [weak self] viewModel in
-      self?.coordinator.start(viewModel)
+      self?.coordinator.start(viewModel, from: self)
     }
   }
   
@@ -75,6 +75,12 @@ final class FoodViewController: UIViewController, Storyboarded {
     loaderView.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
     loaderView.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
     loaderView.startAnimating()
+  }
+}
+
+extension FoodViewController: DismissCallBackDelegate {
+  func getCapturedMeal(meal: CapturedMeal) {
+    viewModel.capturedItems.append(meal)
   }
 }
 

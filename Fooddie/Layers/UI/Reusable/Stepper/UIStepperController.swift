@@ -1,8 +1,8 @@
 //
 //  UIStepperController.swift
+//  Fooddie
 //
-//  Created by Nadeeshan Jayawardana on 6/21/18.
-//  Copyright © 2018 NEngineering. All rights reserved.
+//  Created by Afsal Mohammed on 19/12/2023.
 //
 
 import UIKit

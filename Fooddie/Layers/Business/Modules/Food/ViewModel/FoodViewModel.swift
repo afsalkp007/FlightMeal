@@ -12,6 +12,7 @@ final class FoodViewModel {
   let apiService: APIServiceProtocol
   
   var foodItems: [FoodItem]!
+  var capturedItems = [CapturedMeal]()
   var updateUI: (([FoodItem]) -> Void)?
   
   init(multipeer: MultiPeer,

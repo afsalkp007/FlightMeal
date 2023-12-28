@@ -34,6 +34,7 @@
 		F499366627396C94007D37A3 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366527396C94007D37A3 /* UITableView+Ext.swift */; };
 		F4993668273981CB007D37A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4993667273981CB007D37A3 /* .gitignore */; };
 		F4B9C7602B31C255007702A9 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */; };
+		F4BDB3ED2B3D46C2000FE305 /* CapturedMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB3EC2B3D46C2000FE305 /* CapturedMeal.swift */; };
 		F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */; };
 		F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65065273852BE0068A14E /* CacheableImageView.swift */; };
 		F4D6507A273852BE0068A14E /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65069273852BE0068A14E /* APIServiceProtocol.swift */; };
@@ -102,6 +103,7 @@
 		F499366527396C94007D37A3 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		F4993667273981CB007D37A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		F4BDB3EC2B3D46C2000FE305 /* CapturedMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedMeal.swift; sourceTree = "<group>"; };
 		F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Convenience.swift"; sourceTree = "<group>"; };
 		F4D65065273852BE0068A14E /* CacheableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheableImageView.swift; sourceTree = "<group>"; };
 		F4D65069273852BE0068A14E /* APIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
@@ -317,6 +319,62 @@
 			path = CacheableImageView;
 			sourceTree = "<group>";
 		};
+		F4BDB3EE2B3D4F5A000FE305 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4D65075273852BE0068A14E /* FoodViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4BDB3EF2B3D4F62000FE305 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F4D65076273852BE0068A14E /* FoodViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F4BDB3F02B3D4F6F000FE305 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8DE0C273A767E00482B75 /* FoodViewCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F4BDB3F12B3D4F77000FE305 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4BDB3EC2B3D46C2000FE305 /* CapturedMeal.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4BDB3F22B3D4F7D000FE305 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F4D65072273852BE0068A14E /* FoodDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F4BDB3F32B3D4F83000FE305 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4D65073273852BE0068A14E /* FoodDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4BDB3F42B3D4F8A000FE305 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F4E8DE0E273A771F00482B75 /* FoodDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		F4D65057273852530068A14E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,9 +501,10 @@
 		F4D65071273852BE0068A14E /* FoodDetail */ = {
 			isa = PBXGroup;
 			children = (
-				F4D65072273852BE0068A14E /* FoodDetailViewController.swift */,
-				F4D65073273852BE0068A14E /* FoodDetailViewModel.swift */,
-				F4E8DE0E273A771F00482B75 /* FoodDetailCoordinator.swift */,
+				F4BDB3F12B3D4F77000FE305 /* Model */,
+				F4BDB3F22B3D4F7D000FE305 /* Controller */,
+				F4BDB3F32B3D4F83000FE305 /* ViewModel */,
+				F4BDB3F42B3D4F8A000FE305 /* Coordinator */,
 			);
 			path = FoodDetail;
 			sourceTree = "<group>";
@@ -453,9 +512,9 @@
 		F4D65074273852BE0068A14E /* Food */ = {
 			isa = PBXGroup;
 			children = (
-				F4D65075273852BE0068A14E /* FoodViewModel.swift */,
-				F4D65076273852BE0068A14E /* FoodViewController.swift */,
-				F4E8DE0C273A767E00482B75 /* FoodViewCoordinator.swift */,
+				F4BDB3EF2B3D4F62000FE305 /* Controller */,
+				F4BDB3EE2B3D4F5A000FE305 /* ViewModel */,
+				F4BDB3F02B3D4F6F000FE305 /* Coordinator */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -634,6 +693,7 @@
 				F417F3B22739102700611687 /* Resource.swift in Sources */,
 				F4D65080273852BE0068A14E /* FoodViewModel.swift in Sources */,
 				F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */,
+				F4BDB3ED2B3D46C2000FE305 /* CapturedMeal.swift in Sources */,
 				F48F37382B3B52E2006CC28C /* MultiPeer.swift in Sources */,
 				F499366427396C60007D37A3 /* Adapter.swift in Sources */,
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,

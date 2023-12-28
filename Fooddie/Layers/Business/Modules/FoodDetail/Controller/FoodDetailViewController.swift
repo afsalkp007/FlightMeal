@@ -7,14 +7,20 @@
 
 import UIKit
 
+protocol DismissCallBackDelegate: AnyObject {
+  func getCapturedMeal(meal: CapturedMeal)
+}
+
 final class FoodDetailViewController: UIViewController, Storyboarded {
   
-  internal var viewModel: FoodDetailViewModel?
-  internal var coordinator: FoodDetailCoordinator?
+  internal var viewModel: FoodDetailViewModel!
+  internal var coordinator: FoodDetailCoordinator!
   
   @IBOutlet private weak var foodImageView: CacheableImageView!
   @IBOutlet private weak var titleLabel: UILabel!
   @IBOutlet private weak var nameTextField: UITextField!
+  
+  weak var dismissDelegate: DismissCallBackDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,10 +39,9 @@ final class FoodDetailViewController: UIViewController, Storyboarded {
   
   private func configureView() {
     guard let viewModel = viewModel else { return }
-    titleLabel.text = viewModel.name
-    guard let url = viewModel.imageUrl else { return }
+    titleLabel.text = viewModel.model.name
     foodImageView.setUpLoader()
-    foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFill)
+    foodImageView.downloadImageFrom(url: viewModel.url, imageMode: .scaleAspectFill)
     createDismissKeyboardGesture()
   }
   
@@ -51,11 +56,19 @@ final class FoodDetailViewController: UIViewController, Storyboarded {
         showAlert(title: "Oops, No name!", message: "Please Enter your name", buttonTitle: "OK")
         return
     }
-    guard let _ = nameTextField.text?.trimmingCharacters(in: .whitespaces) else { return }
+    
     nameTextField.resignFirstResponder()
     showAlert(title: "Success", message: "The order has been captured 😋😋😋", buttonTitle: "OK") { [weak self] _ in
-      self?.coordinator?.dismiss()
+      guard let self = self, let meal = self.getMealOrder() else { return }
+      self.coordinator?.dismiss()
+      self.dismissDelegate?.getCapturedMeal(meal: meal)
     }
+  }
+  
+  private func getMealOrder() -> CapturedMeal? {
+    guard let name = nameTextField.text?.trimmingCharacters(in: .whitespaces) else { return nil }
+    let passenger = Passenger(name: name)
+    return CapturedMeal(meal: viewModel.model, passenger: passenger)
   }
 }
 
