@@ -356,7 +356,6 @@
 		F4BDB3F22B3D4F7D000FE305 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F4D65072273852BE0068A14E /* FoodDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,6 +430,14 @@
 			isa = PBXGroup;
 			children = (
 				F4BDB3FE2B3D65D5000FE305 /* CapturedMealViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F4BDB4102B3D7917000FE305 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F4D65072273852BE0068A14E /* FoodDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -558,6 +565,7 @@
 				F4BDB3F12B3D4F77000FE305 /* Model */,
 				F4BDB3F22B3D4F7D000FE305 /* View */,
 				F4BDB3F32B3D4F83000FE305 /* ViewModel */,
+				F4BDB4102B3D7917000FE305 /* Controller */,
 			);
 			path = FoodDetail;
 			sourceTree = "<group>";

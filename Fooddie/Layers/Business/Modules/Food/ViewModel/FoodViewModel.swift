@@ -28,6 +28,7 @@ final class FoodViewModel {
     self.apiService = apiService
     
     fetchItems()
+    setupConnectivity()
   }
   
   private func fetchItems() {

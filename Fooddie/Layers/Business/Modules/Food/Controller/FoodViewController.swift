@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class FoodViewController: UIViewController, Storyboarded {
+final class FoodViewController: UIViewController {
   
-  internal var coordinator: CoordinatorProtocol!
+  internal var coordinator: Coordinatable!
   internal var viewModel: FoodViewModel!
   
   @IBOutlet private weak var collectionView: UICollectionView!
@@ -19,13 +19,11 @@ final class FoodViewController: UIViewController, Storyboarded {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupCollectionView()
+    setupUI()
     
     viewModel.updateUI = { [weak self] models in
       self?.setupData(with: models)
     }
-    
-    viewModel?.setupConnectivity()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -34,16 +32,14 @@ final class FoodViewController: UIViewController, Storyboarded {
   }
   
   @IBAction func showCapturedMeals(_ sender: UIButton) {
-    
+    coordinator.start(viewModel.capturedItems)
   }
   
-  private func setupCollectionView() {
+  private func setupUI() {
     setUpLoader()
     collectionView.register(cellType: FoodCollectionViewCell.self)
     collectionView.delegate = adapter
     collectionView.dataSource = adapter
-    collectionView.layer.cornerRadius = 0
-    collectionView.backgroundColor = UIColor.clear
   }
 
   private func setupData(with items: [FoodItem]) {
@@ -54,22 +50,18 @@ final class FoodViewController: UIViewController, Storyboarded {
   }
   
   private func configureCollectionView() {
-    collectionView.reloadData()
-    
-    adapter.configure = { [weak self] cellVM, cell, indexPath in
-      self?.configure(cell, for: cellVM, at: indexPath)
+    adapter.configure = { model, cell, indexPath in
+      cell.model = model
+      cell.stepper.subtractionButton.tag = indexPath.item
+      cell.stepper.additionButton.tag = indexPath.item
+      cell.stepper.delegate = self
     }
     
     adapter.select = { [weak self] viewModel in
       self?.coordinator.start(viewModel, from: self)
     }
-  }
-  
-  private func configure(_ cell: FoodCollectionViewCell, for model: FoodItem, at indexPath: IndexPath) {
-    cell.model = model
-    cell.stepper.subtractionButton.tag = indexPath.item
-    cell.stepper.additionButton.tag = indexPath.item
-    cell.stepper.delegate = self
+    
+    collectionView.reloadData()
   }
   
   private func setUpLoader() {
@@ -81,6 +73,8 @@ final class FoodViewController: UIViewController, Storyboarded {
     loaderView.startAnimating()
   }
 }
+
+extension FoodViewController: Storyboarded {}
 
 extension FoodViewController: DismissCallBackDelegate {
   func getCapturedMeal(meal: CapturedMeal) {

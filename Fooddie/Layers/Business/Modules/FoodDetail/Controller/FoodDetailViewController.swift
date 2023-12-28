@@ -11,10 +11,10 @@ protocol DismissCallBackDelegate: AnyObject {
   func getCapturedMeal(meal: CapturedMeal)
 }
 
-final class FoodDetailViewController: UIViewController, Storyboarded {
+final class FoodDetailViewController: UIViewController {
   
   internal var viewModel: FoodDetailViewModel!
-  internal var coordinator: CoordinatorProtocol!
+  internal var coordinator: Coordinatable!
   
   @IBOutlet private weak var foodImageView: CacheableImageView!
   @IBOutlet private weak var titleLabel: UILabel!
@@ -69,6 +69,8 @@ final class FoodDetailViewController: UIViewController, Storyboarded {
     return CapturedMeal(meal: viewModel.model, passenger: passenger)
   }
 }
+
+extension FoodDetailViewController: Storyboarded {}
 
 extension FoodDetailViewController {
   func getKeyboardHeight(_ notification : Notification) -> CGFloat {

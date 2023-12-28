@@ -11,7 +11,7 @@ import UIKit
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
   internal var window: UIWindow?
-  private var coordinator: CoordinatorProtocol?
+  private var coordinator: Coordinatable?
 
   func application(
     _ application: UIApplication,

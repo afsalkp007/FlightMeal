@@ -13,7 +13,7 @@ class TableAdapter<T, Cell: UITableViewCell>:
   UITableViewDataSource {
   
   var items: [T] = []
-  var configure: ((T, Cell, IndexPath) -> Void)?
+  var configure: ((T, Cell) -> Void)?
   var select: ((T) -> Void)?
   var height: CGFloat!
   
@@ -31,7 +31,7 @@ class TableAdapter<T, Cell: UITableViewCell>:
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: Cell = tableView.dequeue(indexPath)
     let item = items[indexPath.row]
-    configure?(item, cell, indexPath)
+    configure?(item, cell)
     return cell
   }
   

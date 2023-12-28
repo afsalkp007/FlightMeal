@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class Coordinator: CoordinatorProtocol {
+final class Coordinator: Coordinatable {
   var navigationController: UINavigationController
   
   init(navigationController: UINavigationController) {
@@ -31,8 +31,10 @@ final class Coordinator: CoordinatorProtocol {
     navigationController.present(vc, animated: true)
   }
   
-  func start(_ model: CapturedMeal) {
-    
+  func start(_ items: [CapturedMeal]) {
+    let vc = CapturedMealViewController.instantiate()
+    vc.viewModel = CapturedMealViewModel(items: items)
+    navigationController.pushViewController(vc, animated: true)
   }
   
   func dismiss() {
