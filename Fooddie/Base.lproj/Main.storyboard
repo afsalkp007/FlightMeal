@@ -190,6 +190,36 @@
             </objects>
             <point key="canvasLocation" x="1721.3740458015266" y="71.83098591549296"/>
         </scene>
+        <!--Captured Meal View Controller-->
+        <scene sceneID="a5x-7L-Jxp">
+            <objects>
+                <viewController id="QPw-1f-g3u" customClass="CapturedMealViewController" customModule="Fooddie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jCd-M6-5Ei">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q6E-9f-Skt">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Noy-Jo-9fk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Noy-Jo-9fk" firstAttribute="bottom" secondItem="q6E-9f-Skt" secondAttribute="bottom" id="MAa-EU-Cxw"/>
+                            <constraint firstItem="Noy-Jo-9fk" firstAttribute="trailing" secondItem="q6E-9f-Skt" secondAttribute="trailing" id="WY6-Lk-bo7"/>
+                            <constraint firstItem="q6E-9f-Skt" firstAttribute="leading" secondItem="Noy-Jo-9fk" secondAttribute="leading" id="wMB-Wa-ejr"/>
+                            <constraint firstItem="q6E-9f-Skt" firstAttribute="top" secondItem="Noy-Jo-9fk" secondAttribute="top" id="yGG-nO-kYp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="q6E-9f-Skt" id="nGr-gV-3s4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9w-la-88S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2459" y="72"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>

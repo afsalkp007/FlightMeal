@@ -31,6 +31,10 @@ final class Coordinator: CoordinatorProtocol {
     navigationController.present(vc, animated: true)
   }
   
+  func start(_ model: CapturedMeal) {
+    
+  }
+  
   func dismiss() {
     self.navigationController.dismiss(animated: true)
   }
