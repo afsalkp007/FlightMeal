@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Adapter<T, Cell: UICollectionViewCell>:
+class CollectionAdapter<T, Cell: UICollectionViewCell>:
   NSObject,
   UICollectionViewDelegate,
   UICollectionViewDataSource,
@@ -16,7 +16,7 @@ class Adapter<T, Cell: UICollectionViewCell>:
   var items: [T] = []
   var configure: ((T, Cell, IndexPath) -> Void)?
   var select: ((T) -> Void)?
-  var size: CGSize?
+  var size: CGSize!
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -53,9 +53,6 @@ class Adapter<T, Cell: UICollectionViewCell>:
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
-    let screenSize = UIScreen.main.bounds
-    let sWidth = screenSize.width * 0.4
-    let width = sWidth > 280 ? sWidth : 280
-    return CGSize(width: screenSize.width / 2 - 24, height: width)
+    return size
   }
 }

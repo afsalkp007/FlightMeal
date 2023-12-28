@@ -5,7 +5,7 @@
 //  Created by Afsal Mohammed on 19/12/2023.
 //
 
-import Foundation
+import UIKit
 
 final class FoodViewModel {
   let multipeerService: MultiPeer
@@ -14,6 +14,13 @@ final class FoodViewModel {
   var foodItems: [FoodItem]!
   var capturedItems = [CapturedMeal]()
   var updateUI: (([FoodItem]) -> Void)?
+  
+  var cellSize: CGSize {
+    let screenSize = UIScreen.main.bounds
+    let sWidth = screenSize.width * 0.4
+    let width = sWidth > 280 ? sWidth : 280
+    return CGSize(width: screenSize.width / 2 - 24, height: width)
+  }
   
   init(multipeer: MultiPeer,
        apiService: APIServiceProtocol = APIService()) {

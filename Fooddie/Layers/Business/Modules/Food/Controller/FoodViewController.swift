@@ -15,7 +15,7 @@ final class FoodViewController: UIViewController, Storyboarded {
   @IBOutlet private weak var collectionView: UICollectionView!
   
   private var loaderView = UIActivityIndicatorView()
-  private let adapter = Adapter<FoodItem, FoodCollectionViewCell>()
+  private let adapter = CollectionAdapter<FoodItem, FoodCollectionViewCell>()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -47,6 +47,7 @@ final class FoodViewController: UIViewController, Storyboarded {
   }
 
   private func setupData(with items: [FoodItem]) {
+    adapter.size = viewModel.cellSize
     adapter.items = items
     configureCollectionView()
     loaderView.stopAnimating()

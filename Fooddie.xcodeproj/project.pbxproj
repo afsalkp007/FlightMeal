@@ -30,8 +30,8 @@
 		F48F37392B3B52E2006CC28C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37372B3B52E2006CC28C /* Peer.swift */; };
 		F48F373A2B3B52E2006CC28C /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */; };
 		F48F373C2B3B771B006CC28C /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F373B2B3B771B006CC28C /* FoodResponse.swift */; };
-		F499366427396C60007D37A3 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366327396C60007D37A3 /* Adapter.swift */; };
-		F499366627396C94007D37A3 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366527396C94007D37A3 /* UITableView+Ext.swift */; };
+		F499366427396C60007D37A3 /* CollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366327396C60007D37A3 /* CollectionAdapter.swift */; };
+		F499366627396C94007D37A3 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366527396C94007D37A3 /* UICollectionView+Ext.swift */; };
 		F4993668273981CB007D37A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4993667273981CB007D37A3 /* .gitignore */; };
 		F4B9C7602B31C255007702A9 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */; };
 		F4BDB3ED2B3D46C2000FE305 /* CapturedMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB3EC2B3D46C2000FE305 /* CapturedMeal.swift */; };
@@ -40,7 +40,8 @@
 		F4BDB4012B3D65F8000FE305 /* CapturedMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB4002B3D65F8000FE305 /* CapturedMealViewModel.swift */; };
 		F4BDB4082B3D66F4000FE305 /* CapturedMealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB4062B3D66F4000FE305 /* CapturedMealTableViewCell.swift */; };
 		F4BDB4092B3D66F4000FE305 /* CapturedMealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BDB4072B3D66F4000FE305 /* CapturedMealTableViewCell.xib */; };
-		F4BDB40B2B3D6878000FE305 /* AdaptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB40A2B3D6878000FE305 /* AdaptorProtocol.swift */; };
+		F4BDB40D2B3D69DC000FE305 /* TableAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB40C2B3D69DC000FE305 /* TableAdaptor.swift */; };
+		F4BDB40F2B3D6AD0000FE305 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB40E2B3D6AD0000FE305 /* UITableView+Ext.swift */; };
 		F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */; };
 		F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65065273852BE0068A14E /* CacheableImageView.swift */; };
 		F4D6507A273852BE0068A14E /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65069273852BE0068A14E /* APIServiceProtocol.swift */; };
@@ -103,8 +104,8 @@
 		F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
 		F48F37372B3B52E2006CC28C /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		F48F373B2B3B771B006CC28C /* FoodResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
-		F499366327396C60007D37A3 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
-		F499366527396C94007D37A3 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		F499366327396C60007D37A3 /* CollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAdapter.swift; sourceTree = "<group>"; };
+		F499366527396C94007D37A3 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		F4993667273981CB007D37A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		F4BDB3EC2B3D46C2000FE305 /* CapturedMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedMeal.swift; sourceTree = "<group>"; };
@@ -113,7 +114,8 @@
 		F4BDB4002B3D65F8000FE305 /* CapturedMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedMealViewModel.swift; sourceTree = "<group>"; };
 		F4BDB4062B3D66F4000FE305 /* CapturedMealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedMealTableViewCell.swift; sourceTree = "<group>"; };
 		F4BDB4072B3D66F4000FE305 /* CapturedMealTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CapturedMealTableViewCell.xib; sourceTree = "<group>"; };
-		F4BDB40A2B3D6878000FE305 /* AdaptorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptorProtocol.swift; sourceTree = "<group>"; };
+		F4BDB40C2B3D69DC000FE305 /* TableAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAdaptor.swift; sourceTree = "<group>"; };
+		F4BDB40E2B3D6AD0000FE305 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Convenience.swift"; sourceTree = "<group>"; };
 		F4D65065273852BE0068A14E /* CacheableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheableImageView.swift; sourceTree = "<group>"; };
 		F4D65069273852BE0068A14E /* APIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
@@ -469,7 +471,8 @@
 			children = (
 				F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */,
 				F417F3B7273912A900611687 /* Constants+Urls.swift */,
-				F499366527396C94007D37A3 /* UITableView+Ext.swift */,
+				F499366527396C94007D37A3 /* UICollectionView+Ext.swift */,
+				F4BDB40E2B3D6AD0000FE305 /* UITableView+Ext.swift */,
 				F48A1492274A570100EFDCA7 /* UIImage+Ext.swift */,
 				F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */,
 			);
@@ -582,8 +585,8 @@
 		F4E8DE10273A7C2B00482B75 /* Adapater */ = {
 			isa = PBXGroup;
 			children = (
-				F499366327396C60007D37A3 /* Adapter.swift */,
-				F4BDB40A2B3D6878000FE305 /* AdaptorProtocol.swift */,
+				F4BDB40C2B3D69DC000FE305 /* TableAdaptor.swift */,
+				F499366327396C60007D37A3 /* CollectionAdapter.swift */,
 			);
 			path = Adapater;
 			sourceTree = "<group>";
@@ -723,7 +726,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F499366627396C94007D37A3 /* UITableView+Ext.swift in Sources */,
+				F4BDB40D2B3D69DC000FE305 /* TableAdaptor.swift in Sources */,
+				F499366627396C94007D37A3 /* UICollectionView+Ext.swift in Sources */,
 				F4D6507E273852BE0068A14E /* FoodDetailViewController.swift in Sources */,
 				F4BDB4082B3D66F4000FE305 /* CapturedMealTableViewCell.swift in Sources */,
 				F4B9C7602B31C255007702A9 /* UIViewController+Ext.swift in Sources */,
@@ -738,11 +742,11 @@
 				F4E8DE08273A716600482B75 /* CoordinatorProtocol.swift in Sources */,
 				F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */,
 				F417F3B8273912A900611687 /* Constants+Urls.swift in Sources */,
-				F4BDB40B2B3D6878000FE305 /* AdaptorProtocol.swift in Sources */,
 				F411EA252B3CB5A500B00F2F /* Fooddie.xcdatamodeld in Sources */,
 				F45A62F0273848BD00C9E3A2 /* AppDelegate.swift in Sources */,
 				F417F3B42739106B00611687 /* NetworkService.swift in Sources */,
 				F417F3B62739128A00611687 /* Constants.swift in Sources */,
+				F4BDB40F2B3D6AD0000FE305 /* UITableView+Ext.swift in Sources */,
 				F4D65081273852BE0068A14E /* FoodViewController.swift in Sources */,
 				F435D2492B3A2E33009AE040 /* UIStepperController.swift in Sources */,
 				F417F3B22739102700611687 /* Resource.swift in Sources */,
@@ -752,7 +756,7 @@
 				F48F37382B3B52E2006CC28C /* MultiPeer.swift in Sources */,
 				F4BDB4012B3D65F8000FE305 /* CapturedMealViewModel.swift in Sources */,
 				F4BDB3F82B3D634B000FE305 /* Coordinator.swift in Sources */,
-				F499366427396C60007D37A3 /* Adapter.swift in Sources */,
+				F499366427396C60007D37A3 /* CollectionAdapter.swift in Sources */,
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,
 				F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */,
 				F48F373C2B3B771B006CC28C /* FoodResponse.swift in Sources */,

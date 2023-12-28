@@ -2,18 +2,18 @@
 //  UITableView+Ext.swift
 //  Fooddie
 //
-//  Created by Afsal Mohammed on 19/12/2023
+//  Created by Afsal on 28/12/2023.
 //
 
 import UIKit
 
-extension UICollectionView {
-  func dequeue<Cell: UICollectionViewCell>(_ indexPath: IndexPath) -> Cell {
-    return dequeueReusableCell(withReuseIdentifier: String(describing: Cell.self), for: indexPath) as! Cell
+extension UITableView {
+  func dequeue<Cell: UITableViewCell>(_ indexPath: IndexPath) -> Cell {
+    return dequeueReusableCell(withIdentifier: String(describing: Cell.self), for: indexPath) as! Cell
   }
   
-  func register(cellType: UICollectionViewCell.Type) {
+  func register(cellType: UITableViewCell.Type) {
     let nib = UINib(nibName: String(describing: cellType), bundle: nil)
-    register(nib, forCellWithReuseIdentifier: String(describing: cellType))
+    register(nib, forCellReuseIdentifier: String(describing: cellType))
   }
 }
