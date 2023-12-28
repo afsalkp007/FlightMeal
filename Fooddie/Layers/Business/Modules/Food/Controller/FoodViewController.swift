@@ -26,11 +26,6 @@ final class FoodViewController: UIViewController {
     }
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
-    viewModel?.viewWillDisappear()
-    super.viewWillDisappear(animated)
-  }
-  
   @IBAction func showCapturedMeals(_ sender: UIButton) {
     coordinator.start(CapturedMeal.items)
   }
@@ -79,23 +74,29 @@ extension FoodViewController: Storyboarded {}
 extension FoodViewController: DismissCallBackDelegate {
   func getCapturedMeal(meal: CapturedMeal) {
     CapturedMeal.items.append(meal)
+    viewModel.send(items: CapturedMeal.items, type: .mealCaptured)
   }
 }
 
 extension FoodViewController: UIStepperControllerDelegate {
-  func stepperDidAddValues(_ value: CGFloat, at index: Int) {
-    viewModel.send(value, at: index)
+  func stepperDidAddValues(_ stepper: Stepper) {
+    viewModel.send(stepper: stepper, type: .rawFood)
   }
 
-  func stepperDidSubtractValues(_ value: CGFloat, at index: Int) {
-    viewModel.send(value, at: index)
+  func stepperDidSubtractValues(_ stepper: Stepper) {
+    viewModel.send(stepper: stepper, type: .rawFood)
   }
 }
 
 extension FoodViewController: MultiPeerDelegate {
-  func multiPeer(didReceiveData items: [FoodItem]) {
-    viewModel.foodItems = items
-    setupData(with: items)
+  func multiPeer(didReceiveData data: Data) {
+    
+    if let foodItems = data.toFoodItem() {
+      viewModel.foodItems = foodItems
+      setupData(with: foodItems)
+    } else if let capturedItems = data.toCapturedMeal() {
+      CapturedMeal.items = capturedItems
+    }
   }
   
   func multiPeer(connectedDevicesChanged devices: [String]) {

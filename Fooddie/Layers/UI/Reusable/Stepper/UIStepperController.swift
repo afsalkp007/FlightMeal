@@ -7,9 +7,14 @@
 
 import UIKit
 
+struct Stepper {
+  let count: CGFloat
+  let index: Int
+}
+
 protocol UIStepperControllerDelegate {
-  func stepperDidAddValues(_ value: CGFloat, at index: Int)
-  func stepperDidSubtractValues(_ value: CGFloat, at index: Int)
+  func stepperDidAddValues(_ stepper: Stepper)
+  func stepperDidSubtractValues(_ stepper: Stepper)
 }
 
 class UIStepperController: UIView {
@@ -267,14 +272,16 @@ class UIStepperController: UIView {
     _count = _count >= 0 ? _count : (isMinus ? _count : 0)
     self.countLable.text = isFloat ? String(format: "%.2f", _count) : String(format: "%.0f", _count)
 
-    delegate?.stepperDidSubtractValues(count, at: sender.tag)
+    let stepper = Stepper(count: count, index: sender.tag)
+    delegate?.stepperDidSubtractValues(stepper)
   }
   
   @objc func additionButtonTouchUpInside(sender: UIButton) {
     _count = _count + incrementer
     self.countLable.text = isFloat ? String(format: "%.2f", _count) : String(format: "%.0f", _count)
     
-    delegate?.stepperDidAddValues(count, at: sender.tag)
+    let stepper = Stepper(count: count, index: sender.tag)
+    delegate?.stepperDidAddValues(stepper)
   }
 }
 

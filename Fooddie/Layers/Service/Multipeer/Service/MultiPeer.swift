@@ -8,6 +8,11 @@
 import Foundation
 import MultipeerConnectivity
 
+enum DataType {
+  case rawFood
+  case mealCaptured
+}
+
 /// Main Class for MultiPeer
 internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   
@@ -118,7 +123,7 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   }
   
   /// Stops all invite/accept services
-  private func stopSearching() {
+  internal func stopSearching() {
     stopAccepting()
     stopInviting()
   }
@@ -131,7 +136,7 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   }
   
   /// Stops all invite/accept services, disconnects from the current session, and stops all searching activity
-  internal func end() {
+  private func end() {
     stopSearching()
     disconnect()
   }
@@ -145,8 +150,8 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   /// - Parameters:
   ///     - data: Data (Data) to send to all connected peers.
   /// After sending the data, you can use the extension for Data, to convert it back into data.
-  public func send(_ items: [FoodItem]) {
-    if isConnected, let data = items.data  {
+  public func send(_ data: Data) {
+    if isConnected {
       try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
     }
   }
@@ -233,10 +238,8 @@ extension MultiPeer: MCSessionDelegate {
   internal func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
     printDebug("Received data: \(data.count) bytes")
     
-    guard let stepper = data.toObject() else { return }
-    
     OperationQueue.main.addOperation { [unowned self] in
-      self.delegate?.multiPeer(didReceiveData: stepper)
+      self.delegate?.multiPeer(didReceiveData: data)
     }
   }
   
@@ -253,7 +256,11 @@ extension MultiPeer: MCSessionDelegate {
 
 // MARK: - Data extension for conversion
 extension Data {
-  public func toObject() -> [FoodItem]? {
+  public func toFoodItem() -> [FoodItem]? {
     return try? JSONDecoder().decode([FoodItem].self, from: self)
+  }
+  
+  public func toCapturedMeal() -> [CapturedMeal]? {
+    return try? JSONDecoder().decode([CapturedMeal].self, from: self)
   }
 }

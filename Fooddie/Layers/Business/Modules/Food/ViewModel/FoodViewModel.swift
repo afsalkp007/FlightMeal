@@ -43,25 +43,32 @@ final class FoodViewModel {
     }
   }
   
-  internal func viewWillDisappear() {
-    multipeerService.end()
-  }
-  
   internal func setupConnectivity() {
     multipeerService.initialize(serviceType: "fooddie-mpc")
     multipeerService.autoConnect()
   }
   
-  internal func send(_ value: CGFloat, at index: Int) {
-    foodItems = getUpdatedFoodItems(for: value, at: index)
-    multipeerService.send(foodItems)
+  internal func send(
+    stepper: Stepper = Stepper(count: 0, index: 0),
+    items: [CapturedMeal] = [] ,
+    type: DataType) {
+    
+    switch type {
+    case .mealCaptured:
+      guard let data = items.data else { return }
+      multipeerService.send(data)
+    case .rawFood:
+      foodItems = getUpdatedFoodItems(stepper)
+      guard let data = foodItems.data else { return }
+      multipeerService.send(data)
+    }
   }
   
-  private func getUpdatedFoodItems(for value: CGFloat, at place: Int) -> [FoodItem] {
+  private func getUpdatedFoodItems(_ stepper: Stepper) -> [FoodItem] {
     return foodItems.enumerated().map { index, item in
       var newItem = item
-      if place == index {
-        newItem.quantity = value
+      if stepper.index == index {
+        newItem.quantity = stepper.count
       }
       return newItem
     }

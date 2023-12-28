@@ -8,11 +8,11 @@
 import Foundation
 
 internal protocol MultiPeerDelegate: AnyObject {
-  func multiPeer(didReceiveData items: [FoodItem])
+  func multiPeer(didReceiveData data: Data)
   func multiPeer(connectedDevicesChanged devices: [String])
 }
 
 extension MultiPeerDelegate {
-  func multiPeer(didReceiveData items: [FoodItem]) {}
+  func multiPeer(didReceiveData data: Data) {}
   func multiPeer(connectedDevicesChanged devices: [String]) {}
 }
