@@ -14,7 +14,7 @@ protocol DismissCallBackDelegate: AnyObject {
 final class FoodDetailViewController: UIViewController, Storyboarded {
   
   internal var viewModel: FoodDetailViewModel!
-  internal var coordinator: FoodDetailCoordinator!
+  internal var coordinator: CoordinatorProtocol!
   
   @IBOutlet private weak var foodImageView: CacheableImageView!
   @IBOutlet private weak var titleLabel: UILabel!
@@ -57,15 +57,13 @@ final class FoodDetailViewController: UIViewController, Storyboarded {
         return
     }
     
-    nameTextField.resignFirstResponder()
-    showAlert(title: "Success", message: "The order has been captured 😋😋😋", buttonTitle: "OK") { [weak self] _ in
-      guard let self = self, let meal = self.getMealOrder() else { return }
-      self.coordinator?.dismiss()
-      self.dismissDelegate?.getCapturedMeal(meal: meal)
-    }
+    guard let meal = getMealOrder() else { return }
+    self.coordinator?.dismiss()
+    self.dismissDelegate?.getCapturedMeal(meal: meal)
   }
   
   private func getMealOrder() -> CapturedMeal? {
+    nameTextField.resignFirstResponder()
     guard let name = nameTextField.text?.trimmingCharacters(in: .whitespaces) else { return nil }
     let passenger = Passenger(name: name)
     return CapturedMeal(meal: viewModel.model, passenger: passenger)

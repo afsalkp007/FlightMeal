@@ -11,7 +11,7 @@ import UIKit
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
   internal var window: UIWindow?
-  private var coordinator: FoodViewCoordinator?
+  private var coordinator: CoordinatorProtocol?
 
   func application(
     _ application: UIApplication,
@@ -23,7 +23,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   
   private func setupRootView() {
     let navController = UINavigationController()
-    coordinator = FoodViewCoordinator(navigationController: navController)
+    coordinator = Coordinator(navigationController: navController)
     coordinator?.start()
     setupWindow(for: navController)
   }

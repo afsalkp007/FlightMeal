@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bY1-zb-X0y">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="157.33333333333331" width="393" height="660.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="PbH-YV-fdQ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -28,14 +28,50 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QBA-9z-3oY">
+                                <rect key="frame" x="0.0" y="58.999999999999993" width="393" height="98.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me5-Gg-GQc">
+                                        <rect key="frame" x="16" y="24.333333333333329" width="93.666666666666671" height="42"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4n-Wc-hJG">
+                                        <rect key="frame" x="283.33333333333331" y="8" width="93.666666666666686" height="74.333333333333329"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI3-Y5-x4f">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="74.333333333333329"/>
+                                                <color key="tintColor" red="0.10000000000000001" green="0.54000000000000004" blue="0.83999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
+                                                <connections>
+                                                    <action selector="showCapturedMeals:" destination="gWf-MI-puK" eventType="touchUpInside" id="5L4-sR-E12"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="NI3-Y5-x4f" firstAttribute="leading" secondItem="F4n-Wc-hJG" secondAttribute="leading" id="8Wo-Lj-ucI"/>
+                                            <constraint firstAttribute="trailing" secondItem="NI3-Y5-x4f" secondAttribute="trailing" id="98l-iL-iaT"/>
+                                            <constraint firstAttribute="width" constant="93.666666666666686" id="SuP-dA-8MD"/>
+                                            <constraint firstAttribute="bottom" secondItem="NI3-Y5-x4f" secondAttribute="bottom" id="by8-z9-XbV"/>
+                                            <constraint firstItem="NI3-Y5-x4f" firstAttribute="top" secondItem="F4n-Wc-hJG" secondAttribute="top" id="uEX-AX-u5M"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="8" left="16" bottom="16" right="16"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gN8-OR-xy6"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gN8-OR-xy6" firstAttribute="bottom" secondItem="bY1-zb-X0y" secondAttribute="bottom" id="17i-ot-XHd"/>
+                            <constraint firstItem="gN8-OR-xy6" firstAttribute="trailing" secondItem="QBA-9z-3oY" secondAttribute="trailing" id="9KH-7M-POo"/>
+                            <constraint firstItem="bY1-zb-X0y" firstAttribute="top" secondItem="QBA-9z-3oY" secondAttribute="bottom" id="KO0-FQ-WwU"/>
                             <constraint firstItem="gN8-OR-xy6" firstAttribute="trailing" secondItem="bY1-zb-X0y" secondAttribute="trailing" id="SVI-F1-RYx"/>
+                            <constraint firstItem="QBA-9z-3oY" firstAttribute="leading" secondItem="gN8-OR-xy6" secondAttribute="leading" id="Zs8-V0-v4j"/>
                             <constraint firstItem="bY1-zb-X0y" firstAttribute="leading" secondItem="gN8-OR-xy6" secondAttribute="leading" id="bdL-ru-2rh"/>
-                            <constraint firstItem="bY1-zb-X0y" firstAttribute="top" secondItem="gN8-OR-xy6" secondAttribute="top" id="fGi-yy-O5I"/>
+                            <constraint firstItem="QBA-9z-3oY" firstAttribute="top" secondItem="gN8-OR-xy6" secondAttribute="top" id="xjI-pm-S3s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c0z-ge-hrd"/>
@@ -45,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijg-zK-KRg" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.05797101449286" y="72.991071428571431"/>
+            <point key="canvasLocation" x="983.96946564885491" y="72.535211267605632"/>
         </scene>
         <!--Food Detail View Controller-->
         <scene sceneID="cvY-o6-45d">
@@ -98,7 +134,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="rGp-IP-q3b"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgo-1v-ULb">
                                                 <rect key="frame" x="0.0" y="66" width="361" height="50"/>
@@ -156,6 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

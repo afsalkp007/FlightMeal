@@ -9,7 +9,7 @@ import UIKit
 
 final class FoodViewController: UIViewController, Storyboarded {
   
-  internal var coordinator: FoodDetailCoordinator!
+  internal var coordinator: CoordinatorProtocol!
   internal var viewModel: FoodViewModel!
   
   @IBOutlet private weak var collectionView: UICollectionView!
@@ -32,7 +32,11 @@ final class FoodViewController: UIViewController, Storyboarded {
     viewModel?.viewWillDisappear()
     super.viewWillDisappear(animated)
   }
-
+  
+  @IBAction func showCapturedMeals(_ sender: UIButton) {
+    
+  }
+  
   private func setupCollectionView() {
     setUpLoader()
     collectionView.register(cellType: FoodCollectionViewCell.self)
@@ -43,7 +47,6 @@ final class FoodViewController: UIViewController, Storyboarded {
   }
 
   private func setupData(with items: [FoodItem]) {
-    title = "Menu"
     adapter.items = items
     configureCollectionView()
     loaderView.stopAnimating()
