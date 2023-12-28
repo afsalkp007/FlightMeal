@@ -325,12 +325,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F4BDB3EF2B3D4F62000FE305 /* Controller */ = {
+		F4BDB3EF2B3D4F62000FE305 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F4D65076273852BE0068A14E /* FoodViewController.swift */,
 			);
-			path = Controller;
+			path = View;
 			sourceTree = "<group>";
 		};
 		F4BDB3F12B3D4F77000FE305 /* Model */ = {
@@ -341,12 +341,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F4BDB3F22B3D4F7D000FE305 /* Controller */ = {
+		F4BDB3F22B3D4F7D000FE305 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F4D65072273852BE0068A14E /* FoodDetailViewController.swift */,
 			);
-			path = Controller;
+			path = View;
 			sourceTree = "<group>";
 		};
 		F4BDB3F32B3D4F83000FE305 /* ViewModel */ = {
@@ -363,6 +363,13 @@
 				F4E8DE0A273A718800482B75 /* Storyboarded.swift */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F4BDB3F92B3D6516000FE305 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F4D65057273852530068A14E /* Configuration */ = {
@@ -493,7 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				F4BDB3F12B3D4F77000FE305 /* Model */,
-				F4BDB3F22B3D4F7D000FE305 /* Controller */,
+				F4BDB3F22B3D4F7D000FE305 /* View */,
 				F4BDB3F32B3D4F83000FE305 /* ViewModel */,
 			);
 			path = FoodDetail;
@@ -502,7 +509,8 @@
 		F4D65074273852BE0068A14E /* Food */ = {
 			isa = PBXGroup;
 			children = (
-				F4BDB3EF2B3D4F62000FE305 /* Controller */,
+				F4BDB3F92B3D6516000FE305 /* Model */,
+				F4BDB3EF2B3D4F62000FE305 /* View */,
 				F4BDB3EE2B3D4F5A000FE305 /* ViewModel */,
 			);
 			path = Food;
