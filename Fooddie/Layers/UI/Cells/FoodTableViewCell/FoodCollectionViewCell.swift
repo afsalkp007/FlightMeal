@@ -13,12 +13,12 @@ class FoodCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var foodImageView: CacheableImageView!
   @IBOutlet var stepper: UIStepperController!
   
-  internal var viewModel: FoodCellViewModel? {
+  internal var model: FoodItem? {
     didSet {
-      guard let viewModel = viewModel else { return }
-      titleLabel.text = viewModel.name
-      stepper.count = viewModel.quantity
-      guard let url = viewModel.imageUrl else { return }
+      guard let model = model else { return }
+      titleLabel.text = model.name
+      stepper.count = model.quantity
+      guard let imageUrl = model.imageUrl, let url = URL(string: imageUrl) else { return }
       foodImageView.setUpLoader()
       foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFill)
     }

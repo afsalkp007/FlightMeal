@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F411EA252B3CB5A500B00F2F /* Fooddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F411EA232B3CB5A500B00F2F /* Fooddie.xcdatamodeld */; };
 		F417F3A82739082C00611687 /* FoodDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3A72739082C00611687 /* FoodDataTest.swift */; };
 		F417F3B02739101100611687 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3AF2739101100611687 /* Client.swift */; };
 		F417F3B22739102700611687 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3B12739102700611687 /* Resource.swift */; };
@@ -29,13 +30,11 @@
 		F48F37392B3B52E2006CC28C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37372B3B52E2006CC28C /* Peer.swift */; };
 		F48F373A2B3B52E2006CC28C /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */; };
 		F48F373C2B3B771B006CC28C /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F373B2B3B771B006CC28C /* FoodResponse.swift */; };
-		F48F373F2B3C0EBC006CC28C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F48F373D2B3C0EBC006CC28C /* Model.xcdatamodeld */; };
 		F499366427396C60007D37A3 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366327396C60007D37A3 /* Adapter.swift */; };
 		F499366627396C94007D37A3 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366527396C94007D37A3 /* UITableView+Ext.swift */; };
 		F4993668273981CB007D37A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4993667273981CB007D37A3 /* .gitignore */; };
 		F4B9C7602B31C255007702A9 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */; };
 		F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */; };
-		F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65063273852BE0068A14E /* FoodCellViewModel.swift */; };
 		F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65065273852BE0068A14E /* CacheableImageView.swift */; };
 		F4D6507A273852BE0068A14E /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65069273852BE0068A14E /* APIServiceProtocol.swift */; };
 		F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6506C273852BE0068A14E /* FoodItem.swift */; };
@@ -69,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F411EA242B3CB5A500B00F2F /* Fooddie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fooddie.xcdatamodel; sourceTree = "<group>"; };
 		F417F3A72739082C00611687 /* FoodDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataTest.swift; sourceTree = "<group>"; };
 		F417F3AF2739101100611687 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		F417F3B12739102700611687 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -98,13 +98,11 @@
 		F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
 		F48F37372B3B52E2006CC28C /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		F48F373B2B3B771B006CC28C /* FoodResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
-		F48F373E2B3C0EBC006CC28C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		F499366327396C60007D37A3 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		F499366527396C94007D37A3 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		F4993667273981CB007D37A3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F4B9C75F2B31C255007702A9 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Convenience.swift"; sourceTree = "<group>"; };
-		F4D65063273852BE0068A14E /* FoodCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCellViewModel.swift; sourceTree = "<group>"; };
 		F4D65065273852BE0068A14E /* CacheableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheableImageView.swift; sourceTree = "<group>"; };
 		F4D65069273852BE0068A14E /* APIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		F4D6506C273852BE0068A14E /* FoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
@@ -145,6 +143,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F411EA162B3C99D000B00F2F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		F417F3BB27392D2000611687 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +285,7 @@
 		F4B8BB4E273A578700C7E933 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				F411EA162B3C99D000B00F2F /* CoreData */,
 				F48F372E2B3B529B006CC28C /* Multipeer */,
 				F48484BC2B35FAAA00B0C96E /* API */,
 			);
@@ -297,7 +303,6 @@
 		F4B8BB50273A588E00C7E933 /* FoodTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				F4D65063273852BE0068A14E /* FoodCellViewModel.swift */,
 				F435D2372B3A00A5009AE040 /* FoodCollectionViewCell.swift */,
 				F435D2382B3A00A5009AE040 /* FoodCollectionViewCell.xib */,
 			);
@@ -326,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				F45A62F8273848BE00C9E3A2 /* Assets.xcassets */,
-				F48F373D2B3C0EBC006CC28C /* Model.xcdatamodeld */,
+				F411EA232B3CB5A500B00F2F /* Fooddie.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -620,20 +625,19 @@
 				F4E8DE08273A716600482B75 /* Coordinator.swift in Sources */,
 				F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */,
 				F417F3B8273912A900611687 /* Constants+Urls.swift in Sources */,
+				F411EA252B3CB5A500B00F2F /* Fooddie.xcdatamodeld in Sources */,
 				F45A62F0273848BD00C9E3A2 /* AppDelegate.swift in Sources */,
 				F417F3B42739106B00611687 /* NetworkService.swift in Sources */,
 				F417F3B62739128A00611687 /* Constants.swift in Sources */,
 				F4D65081273852BE0068A14E /* FoodViewController.swift in Sources */,
 				F435D2492B3A2E33009AE040 /* UIStepperController.swift in Sources */,
 				F417F3B22739102700611687 /* Resource.swift in Sources */,
-				F48F373F2B3C0EBC006CC28C /* Model.xcdatamodeld in Sources */,
 				F4D65080273852BE0068A14E /* FoodViewModel.swift in Sources */,
 				F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */,
 				F48F37382B3B52E2006CC28C /* MultiPeer.swift in Sources */,
 				F499366427396C60007D37A3 /* Adapter.swift in Sources */,
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,
 				F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */,
-				F4D65078273852BE0068A14E /* FoodCellViewModel.swift in Sources */,
 				F48F373C2B3B771B006CC28C /* FoodResponse.swift in Sources */,
 				F4E8DE0D273A767E00482B75 /* FoodViewCoordinator.swift in Sources */,
 				F4D6507D273852BE0068A14E /* APIService.swift in Sources */,
@@ -977,13 +981,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F48F373D2B3C0EBC006CC28C /* Model.xcdatamodeld */ = {
+		F411EA232B3CB5A500B00F2F /* Fooddie.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F48F373E2B3C0EBC006CC28C /* Model.xcdatamodel */,
+				F411EA242B3CB5A500B00F2F /* Fooddie.xcdatamodel */,
 			);
-			currentVersion = F48F373E2B3C0EBC006CC28C /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = F411EA242B3CB5A500B00F2F /* Fooddie.xcdatamodel */;
+			path = Fooddie.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

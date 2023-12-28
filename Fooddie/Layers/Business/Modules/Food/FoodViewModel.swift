@@ -12,7 +12,7 @@ final class FoodViewModel {
   let apiService: APIServiceProtocol
   
   var foodItems: [FoodItem]!
-  var updateUI: (([FoodCellViewModel]) -> Void)?
+  var updateUI: (([FoodItem]) -> Void)?
   
   init(multipeer: MultiPeer,
        apiService: APIServiceProtocol = APIService()) {
@@ -28,7 +28,7 @@ final class FoodViewModel {
       case let .success(response):
         guard let items = response?.foodItems else { return }
         self?.foodItems = items
-        self?.updateUI?(items.models)
+        self?.updateUI?(items)
       case let .failure(error):
         print(error.localizedDescription)
       }

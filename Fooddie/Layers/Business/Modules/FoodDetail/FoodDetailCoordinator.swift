@@ -15,10 +15,10 @@ final class FoodDetailCoordinator: Coordinator {
     self.navigationController = navigationController
   }
   
-  func start(_ model: FoodCellViewModel) {
+  func start(_ model: FoodItem) {
     let vc = FoodDetailViewController.instantiate()
     vc.coordinator = self
-    vc.viewModel = FoodDetailViewModel(cellViewModel: model)
+    vc.viewModel = FoodDetailViewModel(model: model)
     navigationController.present(vc, animated: true)
   }
   

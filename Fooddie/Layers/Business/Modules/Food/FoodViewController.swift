@@ -15,7 +15,7 @@ final class FoodViewController: UIViewController, Storyboarded {
   @IBOutlet private weak var collectionView: UICollectionView!
   
   private var loaderView = UIActivityIndicatorView()
-  private let adapter = Adapter<FoodCellViewModel, FoodCollectionViewCell>()
+  private let adapter = Adapter<FoodItem, FoodCollectionViewCell>()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,7 +42,7 @@ final class FoodViewController: UIViewController, Storyboarded {
     collectionView.backgroundColor = UIColor.clear
   }
 
-  private func setupData(with items: [FoodCellViewModel]) {
+  private func setupData(with items: [FoodItem]) {
     title = "Menu"
     adapter.items = items
     configureCollectionView()
@@ -61,8 +61,8 @@ final class FoodViewController: UIViewController, Storyboarded {
     }
   }
   
-  private func configure(_ cell: FoodCollectionViewCell, for cellVM: FoodCellViewModel, at indexPath: IndexPath) {
-    cell.viewModel = cellVM
+  private func configure(_ cell: FoodCollectionViewCell, for model: FoodItem, at indexPath: IndexPath) {
+    cell.model = model
     cell.stepper.subtractionButton.tag = indexPath.item
     cell.stepper.additionButton.tag = indexPath.item
     cell.stepper.delegate = self
@@ -91,7 +91,7 @@ extension FoodViewController: UIStepperControllerDelegate {
 extension FoodViewController: MultiPeerDelegate {
   func multiPeer(didReceiveData items: [FoodItem]) {
     viewModel.foodItems = items
-    setupData(with: items.models)
+    setupData(with: items)
   }
   
   func multiPeer(connectedDevicesChanged devices: [String]) {

@@ -11,10 +11,10 @@ import UIKit
 protocol Coordinator {
   var navigationController: UINavigationController { get set }
   func start()
-  func start(_ model: FoodCellViewModel)
+  func start(_ model: FoodItem)
 }
 
 extension Coordinator {
   func start() { }
-  func start(_ model: FoodCellViewModel) { }
+  func start(_ model: FoodItem) { }
 }

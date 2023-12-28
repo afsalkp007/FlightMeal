@@ -39,8 +39,4 @@ extension Array where Element == FoodItem {
   var data: Data? {
     return try? JSONEncoder().encode(self)
   }
-  
-  var models: [FoodCellViewModel] {
-    return map(FoodCellViewModel.init)
-  }
 }

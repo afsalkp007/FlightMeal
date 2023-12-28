@@ -8,17 +8,14 @@
 import Foundation
 
 struct FoodDetailViewModel {
-  
-  let cellViewModel: FoodCellViewModel
-  
   let name: String
   let quantity: CGFloat
   let imageUrl: URL?
   
-  init(cellViewModel: FoodCellViewModel) {
-    self.cellViewModel = cellViewModel
-    self.name = cellViewModel.name
-    self.quantity = cellViewModel.quantity
-    self.imageUrl = cellViewModel.imageUrl
+  init?(model: FoodItem) {
+    self.name = model.name
+    self.quantity = model.quantity
+    guard let imageUrl = model.imageUrl else { return nil }
+    self.imageUrl = URL(string: imageUrl)
   }
 }
