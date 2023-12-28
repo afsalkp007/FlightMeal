@@ -65,8 +65,7 @@ final class FoodDetailViewController: UIViewController {
   private func getMealOrder() -> CapturedMeal? {
     nameTextField.resignFirstResponder()
     guard let name = nameTextField.text?.trimmingCharacters(in: .whitespaces) else { return nil }
-    let passenger = Passenger(name: name)
-    return CapturedMeal(meal: viewModel.model, passenger: passenger)
+    return CapturedMeal(meal: viewModel.model, name: name)
   }
 }
 

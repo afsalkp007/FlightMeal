@@ -11,7 +11,7 @@ class CapturedMealTableViewCell: UITableViewCell {
     
   var model: CapturedMeal! {
     didSet {
-      nameLabel.text = model.passenger.name
+      nameLabel.text = model.name
       mealLabel.text = model.meal.name
     }
   }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol MultiPeerDelegate: AnyObject {
+internal protocol MultiPeerDelegate: AnyObject {
   func multiPeer(didReceiveData items: [FoodItem])
   func multiPeer(connectedDevicesChanged devices: [String])
 }

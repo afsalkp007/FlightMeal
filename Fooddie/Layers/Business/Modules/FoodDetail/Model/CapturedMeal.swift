@@ -7,11 +7,7 @@
 
 import Foundation
 
-struct Passenger {
-  let name: String
-}
-
-struct CapturedMeal {
+public struct CapturedMeal: Codable {
   let meal: FoodItem
-  let passenger: Passenger
+  let name: String
 }
