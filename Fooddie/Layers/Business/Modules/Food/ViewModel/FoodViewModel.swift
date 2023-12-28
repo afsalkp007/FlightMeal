@@ -12,7 +12,6 @@ final class FoodViewModel {
   let apiService: APIServiceProtocol
   
   var foodItems: [FoodItem]!
-  var capturedItems = [CapturedMeal]()
   var updateUI: (([FoodItem]) -> Void)?
   
   var cellSize: CGSize {

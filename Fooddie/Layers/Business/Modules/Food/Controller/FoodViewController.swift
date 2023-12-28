@@ -32,7 +32,7 @@ final class FoodViewController: UIViewController {
   }
   
   @IBAction func showCapturedMeals(_ sender: UIButton) {
-    coordinator.start(viewModel.capturedItems)
+    coordinator.start(CapturedMeal.items)
   }
   
   private func setupUI() {
@@ -78,7 +78,7 @@ extension FoodViewController: Storyboarded {}
 
 extension FoodViewController: DismissCallBackDelegate {
   func getCapturedMeal(meal: CapturedMeal) {
-    viewModel.capturedItems.append(meal)
+    CapturedMeal.items.append(meal)
   }
 }
 
