@@ -16,7 +16,7 @@ public struct FoodItem {
 extension FoodItem: Codable {
   enum CodingKeys: String, CodingKey {
     case name
-    case quantity
+    case quantity = "calories"
     case imageUrl = "image"
   }
 

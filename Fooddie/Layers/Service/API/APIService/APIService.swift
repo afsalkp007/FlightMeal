@@ -25,7 +25,7 @@ final class APIService: APIServiceProtocol {
   func fetchFoodItems(_ completion: @escaping (Result<FoodResponse?>) -> Void) {
     let resource = Resource(
       url: Constants.Urls.foddieUrl,
-      path: "v3/5866141b-f9c5-4af6-aea2-d385343ae0be")
+      path: "dishes/cat1")
     _ = networking.fetch(resource: resource, completion: { data in
       DispatchQueue.main.async {
         completion(.success(data.flatMap({ FoodResponse.make(data: $0) }) ))

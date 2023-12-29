@@ -123,7 +123,7 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   }
   
   /// Stops all invite/accept services
-  internal func stopSearching() {
+  private func stopSearching() {
     stopAccepting()
     stopInviting()
   }
@@ -150,7 +150,7 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   /// - Parameters:
   ///     - data: Data (Data) to send to all connected peers.
   /// After sending the data, you can use the extension for Data, to convert it back into data.
-  public func send(_ data: Data) {
+  internal func send(_ data: Data) {
     if isConnected {
       try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
     }
