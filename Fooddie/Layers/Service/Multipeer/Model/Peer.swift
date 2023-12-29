@@ -9,7 +9,7 @@ import Foundation
 import MultipeerConnectivity
 
 /// Class containing peerID and session state
-public class Peer {
+internal class Peer {
   var peerID: MCPeerID
   var state: MCSessionState
   

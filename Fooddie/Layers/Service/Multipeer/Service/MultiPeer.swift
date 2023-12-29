@@ -256,11 +256,7 @@ extension MultiPeer: MCSessionDelegate {
 
 // MARK: - Data extension for conversion
 extension Data {
-  public func toFoodItem() -> [FoodItem]? {
-    return try? JSONDecoder().decode([FoodItem].self, from: self)
-  }
-  
-  public func toCapturedMeal() -> [CapturedMeal]? {
-    return try? JSONDecoder().decode([CapturedMeal].self, from: self)
+  public func toObject<T: Decodable>() -> [T]? {
+    return try? JSONDecoder().decode([T].self, from: self)
   }
 }

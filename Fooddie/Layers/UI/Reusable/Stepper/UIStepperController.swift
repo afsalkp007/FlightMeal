@@ -284,9 +284,3 @@ class UIStepperController: UIView {
     delegate?.stepperDidAddValues(stepper)
   }
 }
-
-extension Int {
-  var indexPath: IndexPath {
-    return IndexPath(item: self, section: 0)
-  }
-}

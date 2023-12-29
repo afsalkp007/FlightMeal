@@ -11,7 +11,8 @@ public struct CapturedMeal: Codable {
   let meal: FoodItem
   let name: String
   
-  static var items: [CapturedMeal] = []
+  @CodableAppData(.capturedItems)
+  static var items: [CapturedMeal]
 }
 
 extension Array where Element == CapturedMeal {

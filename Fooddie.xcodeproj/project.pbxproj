@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F411EA252B3CB5A500B00F2F /* Fooddie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F411EA232B3CB5A500B00F2F /* Fooddie.xcdatamodeld */; };
 		F417F3A82739082C00611687 /* FoodDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3A72739082C00611687 /* FoodDataTest.swift */; };
 		F417F3B02739101100611687 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3AF2739101100611687 /* Client.swift */; };
 		F417F3B22739102700611687 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417F3B12739102700611687 /* Resource.swift */; };
@@ -42,6 +41,10 @@
 		F4BDB4092B3D66F4000FE305 /* CapturedMealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BDB4072B3D66F4000FE305 /* CapturedMealTableViewCell.xib */; };
 		F4BDB40D2B3D69DC000FE305 /* TableAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB40C2B3D69DC000FE305 /* TableAdaptor.swift */; };
 		F4BDB40F2B3D6AD0000FE305 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB40E2B3D6AD0000FE305 /* UITableView+Ext.swift */; };
+		F4BDB42A2B3EED47000FE305 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB4282B3EED47000FE305 /* AppData.swift */; };
+		F4BDB42B2B3EED47000FE305 /* AppDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB4292B3EED47000FE305 /* AppDataType.swift */; };
+		F4BDB4392B3EF154000FE305 /* BaseAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB4372B3EF154000FE305 /* BaseAppData.swift */; };
+		F4BDB43A2B3EF154000FE305 /* CodableAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDB4382B3EF154000FE305 /* CodableAppData.swift */; };
 		F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */; };
 		F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65065273852BE0068A14E /* CacheableImageView.swift */; };
 		F4D6507A273852BE0068A14E /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D65069273852BE0068A14E /* APIServiceProtocol.swift */; };
@@ -74,7 +77,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F411EA242B3CB5A500B00F2F /* Fooddie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fooddie.xcdatamodel; sourceTree = "<group>"; };
 		F417F3A72739082C00611687 /* FoodDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataTest.swift; sourceTree = "<group>"; };
 		F417F3AF2739101100611687 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		F417F3B12739102700611687 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -116,6 +118,10 @@
 		F4BDB4072B3D66F4000FE305 /* CapturedMealTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CapturedMealTableViewCell.xib; sourceTree = "<group>"; };
 		F4BDB40C2B3D69DC000FE305 /* TableAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableAdaptor.swift; sourceTree = "<group>"; };
 		F4BDB40E2B3D6AD0000FE305 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		F4BDB4282B3EED47000FE305 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		F4BDB4292B3EED47000FE305 /* AppDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataType.swift; sourceTree = "<group>"; };
+		F4BDB4372B3EF154000FE305 /* BaseAppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAppData.swift; sourceTree = "<group>"; };
+		F4BDB4382B3EF154000FE305 /* CodableAppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableAppData.swift; sourceTree = "<group>"; };
 		F4D6505C273852B30068A14E /* KeyedDecodingContainer+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Convenience.swift"; sourceTree = "<group>"; };
 		F4D65065273852BE0068A14E /* CacheableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheableImageView.swift; sourceTree = "<group>"; };
 		F4D65069273852BE0068A14E /* APIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
@@ -442,6 +448,25 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F4BDB4272B3EED39000FE305 /* AppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				F4BDB4282B3EED47000FE305 /* AppData.swift */,
+				F4BDB4292B3EED47000FE305 /* AppDataType.swift */,
+				F4BDB4362B3EF140000FE305 /* AppData */,
+			);
+			path = AppSettings;
+			sourceTree = "<group>";
+		};
+		F4BDB4362B3EF140000FE305 /* AppData */ = {
+			isa = PBXGroup;
+			children = (
+				F4BDB4372B3EF154000FE305 /* BaseAppData.swift */,
+				F4BDB4382B3EF154000FE305 /* CodableAppData.swift */,
+			);
+			path = AppData;
+			sourceTree = "<group>";
+		};
 		F4D65057273852530068A14E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,7 +481,6 @@
 			isa = PBXGroup;
 			children = (
 				F45A62F8273848BE00C9E3A2 /* Assets.xcassets */,
-				F411EA232B3CB5A500B00F2F /* Fooddie.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -465,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				F417F3B52739128A00611687 /* Constants.swift */,
+				F4BDB4272B3EED39000FE305 /* AppSettings */,
 				F4BDB3F52B3D6315000FE305 /* Storyboard */,
 				F4E8DE10273A7C2B00482B75 /* Adapater */,
 				F4E8DE05273A714E00482B75 /* Coordinator */,
@@ -748,11 +773,13 @@
 				F48F37392B3B52E2006CC28C /* Peer.swift in Sources */,
 				F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */,
 				F4E8DE08273A716600482B75 /* CoordinatorProtocol.swift in Sources */,
+				F4BDB42A2B3EED47000FE305 /* AppData.swift in Sources */,
 				F4D6505E273852B30068A14E /* KeyedDecodingContainer+Convenience.swift in Sources */,
 				F417F3B8273912A900611687 /* Constants+Urls.swift in Sources */,
-				F411EA252B3CB5A500B00F2F /* Fooddie.xcdatamodeld in Sources */,
 				F45A62F0273848BD00C9E3A2 /* AppDelegate.swift in Sources */,
 				F417F3B42739106B00611687 /* NetworkService.swift in Sources */,
+				F4BDB43A2B3EF154000FE305 /* CodableAppData.swift in Sources */,
+				F4BDB4392B3EF154000FE305 /* BaseAppData.swift in Sources */,
 				F417F3B62739128A00611687 /* Constants.swift in Sources */,
 				F4BDB40F2B3D6AD0000FE305 /* UITableView+Ext.swift in Sources */,
 				F4D65081273852BE0068A14E /* FoodViewController.swift in Sources */,
@@ -764,6 +791,7 @@
 				F48F37382B3B52E2006CC28C /* MultiPeer.swift in Sources */,
 				F4BDB4012B3D65F8000FE305 /* CapturedMealViewModel.swift in Sources */,
 				F4BDB3F82B3D634B000FE305 /* Coordinator.swift in Sources */,
+				F4BDB42B2B3EED47000FE305 /* AppDataType.swift in Sources */,
 				F499366427396C60007D37A3 /* CollectionAdapter.swift in Sources */,
 				F4D6507C273852BE0068A14E /* FoodItem.swift in Sources */,
 				F435D2392B3A00A5009AE040 /* FoodCollectionViewCell.swift in Sources */,
@@ -1107,19 +1135,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F411EA232B3CB5A500B00F2F /* Fooddie.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F411EA242B3CB5A500B00F2F /* Fooddie.xcdatamodel */,
-			);
-			currentVersion = F411EA242B3CB5A500B00F2F /* Fooddie.xcdatamodel */;
-			path = Fooddie.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F45A62E4273848BD00C9E3A2 /* Project object */;
 }
