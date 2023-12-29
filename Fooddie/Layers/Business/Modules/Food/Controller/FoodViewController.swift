@@ -52,8 +52,8 @@ final class FoodViewController: UIViewController {
       cell.stepper.delegate = self
     }
     
-    adapter.select = { [weak self] viewModel in
-      self?.coordinator.start(viewModel, from: self)
+    adapter.select = { [weak self] item, indexPath in
+      self?.coordinator.start(item, at: indexPath, from: self)
     }
     
     collectionView.reloadData()
@@ -72,7 +72,10 @@ final class FoodViewController: UIViewController {
 extension FoodViewController: Storyboarded {}
 
 extension FoodViewController: DismissCallBackDelegate {
-  func getCapturedMeal(meal: CapturedMeal) {
+  func getCapturedMeal(meal: CapturedMeal, indexPath: IndexPath) {
+    let quantity = meal.meal.quantity - 1
+    let stepper = Stepper(quantity: quantity, index: indexPath.item)
+    viewModel.send(stepper: stepper, type: .rawFood)
     CapturedMeal.items.append(meal)
     viewModel.send(items: CapturedMeal.items, type: .mealCaptured)
   }

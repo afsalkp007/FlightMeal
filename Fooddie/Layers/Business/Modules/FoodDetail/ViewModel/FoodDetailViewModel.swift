@@ -9,9 +9,12 @@ import Foundation
 
 struct FoodDetailViewModel {
   let model: FoodItem
+  let indexPath: IndexPath
   
-  init(model: FoodItem) {
+  init(model: FoodItem,
+       indexPath: IndexPath) {
     self.model = model
+    self.indexPath = indexPath
   }
   
   var url: URL {

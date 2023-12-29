@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DismissCallBackDelegate: AnyObject {
-  func getCapturedMeal(meal: CapturedMeal)
+  func getCapturedMeal(meal: CapturedMeal, indexPath: IndexPath)
 }
 
 final class FoodDetailViewController: UIViewController {
@@ -59,7 +59,7 @@ final class FoodDetailViewController: UIViewController {
     
     guard let meal = getMealOrder() else { return }
     self.coordinator?.dismiss()
-    self.dismissDelegate?.getCapturedMeal(meal: meal)
+    self.dismissDelegate?.getCapturedMeal(meal: meal, indexPath: viewModel.indexPath)
   }
   
   private func getMealOrder() -> CapturedMeal? {

@@ -11,14 +11,14 @@ import UIKit
 protocol Coordinatable {
   var navigationController: UINavigationController { get set }
   func start()
-  func start(_ model: FoodItem, from fc: FoodViewController?)
+  func start(_ model: FoodItem, at indexPath: IndexPath, from fc: FoodViewController?)
   func start(_ items: [CapturedMeal])
   func dismiss()
 }
 
 extension Coordinatable {
   func start() {}
-  func start(_ model: FoodItem, from fc: FoodViewController?) {}
+  func start(_ model: FoodItem, at indexPath: IndexPath, from fc: FoodViewController?) {}
   func start(_ items: [CapturedMeal]) {}
   func dismiss() {}
 }

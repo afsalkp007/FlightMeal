@@ -37,6 +37,7 @@ final class FoodViewModel {
         guard let items = response?.foodItems else { return }
         self?.foodItems = items
         self?.updateUI?(items)
+        self?.sendFoodItems(items)
       case let .failure(error):
         print(error.localizedDescription)
       }
@@ -49,7 +50,7 @@ final class FoodViewModel {
   }
   
   internal func send(
-    stepper: Stepper = Stepper(count: 0, index: 0),
+    stepper: Stepper = Stepper(quantity: 0, index: 0),
     items: [CapturedMeal] = [] ,
     type: DataType) {
     
@@ -59,16 +60,21 @@ final class FoodViewModel {
       multipeerService.send(data)
     case .rawFood:
       foodItems = getUpdatedFoodItems(stepper)
-      guard let data = foodItems.data else { return }
-      multipeerService.send(data)
+      updateUI?(foodItems)
+      sendFoodItems(foodItems)
     }
+  }
+  
+  private func sendFoodItems(_ items: [FoodItem]) {
+    guard let data = items.data else { return }
+    multipeerService.send(data)
   }
   
   private func getUpdatedFoodItems(_ stepper: Stepper) -> [FoodItem] {
     return foodItems.enumerated().map { index, item in
       var newItem = item
       if stepper.index == index {
-        newItem.quantity = stepper.count
+        newItem.quantity = stepper.quantity
       }
       return newItem
     }

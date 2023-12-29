@@ -15,7 +15,7 @@ class CollectionAdapter<T, Cell: UICollectionViewCell>:
   
   var items: [T] = []
   var configure: ((T, Cell, IndexPath) -> Void)?
-  var select: ((T) -> Void)?
+  var select: ((T, IndexPath) -> Void)?
   var size: CGSize!
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -45,7 +45,7 @@ class CollectionAdapter<T, Cell: UICollectionViewCell>:
   ) {
     collectionView.deselectItem(at: indexPath, animated: true)
     let item = items[indexPath.row]
-    select?(item)
+    select?(item, indexPath)
   }
   
   func collectionView(

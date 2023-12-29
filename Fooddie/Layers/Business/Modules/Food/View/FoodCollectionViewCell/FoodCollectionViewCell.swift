@@ -17,7 +17,7 @@ class FoodCollectionViewCell: UICollectionViewCell {
     didSet {
       guard let model = model else { return }
       titleLabel.text = model.name
-      stepper.count = model.quantity
+      stepper.quantity = model.quantity
       guard let imageUrl = model.imageUrl, let url = URL(string: imageUrl) else { return }
       foodImageView.setUpLoader()
       foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFill)

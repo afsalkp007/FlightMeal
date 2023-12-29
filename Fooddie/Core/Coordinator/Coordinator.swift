@@ -23,11 +23,11 @@ final class Coordinator: Coordinatable {
     navigationController.pushViewController(vc, animated: false)
   }
   
-  func start(_ model: FoodItem, from fc: FoodViewController?) {
+  func start(_ model: FoodItem, at indexPath: IndexPath, from fc: FoodViewController?) {
     let vc = FoodDetailViewController.instantiate()
     vc.coordinator = self
     vc.dismissDelegate = fc
-    vc.viewModel = FoodDetailViewModel(model: model)
+    vc.viewModel = FoodDetailViewModel(model: model, indexPath: indexPath)
     navigationController.present(vc, animated: true)
   }
   
