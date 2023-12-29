@@ -49,19 +49,16 @@ final class FoodViewModel {
     multipeerService.autoConnect()
   }
   
-  internal func send(
-    stepper: Stepper = Stepper(quantity: 0, index: 0),
-    items: [CapturedMeal] = [] ,
-    type: DataType) {
+  internal func send(type: DataType) {
     
     switch type {
-    case .mealCaptured:
+    case let .mealCaptured(items):
       guard let data = items.data else { return }
       multipeerService.send(data)
-    case .rawFood:
-      foodItems = getUpdatedFoodItems(stepper)
-      updateUI?(foodItems)
-      sendFoodItems(foodItems)
+    case let .rawFood(items):
+      foodItems = items
+      updateUI?(items)
+      sendFoodItems(items)
     }
   }
   
@@ -70,8 +67,8 @@ final class FoodViewModel {
     multipeerService.send(data)
   }
   
-  private func getUpdatedFoodItems(_ stepper: Stepper) -> [FoodItem] {
-    return foodItems.enumerated().map { index, item in
+  internal func getUpdatedFoodItems(_ stepper: Stepper) {
+    foodItems = foodItems.enumerated().map { index, item in
       var newItem = item
       if stepper.index == index {
         newItem.quantity = stepper.quantity

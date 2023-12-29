@@ -73,21 +73,25 @@ extension FoodViewController: Storyboarded {}
 
 extension FoodViewController: DismissCallBackDelegate {
   func getCapturedMeal(meal: CapturedMeal, indexPath: IndexPath) {
+    CapturedMeal.items.append(meal)
+    viewModel.send(type: .mealCaptured(CapturedMeal.items))
+    
     let quantity = meal.meal.quantity - 1
     let stepper = Stepper(quantity: quantity, index: indexPath.item)
-    viewModel.send(stepper: stepper, type: .rawFood)
-    CapturedMeal.items.append(meal)
-    viewModel.send(items: CapturedMeal.items, type: .mealCaptured)
+    viewModel.getUpdatedFoodItems(stepper)
+    viewModel.send(type: .rawFood(viewModel.foodItems))
   }
 }
 
 extension FoodViewController: UIStepperControllerDelegate {
   func stepperDidAddValues(_ stepper: Stepper) {
-    viewModel.send(stepper: stepper, type: .rawFood)
+    viewModel.getUpdatedFoodItems(stepper)
+    viewModel.send(type: .rawFood(viewModel.foodItems))
   }
 
   func stepperDidSubtractValues(_ stepper: Stepper) {
-    viewModel.send(stepper: stepper, type: .rawFood)
+    viewModel.getUpdatedFoodItems(stepper)
+    viewModel.send(type: .rawFood(viewModel.foodItems))
   }
 }
 

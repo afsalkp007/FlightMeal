@@ -9,8 +9,8 @@ import Foundation
 import MultipeerConnectivity
 
 enum DataType {
-  case rawFood
-  case mealCaptured
+  case rawFood([FoodItem])
+  case mealCaptured([CapturedMeal])
 }
 
 /// Main Class for MultiPeer
