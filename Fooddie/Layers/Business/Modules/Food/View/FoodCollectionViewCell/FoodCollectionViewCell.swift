@@ -26,11 +26,13 @@ class FoodCollectionViewCell: UICollectionViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    setupViews()
+    shadow()
   }
-  
-  private func setupViews() {
-    layer.cornerRadius = 12
+}
+
+extension UIView {
+  func shadow() {
+    layer.cornerRadius = 0
     layer.shadowColor = UIColor.black.cgColor
     layer.shadowOffset = CGSize(width: 3, height: 3)
     layer.shadowOpacity = 0.7

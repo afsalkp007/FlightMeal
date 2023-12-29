@@ -16,6 +16,7 @@ final class FoodDetailViewController: UIViewController {
   internal var viewModel: FoodDetailViewModel!
   internal var coordinator: Coordinatable!
   
+  @IBOutlet private weak var containerView: UIView!
   @IBOutlet private weak var foodImageView: CacheableImageView!
   @IBOutlet private weak var titleLabel: UILabel!
   @IBOutlet private weak var nameTextField: UITextField!
@@ -27,22 +28,14 @@ final class FoodDetailViewController: UIViewController {
     configureView()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    subscribeToKeyboardNotifications()
-  }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    unsubscribeFromKeyboardNotifications()
-  }
-  
   private func configureView() {
     guard let viewModel = viewModel else { return }
     titleLabel.text = viewModel.model.name
     foodImageView.setUpLoader()
     foodImageView.downloadImageFrom(url: viewModel.url, imageMode: .scaleAspectFill)
     createDismissKeyboardGesture()
+    containerView.shadow()
+    nameTextField.border()
   }
   
   private func createDismissKeyboardGesture(){
@@ -80,7 +73,7 @@ extension FoodDetailViewController {
   
   @objc func keyboardWillShow(_ notification:Notification) {
     if nameTextField.isFirstResponder && view.frame.origin.y == 0 {
-      view.frame.origin.y -= getKeyboardHeight(notification)
+      view.frame.origin.y -= 0
     }
   }
   
@@ -100,5 +93,13 @@ extension FoodDetailViewController {
     if view.frame.origin.y != 0{
       view.frame.origin.y = 0
     }
+  }
+}
+
+extension UITextField {
+  func border() {
+    layer.borderColor = UIColor.lightGray.cgColor
+    layer.borderWidth = 1.0
+    layer.cornerRadius = 4.0
   }
 }
