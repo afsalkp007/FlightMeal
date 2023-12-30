@@ -14,7 +14,7 @@ protocol DismissCallBackDelegate: AnyObject {
 final class MealDetailViewController: UIViewController {
   
   internal var viewModel: MealDetailViewModel!
-  internal var coordinator: Coordinatable!
+  internal var coordinator: CoordinatorProtocol!
   
   @IBOutlet private weak var containerView: UIView!
   @IBOutlet private weak var mealImageView: CacheableImageView!

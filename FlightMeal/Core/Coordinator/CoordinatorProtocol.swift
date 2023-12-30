@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol Coordinatable {
+protocol CoordinatorProtocol {
   var navigationController: UINavigationController { get set }
   func start()
   func start(_ model: Meal, at indexPath: IndexPath, from fc: MealViewController?)
@@ -16,7 +16,7 @@ protocol Coordinatable {
   func dismiss()
 }
 
-extension Coordinatable {
+extension CoordinatorProtocol {
   func start() {}
   func start(_ model: Meal, at indexPath: IndexPath, from fc: MealViewController?) {}
   func start(_ items: [Order]) {}

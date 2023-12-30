@@ -9,7 +9,7 @@ import UIKit
 
 final class MealViewController: UIViewController {
   
-  internal var coordinator: Coordinatable!
+  internal var coordinator: CoordinatorProtocol!
   internal var viewModel: MealViewModel!
   
   @IBOutlet private weak var collectionView: UICollectionView!
