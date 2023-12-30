@@ -98,10 +98,10 @@ extension FoodViewController: UIStepperControllerDelegate {
 extension FoodViewController: MultiPeerDelegate {
   func multiPeer(didReceiveData data: Data) {
     
-    if let foodItems: [FoodItem] = data.toObject() {
+    if let foodItems: [FoodItem] = data.toObject(), !foodItems.isEmpty {
       viewModel.foodItems = foodItems
       setupData(with: foodItems)
-    } else if let capturedItems: [CapturedMeal] = data.toObject() {
+    } else if let capturedItems: [CapturedMeal] = data.toObject(), !capturedItems.isEmpty {
       CapturedMeal.items = capturedItems
     }
   }
