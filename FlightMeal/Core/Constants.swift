@@ -8,3 +8,7 @@
 import Foundation
 
 enum Constants {}
+
+extension Constants {
+  static let serviceType = "FlightMeal-mpc"
+}

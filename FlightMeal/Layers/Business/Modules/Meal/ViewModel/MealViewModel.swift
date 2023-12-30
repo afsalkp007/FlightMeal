@@ -45,7 +45,7 @@ final class MealViewModel {
   }
   
   internal func setupConnectivity() {
-    multipeerService.initialize(serviceType: "FlightMeal-mpc")
+    multipeerService.initialize(serviceType: Constants.serviceType)
     multipeerService.autoConnect()
   }
   
