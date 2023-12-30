@@ -32,10 +32,10 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   private var connectionTimeout = 30.0
   
   /// Peers available to connect to
-  private var availablePeers: [Peer] = []
+  private var availablePeers: [PeerDevice] = []
   
   /// Peers connected to
-  private var connectedPeers: [Peer] = []
+  private var connectedPeers: [PeerDevice] = []
   
   /// Names of all connected devices
   private var connectedDeviceNames: [String] {
@@ -185,7 +185,7 @@ extension MultiPeer: MCNearbyServiceBrowserDelegate {
     printDebug("Found peer: \(peerID)")
     
     // Update the list of available peers
-    availablePeers.append(Peer(peerID: peerID, state: .notConnected))
+    availablePeers.append(PeerDevice(peerID: peerID, state: .notConnected))
     
     browser.invitePeer(peerID, to: session, withContext: nil, timeout: connectionTimeout)
   }
@@ -221,7 +221,7 @@ extension MultiPeer: MCSessionDelegate {
     }
     
     // Update all connected peers
-    connectedPeers = session.connectedPeers.map { Peer(peerID: $0, state: .connected) }
+    connectedPeers = session.connectedPeers.map { PeerDevice(peerID: $0, state: .connected) }
     
     // Send new connection list to delegate
     OperationQueue.main.addOperation { [unowned self] in

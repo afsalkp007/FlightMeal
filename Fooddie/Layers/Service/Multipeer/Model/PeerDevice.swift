@@ -9,7 +9,7 @@ import Foundation
 import MultipeerConnectivity
 
 /// Class containing peerID and session state
-internal class Peer {
+internal class PeerDevice {
   internal let peerID: MCPeerID
   internal var state: MCSessionState
   internal let uuid: String?
@@ -23,7 +23,7 @@ internal class Peer {
   }
 }
 
-extension Array where Element == Peer {
+extension Array where Element == PeerDevice {
   var peers: [MCPeerID] {
     map(\.peerID)
   }

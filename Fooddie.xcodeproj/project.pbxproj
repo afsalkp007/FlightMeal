@@ -30,7 +30,7 @@
 		F46B3E312B4024CF005FE3E9 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46B3E302B4024CF005FE3E9 /* UIView+Ext.swift */; };
 		F48A1493274A570100EFDCA7 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48A1492274A570100EFDCA7 /* UIImage+Ext.swift */; };
 		F48F37382B3B52E2006CC28C /* MultiPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37332B3B52E1006CC28C /* MultiPeer.swift */; };
-		F48F37392B3B52E2006CC28C /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37372B3B52E2006CC28C /* Peer.swift */; };
+		F48F37392B3B52E2006CC28C /* PeerDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37372B3B52E2006CC28C /* PeerDevice.swift */; };
 		F48F373A2B3B52E2006CC28C /* MultiPeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */; };
 		F48F373C2B3B771B006CC28C /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F373B2B3B771B006CC28C /* FoodResponse.swift */; };
 		F499366427396C60007D37A3 /* CollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499366327396C60007D37A3 /* CollectionAdapter.swift */; };
@@ -112,7 +112,7 @@
 		F48A1492274A570100EFDCA7 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		F48F37332B3B52E1006CC28C /* MultiPeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeer.swift; sourceTree = "<group>"; };
 		F48F37342B3B52E2006CC28C /* MultiPeerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPeerDelegate.swift; sourceTree = "<group>"; };
-		F48F37372B3B52E2006CC28C /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		F48F37372B3B52E2006CC28C /* PeerDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerDevice.swift; sourceTree = "<group>"; };
 		F48F373B2B3B771B006CC28C /* FoodResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
 		F499366327396C60007D37A3 /* CollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAdapter.swift; sourceTree = "<group>"; };
 		F499366527396C94007D37A3 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		F42350C12B3C207500FEF090 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F48F37372B3B52E2006CC28C /* Peer.swift */,
+				F48F37372B3B52E2006CC28C /* PeerDevice.swift */,
 				F46B3E2A2B402457005FE3E9 /* DataType.swift */,
 			);
 			path = Model;
@@ -775,7 +775,7 @@
 				F417F3B02739101100611687 /* Client.swift in Sources */,
 				F4E8DE0B273A718800482B75 /* Storyboarded.swift in Sources */,
 				F48F373A2B3B52E2006CC28C /* MultiPeerDelegate.swift in Sources */,
-				F48F37392B3B52E2006CC28C /* Peer.swift in Sources */,
+				F48F37392B3B52E2006CC28C /* PeerDevice.swift in Sources */,
 				F4D65079273852BE0068A14E /* CacheableImageView.swift in Sources */,
 				F46B3E2B2B402457005FE3E9 /* DataType.swift in Sources */,
 				F4E8DE08273A716600482B75 /* CoordinatorProtocol.swift in Sources */,
