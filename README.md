@@ -23,6 +23,4 @@ Follow the steps to get test case reports:
 
  This project uses MVVM-C design pattern and project is fully developed in Swift.
  
- 
- 
 

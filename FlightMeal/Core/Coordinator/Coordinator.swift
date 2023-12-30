@@ -15,7 +15,7 @@ final class Coordinator: CoordinatorProtocol {
   }
   
   func start() {
-    let vc = MealViewController.instantiate()
+    let vc = MealViewController()
     vc.coordinator = self
     let mpc = MultiPeer()
     mpc.delegate = vc
@@ -24,7 +24,7 @@ final class Coordinator: CoordinatorProtocol {
   }
   
   func start(_ model: Meal, at indexPath: IndexPath, from fc: MealViewController?) {
-    let vc = MealDetailViewController.instantiate()
+    let vc = MealDetailViewController()
     vc.coordinator = self
     vc.dismissDelegate = fc
     vc.viewModel = MealDetailViewModel(model: model, indexPath: indexPath)
@@ -32,7 +32,7 @@ final class Coordinator: CoordinatorProtocol {
   }
   
   func start(_ items: [Order]) {
-    let vc = OrderViewController.instantiate()
+    let vc = OrderViewController()
     vc.viewModel = OrderViewModel(items: items)
     navigationController.pushViewController(vc, animated: true)
   }

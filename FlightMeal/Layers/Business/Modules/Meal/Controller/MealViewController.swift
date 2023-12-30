@@ -69,8 +69,6 @@ final class MealViewController: UIViewController {
   }
 }
 
-extension MealViewController: Storyboarded {}
-
 extension MealViewController: DismissCallBackDelegate {
   func getOrders(order: Order, indexPath: IndexPath) {
     Order.items.append(order)

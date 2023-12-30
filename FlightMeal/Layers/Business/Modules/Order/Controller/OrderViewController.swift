@@ -37,5 +37,3 @@ class OrderViewController: UIViewController {
     tableView.reloadData()
   }
 }
-
-extension OrderViewController: Storyboarded {}

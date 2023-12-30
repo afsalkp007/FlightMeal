@@ -62,8 +62,6 @@ final class MealDetailViewController: UIViewController {
   }
 }
 
-extension MealDetailViewController: Storyboarded {}
-
 extension MealDetailViewController {
   func getKeyboardHeight(_ notification : Notification) -> CGFloat {
     let userInfo = notification.userInfo
