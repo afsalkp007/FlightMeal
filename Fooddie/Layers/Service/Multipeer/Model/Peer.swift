@@ -10,12 +10,16 @@ import MultipeerConnectivity
 
 /// Class containing peerID and session state
 internal class Peer {
-  var peerID: MCPeerID
-  var state: MCSessionState
+  internal let peerID: MCPeerID
+  internal var state: MCSessionState
+  internal let uuid: String?
+  internal let connectionTime: Date?
   
   init(peerID: MCPeerID, state: MCSessionState) {
     self.peerID = peerID
     self.state = state
+    self.uuid = UUID().uuidString
+    self.connectionTime = Date()
   }
 }
 
