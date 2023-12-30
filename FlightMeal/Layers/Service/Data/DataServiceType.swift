@@ -8,5 +8,5 @@
 import Foundation
 
 enum DataServiceType: String, CaseIterable {
-  case capturedItems = "ae.FlightMeal.capturedItems"
+  case orders = "com.FlightMeal.orders"
 }

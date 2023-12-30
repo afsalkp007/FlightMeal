@@ -11,7 +11,7 @@ public struct Order: Codable {
   let meal: Meal
   let name: String
   
-  @CodableAppData(.capturedItems)
+  @CodableAppData(.orders)
   static var items: [Order]
 }
 

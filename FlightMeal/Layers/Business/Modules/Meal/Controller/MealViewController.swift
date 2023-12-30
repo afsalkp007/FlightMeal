@@ -26,7 +26,7 @@ final class MealViewController: UIViewController {
     }
   }
   
-  @IBAction func showCapturedMeals(_ sender: UIButton) {
+  @IBAction func showOrders(_ sender: UIButton) {
     coordinator.start(Order.items)
   }
   
@@ -72,11 +72,11 @@ final class MealViewController: UIViewController {
 extension MealViewController: Storyboarded {}
 
 extension MealViewController: DismissCallBackDelegate {
-  func getCapturedMeal(meal: Order, indexPath: IndexPath) {
-    Order.items.append(meal)
-    viewModel.send(type: .typeOrder(meal))
+  func getOrders(order: Order, indexPath: IndexPath) {
+    Order.items.append(order)
+    viewModel.send(type: .typeOrder(order))
     
-    let quantity = meal.meal.quantity - 1
+    let quantity = order.meal.quantity - 1
     let stepper = Stepper(quantity: quantity, index: indexPath.item)
     viewModel.getUpdatedMeals(stepper)
     viewModel.send(type: .typeMeal(viewModel.meals))
@@ -101,8 +101,8 @@ extension MealViewController: MultiPeerDelegate {
     if let meals: [Meal] = data.toObjects(), !meals.isEmpty {
       viewModel.meals = meals
       setupData(with: meals)
-    } else if let capturedItem: Order = data.toObject() {
-      Order.items.append(capturedItem)
+    } else if let order: Order = data.toObject() {
+      Order.items.append(order)
     }
   }
   

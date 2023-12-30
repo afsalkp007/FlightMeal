@@ -45,7 +45,7 @@
                                                 <color key="tintColor" red="0.098039215686274508" green="0.54117647058823526" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
                                                 <connections>
-                                                    <action selector="showCapturedMeals:" destination="gWf-MI-puK" eventType="touchUpInside" id="5L4-sR-E12"/>
+                                                    <action selector="showOrders:" destination="gWf-MI-puK" eventType="touchUpInside" id="7zM-Li-XaE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
