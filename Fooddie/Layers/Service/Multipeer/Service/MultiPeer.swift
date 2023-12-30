@@ -44,7 +44,7 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   
   /// Names of all connected devices
   private var connectedDeviceNames: [String] {
-    return session.connectedPeers.map({$0.displayName})
+    return connectedPeers.map({$0.peerID.displayName})
   }
   
   /// Prints out all errors and status updates
@@ -152,7 +152,7 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   /// After sending the data, you can use the extension for Data, to convert it back into data.
   internal func send(_ data: Data) {
     if isConnected {
-      try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
+      try? session.send(data, toPeers: connectedPeers.peers, with: .reliable)
     }
   }
   
@@ -230,7 +230,7 @@ extension MultiPeer: MCSessionDelegate {
     
     // Send new connection list to delegate
     OperationQueue.main.addOperation { [unowned self] in
-      self.delegate?.multiPeer(connectedDevicesChanged: session.connectedPeers.map({$0.displayName}))
+      self.delegate?.multiPeer(connectedDevicesChanged: self.connectedDeviceNames)
     }
   }
   
