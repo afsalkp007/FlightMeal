@@ -29,14 +29,3 @@ struct Resource {
     self.headers = headers
   }
 }
-
-enum HTTPMethod: String {
-  case get = "GET"
-  case post = "POST"
-  case put = "PUT"
-  case delete = "DELETE"
-  
-  var value: String {
-    rawValue
-  }
-}

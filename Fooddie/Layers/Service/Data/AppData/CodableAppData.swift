@@ -46,8 +46,8 @@ final class CodableAppData<Value: Codable>: BaseAppData<Value> {
 extension CodableAppData {
 
   convenience init<T: Codable>(
-    _ type: AppDataType,
-    settings: AppData = .default
+    _ type: DataServiceType,
+    settings: DataService = .default
   ) where Value == [T] {
     self.init(type, settings: settings, defaultValue: [])
   }

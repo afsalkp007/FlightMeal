@@ -8,11 +8,6 @@
 import Foundation
 import MultipeerConnectivity
 
-enum DataType {
-  case rawFood([FoodItem])
-  case mealCaptured([CapturedMeal])
-}
-
 /// Main Class for MultiPeer
 internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   
@@ -252,11 +247,4 @@ extension MultiPeer: MCSessionDelegate {
   /// Finished receiving resource
   internal func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {}
   
-}
-
-// MARK: - Data extension for conversion
-extension Data {
-  public func toObject<T: Decodable>() -> [T]? {
-    return try? JSONDecoder().decode([T].self, from: self)
-  }
 }

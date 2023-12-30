@@ -74,7 +74,7 @@ extension FoodViewController: Storyboarded {}
 extension FoodViewController: DismissCallBackDelegate {
   func getCapturedMeal(meal: CapturedMeal, indexPath: IndexPath) {
     CapturedMeal.items.append(meal)
-    viewModel.send(type: .mealCaptured(CapturedMeal.items))
+    viewModel.send(type: .mealCaptured(meal))
     
     let quantity = meal.meal.quantity - 1
     let stepper = Stepper(quantity: quantity, index: indexPath.item)
@@ -98,11 +98,11 @@ extension FoodViewController: UIStepperControllerDelegate {
 extension FoodViewController: MultiPeerDelegate {
   func multiPeer(didReceiveData data: Data) {
     
-    if let foodItems: [FoodItem] = data.toObject(), !foodItems.isEmpty {
+    if let foodItems: [FoodItem] = data.toObjects(), !foodItems.isEmpty {
       viewModel.foodItems = foodItems
       setupData(with: foodItems)
-    } else if let capturedItems: [CapturedMeal] = data.toObject(), !capturedItems.isEmpty {
-      CapturedMeal.items = capturedItems
+    } else if let capturedItem: CapturedMeal = data.toObject() {
+      CapturedMeal.items.append(capturedItem)
     }
   }
   

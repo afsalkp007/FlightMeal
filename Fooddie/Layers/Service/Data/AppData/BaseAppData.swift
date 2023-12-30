@@ -10,8 +10,8 @@ import Foundation
 @propertyWrapper
 class BaseAppData<Value> {
 
-  let type: AppDataType
-  let settings: AppData
+  let type: DataServiceType
+  let settings: DataService
   let defaultValue: Value
 
   var wrappedValue: Value {
@@ -20,8 +20,8 @@ class BaseAppData<Value> {
   }
 
   init(
-    _ type: AppDataType,
-    settings: AppData = .default,
+    _ type: DataServiceType,
+    settings: DataService = .default,
     defaultValue: Value
   ) {
     self.type = type

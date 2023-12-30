@@ -1,5 +1,5 @@
 //
-//  AppData.swift
+//  DataService.swift
 //  Fooddie
 //
 //  Created by Afsal Mohammed on 19/12/2023
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AppData {
+struct DataService {
 
   private let defaults: UserDefaults
 
@@ -19,21 +19,21 @@ struct AppData {
     defaults.set(value, forKey: key)
   }
 
-  func remove(_ settings: AppDataType...) {
+  func remove(_ settings: DataServiceType...) {
     settings.forEach {
       defaults.removeObject(forKey: $0.rawValue)
     }
   }
 
   func removeAll() {
-    AppDataType.allCases.forEach {
+    DataServiceType.allCases.forEach {
       defaults.removeObject(forKey: $0.rawValue)
     }
   }
 }
 
-extension AppData {
+extension DataService {
 
-  static let `default` = AppData(defaults: .standard)
+  static let `default` = DataService(defaults: .standard)
 
 }

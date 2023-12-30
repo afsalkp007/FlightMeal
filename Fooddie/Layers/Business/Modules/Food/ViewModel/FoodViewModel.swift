@@ -52,8 +52,8 @@ final class FoodViewModel {
   internal func send(type: DataType) {
     
     switch type {
-    case let .mealCaptured(items):
-      guard let data = items.data else { return }
+    case let .mealCaptured(item):
+      guard let data = item.data else { return }
       multipeerService.send(data)
     case let .rawFood(items):
       foodItems = items

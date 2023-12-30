@@ -15,7 +15,7 @@ public struct CapturedMeal: Codable {
   static var items: [CapturedMeal]
 }
 
-extension Array where Element == CapturedMeal {
+extension CapturedMeal {
   var data: Data? {
     return try? JSONEncoder().encode(self)
   }
