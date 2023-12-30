@@ -17,7 +17,7 @@ final class MealDetailViewController: UIViewController {
   internal var coordinator: Coordinatable!
   
   @IBOutlet private weak var containerView: UIView!
-  @IBOutlet private weak var foodImageView: CacheableImageView!
+  @IBOutlet private weak var mealImageView: CacheableImageView!
   @IBOutlet private weak var titleLabel: UILabel!
   @IBOutlet private weak var nameTextField: UITextField!
   
@@ -31,8 +31,8 @@ final class MealDetailViewController: UIViewController {
   private func configureView() {
     guard let viewModel = viewModel else { return }
     titleLabel.text = viewModel.model.name
-    foodImageView.setUpLoader()
-    foodImageView.downloadImageFrom(url: viewModel.url, imageMode: .scaleAspectFill)
+    mealImageView.setUpLoader()
+    mealImageView.downloadImageFrom(url: viewModel.url, imageMode: .scaleAspectFill)
     createDismissKeyboardGesture()
     containerView.shadow()
     nameTextField.border()

@@ -8,9 +8,9 @@
 import Foundation
 
 protocol APIServiceProtocol {
-  func fetchFoodItems(_ completion: @escaping (Result<FoodResponse?>) -> Void)
+  func fetchMeals(_ completion: @escaping (Result<MealResponse?>) -> Void)
 }
 
 extension APIServiceProtocol {
-  func fetchFoodItems(_ completion: @escaping (Result<FoodResponse?>) -> Void) {}
+  func fetchMeals(_ completion: @escaping (Result<MealResponse?>) -> Void) {}
 }

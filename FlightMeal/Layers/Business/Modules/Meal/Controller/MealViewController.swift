@@ -15,7 +15,7 @@ final class MealViewController: UIViewController {
   @IBOutlet private weak var collectionView: UICollectionView!
   
   private var loaderView = UIActivityIndicatorView()
-  private let adapter = CollectionAdapter<FoodItem, MealCollectionViewCell>()
+  private let adapter = CollectionAdapter<Meal, MealCollectionViewCell>()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,7 +37,7 @@ final class MealViewController: UIViewController {
     collectionView.dataSource = adapter
   }
 
-  private func setupData(with items: [FoodItem]) {
+  private func setupData(with items: [Meal]) {
     adapter.size = viewModel.cellSize
     adapter.items = items
     configureCollectionView()
@@ -74,33 +74,33 @@ extension MealViewController: Storyboarded {}
 extension MealViewController: DismissCallBackDelegate {
   func getCapturedMeal(meal: Order, indexPath: IndexPath) {
     Order.items.append(meal)
-    viewModel.send(type: .mealCaptured(meal))
+    viewModel.send(type: .typeOrder(meal))
     
     let quantity = meal.meal.quantity - 1
     let stepper = Stepper(quantity: quantity, index: indexPath.item)
-    viewModel.getUpdatedFoodItems(stepper)
-    viewModel.send(type: .rawFood(viewModel.foodItems))
+    viewModel.getUpdatedMeals(stepper)
+    viewModel.send(type: .typeMeal(viewModel.meals))
   }
 }
 
 extension MealViewController: UIStepperControllerDelegate {
   func stepperDidAddValues(_ stepper: Stepper) {
-    viewModel.getUpdatedFoodItems(stepper)
-    viewModel.send(type: .rawFood(viewModel.foodItems))
+    viewModel.getUpdatedMeals(stepper)
+    viewModel.send(type: .typeMeal(viewModel.meals))
   }
 
   func stepperDidSubtractValues(_ stepper: Stepper) {
-    viewModel.getUpdatedFoodItems(stepper)
-    viewModel.send(type: .rawFood(viewModel.foodItems))
+    viewModel.getUpdatedMeals(stepper)
+    viewModel.send(type: .typeMeal(viewModel.meals))
   }
 }
 
 extension MealViewController: MultiPeerDelegate {
   func multiPeer(didReceiveData data: Data) {
     
-    if let foodItems: [FoodItem] = data.toObjects(), !foodItems.isEmpty {
-      viewModel.foodItems = foodItems
-      setupData(with: foodItems)
+    if let meals: [Meal] = data.toObjects(), !meals.isEmpty {
+      viewModel.meals = meals
+      setupData(with: meals)
     } else if let capturedItem: Order = data.toObject() {
       Order.items.append(capturedItem)
     }

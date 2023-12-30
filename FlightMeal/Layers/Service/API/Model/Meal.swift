@@ -1,5 +1,5 @@
 //
-//  FoodItem.swift
+//  Meal.swift
 //  FlightMeal
 //
 //  Created by Afsal Mohammed on 19/12/2023
@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct FoodItem {
+public struct Meal {
   var name: String
   var quantity: CGFloat
   var imageUrl: String?
 }
 
-extension FoodItem: Codable {
+extension Meal: Codable {
   enum CodingKeys: String, CodingKey {
     case name
     case quantity = "calories"
@@ -35,7 +35,7 @@ extension FoodItem: Codable {
   }
 }
 
-extension Array where Element == FoodItem {
+extension Array where Element == Meal {
   var data: Data? {
     return try? JSONEncoder().encode(self)
   }

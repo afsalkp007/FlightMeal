@@ -10,17 +10,17 @@ import UIKit
 class MealCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var foodImageView: CacheableImageView!
+  @IBOutlet weak var mealImageView: CacheableImageView!
   @IBOutlet var stepper: UIStepperController!
   
-  internal var model: FoodItem? {
+  internal var model: Meal? {
     didSet {
       guard let model = model else { return }
       titleLabel.text = model.name
       stepper.quantity = model.quantity
       guard let imageUrl = model.imageUrl, let url = URL(string: imageUrl) else { return }
-      foodImageView.setUpLoader()
-      foodImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFill)
+      mealImageView.setUpLoader()
+      mealImageView.downloadImageFrom(url: url, imageMode: .scaleAspectFill)
     }
   }
   

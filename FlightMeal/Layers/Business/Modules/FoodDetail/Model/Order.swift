@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Order: Codable {
-  let meal: FoodItem
+  let meal: Meal
   let name: String
   
   @CodableAppData(.capturedItems)

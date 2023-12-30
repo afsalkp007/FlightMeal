@@ -1,8 +1,8 @@
 # FlightMeal App
 
-A simple app to take food order for flight passenger by cabin crew:
-* Show a list of foods
-* Shows details when food items on the list are tapped. 
+A simple app to take meal order for flight passenger by cabin crew:
+* Show a list of meals
+* Shows details when meal items on the list are tapped. 
  
 
 # Installation
@@ -24,12 +24,12 @@ Follow the steps to get test case reports:
  This project uses MVVM design pattern and project is fully developed in Swift.
  
  
- ### Load Food from API
+ ### Load Meal from API
  
  #### Primary Course (Happy path):
- 1. Call fetchFood API
- 2. System fetches food data from API
- 3. System prefill the food data on the UI
+ 1. Call fetchMeals API
+ 2. System fetches meal data from API
+ 3. System prefill the meal data on the UI
  
  #### Error Course (Sad path):
  1. System delivers error

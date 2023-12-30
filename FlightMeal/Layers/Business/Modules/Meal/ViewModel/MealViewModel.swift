@@ -11,8 +11,8 @@ final class MealViewModel {
   let multipeerService: MultiPeer
   let apiService: APIServiceProtocol
   
-  var foodItems: [FoodItem]!
-  var updateUI: (([FoodItem]) -> Void)?
+  var meals: [Meal]!
+  var updateUI: (([Meal]) -> Void)?
   
   var cellSize: CGSize {
     let screenSize = UIScreen.main.bounds
@@ -31,13 +31,13 @@ final class MealViewModel {
   }
   
   private func fetchItems() {
-    apiService.fetchFoodItems { [weak self] result in
+    apiService.fetchMeals { [weak self] result in
       switch result {
       case let .success(response):
-        guard let items = response?.foodItems else { return }
-        self?.foodItems = items
+        guard let items = response?.meals else { return }
+        self?.meals = items
         self?.updateUI?(items)
-        self?.sendFoodItems(items)
+        self?.sendMeals(items)
       case let .failure(error):
         print(error.localizedDescription)
       }
@@ -52,23 +52,23 @@ final class MealViewModel {
   internal func send(type: DataType) {
     
     switch type {
-    case let .mealCaptured(item):
+    case let .typeOrder(item):
       guard let data = item.data else { return }
       multipeerService.send(data)
-    case let .rawFood(items):
-      foodItems = items
+    case let .typeMeal(items):
+      meals = items
       updateUI?(items)
-      sendFoodItems(items)
+      sendMeals(items)
     }
   }
   
-  private func sendFoodItems(_ items: [FoodItem]) {
+  private func sendMeals(_ items: [Meal]) {
     guard let data = items.data else { return }
     multipeerService.send(data)
   }
   
-  internal func getUpdatedFoodItems(_ stepper: Stepper) {
-    foodItems = foodItems.enumerated().map { index, item in
+  internal func getUpdatedMeals(_ stepper: Stepper) {
+    meals = meals.enumerated().map { index, item in
       var newItem = item
       if stepper.index == index {
         newItem.quantity = stepper.quantity

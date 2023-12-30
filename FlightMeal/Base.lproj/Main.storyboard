@@ -185,7 +185,7 @@
                     <navigationItem key="navigationItem" id="QmT-PJ-gBw"/>
                     <connections>
                         <outlet property="containerView" destination="Waa-Qs-O5I" id="ulr-tM-oj8"/>
-                        <outlet property="foodImageView" destination="aru-cw-U56" id="h05-cN-Ayu"/>
+                        <outlet property="mealImageView" destination="aru-cw-U56" id="4fI-zc-8OG"/>
                         <outlet property="nameTextField" destination="WHL-zx-iNE" id="6lq-WL-juA"/>
                         <outlet property="titleLabel" destination="FA0-ux-IBa" id="4HG-AZ-tIs"/>
                     </connections>

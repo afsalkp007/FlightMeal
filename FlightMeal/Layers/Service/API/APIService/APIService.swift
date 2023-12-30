@@ -19,16 +19,16 @@ final class APIService: APIServiceProtocol {
     self.networking = networking
   }
   
-  /// Fetch food data
+  /// Fetch meal data
   /// - Parameter completion: Called when operation finishes
   /// https://yummie.glitch.me/dishes/cat1
-  func fetchFoodItems(_ completion: @escaping (Result<FoodResponse?>) -> Void) {
+  func fetchMeals(_ completion: @escaping (Result<MealResponse?>) -> Void) {
     let resource = Resource(
       url: Constants.Urls.mealUrl,
       path: "dishes/cat1")
     _ = networking.fetch(resource: resource, completion: { data in
       DispatchQueue.main.async {
-        completion(.success(data.flatMap({ FoodResponse.make(data: $0) }) ))
+        completion(.success(data.flatMap({ MealResponse.make(data: $0) }) ))
       }
     })
   }

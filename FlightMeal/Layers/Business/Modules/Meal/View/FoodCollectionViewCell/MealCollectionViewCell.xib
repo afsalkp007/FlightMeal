@@ -63,7 +63,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="341" height="272"/>
             <connections>
-                <outlet property="foodImageView" destination="Hlm-nT-jsT" id="G4a-4x-9lf"/>
+                <outlet property="mealImageView" destination="Hlm-nT-jsT" id="nnH-L2-vML"/>
                 <outlet property="stepper" destination="mlP-4J-ff1" id="TTP-CV-Hb1"/>
                 <outlet property="titleLabel" destination="Ofd-Ta-PXX" id="XnF-qU-VMK"/>
             </connections>

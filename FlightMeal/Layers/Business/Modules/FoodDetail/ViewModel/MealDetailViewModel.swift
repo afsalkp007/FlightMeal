@@ -8,10 +8,10 @@
 import Foundation
 
 struct MealDetailViewModel {
-  let model: FoodItem
+  let model: Meal
   let indexPath: IndexPath
   
-  init(model: FoodItem,
+  init(model: Meal,
        indexPath: IndexPath) {
     self.model = model
     self.indexPath = indexPath

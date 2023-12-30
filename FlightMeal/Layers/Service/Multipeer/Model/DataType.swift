@@ -8,6 +8,6 @@
 import Foundation
 
 enum DataType {
-  case rawFood([FoodItem])
-  case mealCaptured(Order)
+  case typeMeal([Meal])
+  case typeOrder(Order)
 }
