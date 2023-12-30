@@ -8,7 +8,7 @@
 import Foundation
 
 struct CapturedMealViewModel {
-  let items: [CapturedMeal]
+  internal let items: [CapturedMeal]
   
   var hegith: CGFloat {
     return 65.0
