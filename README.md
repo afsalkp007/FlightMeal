@@ -1,4 +1,4 @@
-# Foddie App
+# FlightMeal App
 
 A simple app to take food order for flight passenger by cabin crew:
 * Show a list of foods
