@@ -18,3 +18,33 @@ extension UIViewController {
   }
 }
 
+extension UINavigationController {
+  func removeSubViews() {
+    navigationBar.subviews.forEach {
+      $0.removeFromSuperview()
+    }
+  }
+  
+  func showLargeTitle(_ show: Bool) {
+    navigationBar.prefersLargeTitles = show
+    navigationItem.largeTitleDisplayMode = show ? .always : .never
+  }
+  
+  func addCartButton() {
+    guard let UINavigationBarLargeTitleView = NSClassFromString("_UINavigationBarLargeTitleView") else {
+      return
+    }
+    navigationBar.subviews.forEach { subview in
+      if subview.isKind(of: UINavigationBarLargeTitleView.self) {
+        subview.addSubview(UIButton.cartButton)
+        
+        NSLayoutConstraint.activate([
+          UIButton.cartButton.bottomAnchor.constraint(equalTo: subview.bottomAnchor, constant: -8),
+          UIButton.cartButton.trailingAnchor.constraint(
+            equalTo: subview.trailingAnchor, constant: -16
+          )
+        ])
+      }
+    }
+  }
+}

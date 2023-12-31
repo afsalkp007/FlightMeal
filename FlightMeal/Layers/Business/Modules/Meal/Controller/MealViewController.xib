@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cSO-Rg-agz">
-                    <rect key="frame" x="0.0" y="157.33333333333331" width="393" height="660.66666666666674"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="ftR-dV-DBw">
                         <size key="itemSize" width="128" height="128"/>
@@ -31,56 +31,19 @@
                     </collectionViewFlowLayout>
                     <cells/>
                 </collectionView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ild-qP-vI4">
-                    <rect key="frame" x="0.0" y="58.999999999999993" width="393" height="98.333333333333314"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsC-bf-wkf">
-                            <rect key="frame" x="16" y="24.333333333333329" width="93.666666666666671" height="42"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSu-yd-d3W">
-                            <rect key="frame" x="283.33333333333331" y="8" width="93.666666666666686" height="74.333333333333329"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-ZK-5Ty">
-                                    <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="74.333333333333329"/>
-                                    <color key="tintColor" red="0.098039215690000001" green="0.54117647059999996" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
-                                    <connections>
-                                        <action selector="showOrders:" destination="-1" eventType="touchUpInside" id="D3e-Zr-uoV"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="gUd-ZK-5Ty" secondAttribute="bottom" id="0qi-Iu-h6m"/>
-                                <constraint firstAttribute="trailing" secondItem="gUd-ZK-5Ty" secondAttribute="trailing" id="Cv3-lT-1tJ"/>
-                                <constraint firstAttribute="width" constant="93.666666666666686" id="a8D-eq-hFD"/>
-                                <constraint firstItem="gUd-ZK-5Ty" firstAttribute="leading" secondItem="fSu-yd-d3W" secondAttribute="leading" id="hoa-1P-EZG"/>
-                                <constraint firstItem="gUd-ZK-5Ty" firstAttribute="top" secondItem="fSu-yd-d3W" secondAttribute="top" id="jYG-Mt-Bab"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <edgeInsets key="layoutMargins" top="8" left="16" bottom="16" right="16"/>
-                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="IJ7-ly-Thj"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Ild-qP-vI4" firstAttribute="top" secondItem="IJ7-ly-Thj" secondAttribute="top" id="1o9-p7-oU8"/>
-                <constraint firstItem="Ild-qP-vI4" firstAttribute="leading" secondItem="IJ7-ly-Thj" secondAttribute="leading" id="1sg-mN-Xz7"/>
+                <constraint firstItem="cSO-Rg-agz" firstAttribute="top" secondItem="IJ7-ly-Thj" secondAttribute="top" id="6eV-pP-uJ5"/>
                 <constraint firstItem="cSO-Rg-agz" firstAttribute="leading" secondItem="IJ7-ly-Thj" secondAttribute="leading" id="CK1-xz-A3i"/>
-                <constraint firstItem="IJ7-ly-Thj" firstAttribute="trailing" secondItem="Ild-qP-vI4" secondAttribute="trailing" id="JI2-v5-Z6I"/>
                 <constraint firstItem="IJ7-ly-Thj" firstAttribute="bottom" secondItem="cSO-Rg-agz" secondAttribute="bottom" id="UMH-AD-umk"/>
-                <constraint firstItem="cSO-Rg-agz" firstAttribute="top" secondItem="Ild-qP-vI4" secondAttribute="bottom" id="dsz-PJ-7Dm"/>
                 <constraint firstItem="IJ7-ly-Thj" firstAttribute="trailing" secondItem="cSO-Rg-agz" secondAttribute="trailing" id="rx6-i7-TWQ"/>
             </constraints>
             <point key="canvasLocation" x="-385" y="-8"/>
         </view>
     </objects>
     <resources>
-        <image name="cart" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,6 +11,7 @@ class OrderViewController: UIViewController {
   
   @IBOutlet private weak var tableView: UITableView!
   private let adapter = TableAdapter<Order, OrderTableViewCell>()
+  internal var coordinator: CoordinatorProtocol!
   
   internal var viewModel: OrderViewModel!
   
@@ -18,6 +19,12 @@ class OrderViewController: UIViewController {
     super.viewDidLoad()
     setupUI()
     setupData()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.showLargeTitle(false)
+    navigationController?.removeSubViews()
   }
   
   private func setupUI() {

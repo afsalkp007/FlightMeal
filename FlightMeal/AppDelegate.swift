@@ -23,6 +23,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
   
   private func setupRootView() {
     let navController = UINavigationController()
+    navController.showLargeTitle(true)
     coordinator = Coordinator(navigationController: navController)
     coordinator?.start()
     setupWindow(for: navController)

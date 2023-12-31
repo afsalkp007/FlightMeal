@@ -26,7 +26,12 @@ final class MealViewController: UIViewController {
     }
   }
   
-  @IBAction func showOrders(_ sender: UIButton) {
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.showLargeTitle(true)
+  }
+  
+  @objc func orderDidTap() {
     coordinator.start(Order.items)
   }
   
@@ -35,8 +40,12 @@ final class MealViewController: UIViewController {
     collectionView.register(cellType: MealCollectionViewCell.self)
     collectionView.delegate = adapter
     collectionView.dataSource = adapter
+    
+    navigationController?.addCartButton()
+    UIButton.cartButton.addTarget(self, action: #selector(orderDidTap), for: .touchUpInside)
+    title = "Menu"
   }
-
+  
   private func setupData(with items: [Meal]) {
     adapter.size = viewModel.cellSize
     adapter.items = items

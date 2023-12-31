@@ -33,6 +33,7 @@ final class Coordinator: CoordinatorProtocol {
   
   func start(_ items: [Order]) {
     let vc = OrderViewController()
+    vc.coordinator = self
     vc.viewModel = OrderViewModel(items: items)
     navigationController.pushViewController(vc, animated: true)
   }
