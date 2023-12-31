@@ -43,7 +43,7 @@ final class MealViewController: UIViewController {
     
     navigationController?.addCartButton()
     UIButton.cartButton.addTarget(self, action: #selector(orderDidTap), for: .touchUpInside)
-    title = "Menu"
+    title = viewModel.title
   }
   
   private func setupData(with items: [Meal]) {
@@ -71,9 +71,7 @@ final class MealViewController: UIViewController {
   private func setUpLoader() {
     collectionView.addSubview(loaderView)
     loaderView.hidesWhenStopped = true
-    loaderView.translatesAutoresizingMaskIntoConstraints = false
-    loaderView.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
-    loaderView.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor).isActive = true
+    loaderView.placeCenter(of: collectionView)
     loaderView.startAnimating()
   }
 }

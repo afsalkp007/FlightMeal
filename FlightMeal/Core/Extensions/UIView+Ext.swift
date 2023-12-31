@@ -16,4 +16,10 @@ extension UIView {
     layer.shadowRadius = 4.0
     clipsToBounds = false
   }
+  
+  func placeCenter(of view:UIView) {
+    translatesAutoresizingMaskIntoConstraints = false
+    centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+  }
 }

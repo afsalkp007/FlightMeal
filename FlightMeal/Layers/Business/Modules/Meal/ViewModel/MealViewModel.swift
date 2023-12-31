@@ -14,6 +14,10 @@ final class MealViewModel {
   var meals: [Meal]!
   var updateUI: (([Meal]) -> Void)?
   
+  var title: String {
+    return "Menu"
+  }
+  
   var cellSize: CGSize {
     let screenSize = UIScreen.main.bounds
     let sWidth = screenSize.width * 0.4
