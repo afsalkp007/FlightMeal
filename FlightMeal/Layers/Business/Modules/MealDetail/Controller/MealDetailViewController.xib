@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUT-k0-FY8">
-                    <rect key="frame" x="16" y="75" width="361" height="252"/>
+                    <rect key="frame" x="16" y="16" width="361" height="252"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eps-k9-Azd">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="200"/>
@@ -58,7 +58,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kx4-BD-h6H">
-                    <rect key="frame" x="16" y="343" width="361" height="116"/>
+                    <rect key="frame" x="16" y="284" width="361" height="116"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="G0e-sa-m7r">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="116"/>
@@ -87,6 +87,9 @@
                                             <real key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="placeOrder:" destination="-1" eventType="touchUpInside" id="eyT-mI-0dw"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
