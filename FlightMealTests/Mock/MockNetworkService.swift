@@ -16,7 +16,7 @@ final class MockNetworkService: Networking {
     self.data = try! Data(contentsOf: url)
   }
 
-  func fetch(resource: Resource, completion: @escaping (Data?) -> Void) -> URLSessionTask? {
+  func fetch(resource: Resource, completion: @escaping DataHandler) -> URLSessionTask? {
     completion(data)
     return nil
   }

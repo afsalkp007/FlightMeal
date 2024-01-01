@@ -7,6 +7,8 @@
 
 import Foundation
 
+public typealias DataHandler = (Data?) -> Void
+
 protocol Networking {
 
   /// Fetch data from url and parameters query
@@ -18,6 +20,6 @@ protocol Networking {
   /// - Returns: The data task
   @discardableResult func fetch(
     resource: Resource,
-    completion: @escaping (Data?) -> Void
+    completion: @escaping DataHandler
   ) -> URLSessionTask?
 }

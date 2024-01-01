@@ -20,7 +20,7 @@ final class NetworkService: Networking {
   @discardableResult
   func fetch(
     resource: Resource,
-    completion: @escaping (Data?) -> Void
+    completion: @escaping DataHandler
   ) -> URLSessionTask? {
     guard let request = makeRequest(resource: resource) else {
       completion(nil)

@@ -22,7 +22,7 @@ final class APIService: APIServiceProtocol {
   /// Fetch meal data
   /// - Parameter completion: Called when operation finishes
   /// https://yummie.glitch.me/dishes/cat1
-  func fetchMeals(_ completion: @escaping (Result<MealResponse?>) -> Void) {
+  func fetchMeals(_ completion: @escaping MealResponseHandler) {
     let resource = Resource(
       url: Constants.Urls.mealUrl,
       path: "dishes/cat1")

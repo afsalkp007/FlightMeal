@@ -8,6 +8,8 @@
 import Foundation
 import MultipeerConnectivity
 
+typealias InvitationHandler = (Bool, MCSession?) -> Void
+
 /// Main Class for MultiPeer
 internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
   
@@ -163,7 +165,7 @@ internal class MultiPeer: NSObject, MCAdvertiserAssistantDelegate {
 extension MultiPeer: MCNearbyServiceAdvertiserDelegate {
   
   /// Received invitation
-  internal func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+  internal func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping InvitationHandler) {
     
     OperationQueue.main.addOperation { [unowned self] in
       invitationHandler(true, self.session)

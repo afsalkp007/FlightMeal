@@ -7,10 +7,12 @@
 
 import Foundation
 
+typealias MealResponseHandler = (Result<MealResponse?>) -> Void
+
 protocol APIServiceProtocol {
-  func fetchMeals(_ completion: @escaping (Result<MealResponse?>) -> Void)
+  func fetchMeals(_ completion: @escaping MealResponseHandler)
 }
 
 extension APIServiceProtocol {
-  func fetchMeals(_ completion: @escaping (Result<MealResponse?>) -> Void) {}
+  func fetchMeals(_ completion: @escaping MealResponseHandler) {}
 }
