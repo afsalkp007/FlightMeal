@@ -19,7 +19,9 @@ final class Coordinator: CoordinatorProtocol {
     vc.coordinator = self
     let mpc = MultiPeer()
     mpc.delegate = vc
-    vc.viewModel = MealViewModel(multipeer: mpc)
+    let viewModel = MealViewModel(multipeer: mpc)
+    viewModel.delegate = vc
+    vc.viewModel = viewModel
     navigationController.pushViewController(vc, animated: false)
   }
   

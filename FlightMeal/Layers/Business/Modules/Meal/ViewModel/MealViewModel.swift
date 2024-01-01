@@ -7,12 +7,16 @@
 
 import UIKit
 
+protocol UpdateMealViewDelegate: AnyObject {
+  func updateView(for meals: [Meal])
+}
+
 final class MealViewModel {
   let multipeerService: MultiPeer
   let apiService: APIServiceProtocol
   
   var meals: [Meal]!
-  var updateUI: (([Meal]) -> Void)?
+  weak var delegate: UpdateMealViewDelegate?
   
   var title: String {
     return "Menu"
@@ -40,7 +44,7 @@ final class MealViewModel {
       case let .success(response):
         guard let items = response?.meals else { return }
         self?.meals = items
-        self?.updateUI?(items)
+        self?.delegate?.updateView(for: items)
         self?.sendMeals(items)
       case let .failure(error):
         print(error.localizedDescription)
@@ -61,7 +65,7 @@ final class MealViewModel {
       multipeerService.send(data)
     case let .typeMeal(items):
       meals = items
-      updateUI?(items)
+      delegate?.updateView(for: items)
       sendMeals(items)
     }
   }

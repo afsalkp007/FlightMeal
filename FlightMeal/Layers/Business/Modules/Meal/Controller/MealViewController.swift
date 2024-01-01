@@ -20,10 +20,6 @@ final class MealViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
-    
-    viewModel.updateUI = { [weak self] models in
-      self?.setupData(with: models)
-    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +69,12 @@ final class MealViewController: UIViewController {
     loaderView.hidesWhenStopped = true
     loaderView.placeCenter(of: collectionView)
     loaderView.startAnimating()
+  }
+}
+
+extension MealViewController: UpdateMealViewDelegate {
+  func updateView(for meals: [Meal]) {
+    setupData(with: meals)
   }
 }
 
