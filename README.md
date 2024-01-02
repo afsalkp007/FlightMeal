@@ -1,8 +1,25 @@
 # FlightMeal App
 
 A simple app to take meal order for flight passenger by cabin crew:
-* Show a list of meals
-* Shows details when meal items on the list are tapped. 
+* Presented items from a predefined menu, ensuring synchronization across devices.
+
+* Managed device connections through the Bluetooth/Wifi (MultipeerConnectivity) framework.
+
+* Captured meal orders from passengers and displayed a summary in a separate view.
+
+* Stored captured information locally in a database to persist data, ensuring data availability even upon app relaunch.
+
+* Implemented a countdown functionality with each order to keep everyone informed.
+
+* Executed a seamless Master/Slave implementation over the MultipeerConnectivity framework.
+
+* Enabled syncing and local persistence of the order list, even when other devices are in the background.
+
+* Ensured syncing and persistence even during simultaneous order-taking by multiple peers.
+
+* Revamped all screens with animated designs.
+
+* Employed a clean MVVM-C architecture, accompanied by Unit/UI tests. 
  
 
 # Installation
