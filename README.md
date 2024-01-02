@@ -17,8 +17,6 @@ A simple app to take meal order for flight passenger by cabin crew:
 
 * Ensured syncing and persistence even during simultaneous order-taking by multiple peers.
 
-* Revamped all screens with animated designs.
-
 * Employed a clean MVVM-C architecture, accompanied by Unit/UI tests. 
  
 
